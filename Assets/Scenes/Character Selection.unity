@@ -240,17 +240,17 @@ MonoBehaviour:
   Carlos_Damage: 1
   Carlos_Speed: 1
   Carlos_AttSpeed: 1
-  CarlosPortrait: {fileID: 0}
+  CarlosPortrait: {fileID: 21300000, guid: 6bf7c44321caa1d478eb0e645df1c85d, type: 3}
   Fer_Health: 1
   Fer_Damage: 1
   Fer_Speed: 1
   Fer_AttSpeed: 1
-  FerPortrait: {fileID: 0}
+  FerPortrait: {fileID: 21300000, guid: 6801b3d4e0cd6e048b22158e7162a10b, type: 3}
   Marcos_Health: 1
   Marcos_Damage: 1
   Marcos_Speed: 1
   Marcos_AttSpeed: 1
-  MarcosPortrait: {fileID: 0}
+  MarcosPortrait: {fileID: 21300000, guid: 10457902ababee04f81cd68cc74f7bcf, type: 3}
   portrait: {fileID: 114582614}
 --- !u!4 &432103238
 Transform:
