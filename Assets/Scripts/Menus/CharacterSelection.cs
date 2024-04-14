@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
 using TMPro;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,7 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private float Carlos_Speed;
     [SerializeField] private float Carlos_AttSpeed;
     [SerializeField] private Sprite CarlosPortrait;
+    [SerializeField] private AnimatorController CarlosAnimator;
 
     //Fer Stuff
     [Header("Fer Properties")]
@@ -24,6 +26,7 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private float Fer_Speed;
     [SerializeField] private float Fer_AttSpeed;
     [SerializeField] private Sprite FerPortrait;
+    [SerializeField] private AnimatorController FerAnimator;
 
     //Marcos Stuff
     [Header("Marcos Properties")]
@@ -32,6 +35,7 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private float Marcos_Speed;
     [SerializeField] private float Marcos_AttSpeed;
     [SerializeField] private Sprite MarcosPortrait;
+    [SerializeField] private AnimatorController MarcosAnimator;
 
     [Header("Portrait")]
     [SerializeField] private GameObject portrait;
@@ -47,6 +51,8 @@ public class CharacterSelection : MonoBehaviour
     private List<Dictionary<string, float>> characterSelection;
     private List<Sprite> portraits;
     private int characterSelected;
+    private List<AnimatorController> animations;
+
 
     private Dictionary<string, float> CProperties;
     private Dictionary<string, float> FProperties;
@@ -57,7 +63,7 @@ public class CharacterSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        animations = new List<AnimatorController>() { CarlosAnimator, FerAnimator, MarcosAnimator};
         SRPortrait = portrait.GetComponent<SpriteRenderer>();
         CProperties = new Dictionary<string, float>()
         {
@@ -98,6 +104,7 @@ public class CharacterSelection : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameManager.instance.setProperties(characterSelection[characterSelected]);
+            GameManager.instance.setAnimator(animations[characterSelected]);
             SceneManager.LoadScene("Escena_Pruebas");
         }
 
@@ -114,7 +121,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void changePropertiesTxt()
     {
-         Health.text = Convert.ToString(characterSelection[characterSelected]["Health"]);
+            Health.text = Convert.ToString(characterSelection[characterSelected]["Health"]);
             Damage.text = Convert.ToString(characterSelection[characterSelected]["Damage"]);
             Speed.text = Convert.ToString(characterSelection[characterSelected]["Speed"]);
             AttSpeed.text = Convert.ToString(characterSelection[characterSelected]["AttSpeed"]);

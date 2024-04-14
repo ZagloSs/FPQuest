@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -11,8 +12,10 @@ public class Movement : MonoBehaviour
 
 
 
+
     private void Start()
     {
+        animator.runtimeAnimatorController = GameManager.instance.GetAnimator();
         //Pruebas
         animator.SetBool("IsWalkingSide", false);
         //FIn Pruebas (Borrar Luego)

@@ -1,6 +1,7 @@
  using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,8 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] GameObject LoadingScene;
-    private Animator animator;
-    private Sprite skin;
+    private AnimatorController animator;
     private Dictionary<string, float> properties;
 
 
@@ -33,7 +33,15 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    public void setAnimator(AnimatorController animator)
+    {
+        this.animator = animator;
+    }
+    public AnimatorController GetAnimator()
+    {
+        return this.animator;
+    }
+    
 
 
     public void backToMenu()
