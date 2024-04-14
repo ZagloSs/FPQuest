@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bccd1abed91a9564d9ba72294f6e3409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LoadingScene: {fileID: 0}
 --- !u!1 &667427494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -400, y: 180}
+  m_AnchoredPosition: {x: -338, y: 180}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5000001}
 --- !u!114 &1364201944
@@ -1026,9 +1027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Choose your character
-
-'
+  m_text: Elije a tu personaje
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d4c2482361d40d4e9486e9e1499e4dd, type: 2}
   m_sharedMaterial: {fileID: -4694991279931788576, guid: 1d4c2482361d40d4e9486e9e1499e4dd, type: 2}
