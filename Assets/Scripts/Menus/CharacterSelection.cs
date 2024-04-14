@@ -103,38 +103,12 @@ public class CharacterSelection : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (characterSelected == 2)
-            {
-                characterSelected = 0;
-            }
-            else
-            {
-                characterSelected++;
-            }
-           
-            SRPortrait.sprite = portraits[characterSelected];
-            UnityEngine.Debug.Log(characterSelected);
-
-
+            changeForwards();
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (characterSelected == 0)
-            {
-                characterSelected = 2;
-            }
-            else
-            {
-                characterSelected--;
-            }
-
-
-            SRPortrait.sprite = portraits[characterSelected];
-            UnityEngine.Debug.Log(characterSelected);
-
-
-
+            changeBackwards();
         }
     }
 
@@ -144,5 +118,36 @@ public class CharacterSelection : MonoBehaviour
             Damage.text = Convert.ToString(characterSelection[characterSelected]["Damage"]);
             Speed.text = Convert.ToString(characterSelection[characterSelected]["Speed"]);
             AttSpeed.text = Convert.ToString(characterSelection[characterSelected]["AttSpeed"]);
+    }
+
+    public void changeBackwards()
+    {
+        if (characterSelected == 0)
+        {
+            characterSelected = 2;
+        }
+        else
+        {
+            characterSelected--;
+        }
+
+
+        SRPortrait.sprite = portraits[characterSelected];
+        UnityEngine.Debug.Log(characterSelected);
+    }
+
+    public void changeForwards()
+    {
+        if (characterSelected == 2)
+        {
+            characterSelected = 0;
+        }
+        else
+        {
+            characterSelected++;
+        }
+
+        SRPortrait.sprite = portraits[characterSelected];
+        UnityEngine.Debug.Log(characterSelected);
     }
 }
