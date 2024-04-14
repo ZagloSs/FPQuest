@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,6 +35,12 @@ public class CharacterSelection : MonoBehaviour
 
     [Header("Portrait")]
     [SerializeField] private GameObject portrait;
+
+    [Header("Properties")]
+    [SerializeField] private TextMeshProUGUI Health;
+    [SerializeField] private TextMeshProUGUI Damage;
+    [SerializeField] private TextMeshProUGUI Speed;
+    [SerializeField] private TextMeshProUGUI AttSpeed;
 
 
     private SpriteRenderer SRPortrait;
@@ -86,6 +93,8 @@ public class CharacterSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        changePropertiesTxt();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameManager.instance.setProperties(characterSelection[characterSelected]);
@@ -102,8 +111,11 @@ public class CharacterSelection : MonoBehaviour
             {
                 characterSelected++;
             }
+           
             SRPortrait.sprite = portraits[characterSelected];
             UnityEngine.Debug.Log(characterSelected);
+
+
         }
 
         if (Input.GetKeyDown(KeyCode.A))
@@ -116,8 +128,21 @@ public class CharacterSelection : MonoBehaviour
             {
                 characterSelected--;
             }
+
+
             SRPortrait.sprite = portraits[characterSelected];
             UnityEngine.Debug.Log(characterSelected);
+
+
+
         }
+    }
+
+    public void changePropertiesTxt()
+    {
+         Health.text = Convert.ToString(characterSelection[characterSelected]["Health"]);
+            Damage.text = Convert.ToString(characterSelection[characterSelected]["Damage"]);
+            Speed.text = Convert.ToString(characterSelection[characterSelected]["Speed"]);
+            AttSpeed.text = Convert.ToString(characterSelection[characterSelected]["AttSpeed"]);
     }
 }
