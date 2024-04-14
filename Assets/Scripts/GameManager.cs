@@ -36,10 +36,14 @@ public class GameManager : MonoBehaviour
 
 
 
-
     public void backToMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void goToCharacterSelection()
+    {
+        SceneManager.LoadScene("Character Selection");
     }
 
     public void quitGame()
