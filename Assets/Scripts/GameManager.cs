@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
+    [SerializeField] GameObject LoadingScene;
     private Animator animator;
     private Sprite skin;
     private Dictionary<string, float> properties;
@@ -36,14 +36,36 @@ public class GameManager : MonoBehaviour
 
 
 
-
     public void backToMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        LoadingScreen("MainMenu");
+    }
+
+    public void goToCharacterSelection()
+    {
+        LoadingScreen("Character Selection");
     }
 
     public void quitGame()
     {
         Application.Quit();
+    }
+
+
+
+    public void LoadingScreen(string sceneName) 
+    {  
+        StartCoroutine(LoadSceneAynchronously(sceneName));
+    }
+
+    IEnumerator LoadSceneAynchronously(string sceneName)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+        LoadingScene.SetActive(true);
+        while (!operation.isDone)
+        {
+
+            yield return null;
+        }
     }
 }
