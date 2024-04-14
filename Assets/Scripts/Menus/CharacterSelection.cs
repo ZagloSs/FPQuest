@@ -4,31 +4,32 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
     //Carlos Stuff
     [Header("Carlos Properties")]
-    [SerializeField] private float Carlos_Health = 1f;
-    [SerializeField] private float Carlos_Damage = 1f;
-    [SerializeField] private float Carlos_Speed = 1f;
-    [SerializeField] private float Carlos_AttSpeed = 1f;
+    [SerializeField] private float Carlos_Health;
+    [SerializeField] private float Carlos_Damage;
+    [SerializeField] private float Carlos_Speed;
+    [SerializeField] private float Carlos_AttSpeed;
     [SerializeField] private Sprite CarlosPortrait;
 
     //Fer Stuff
     [Header("Fer Properties")]
-    [SerializeField] private float Fer_Health = 1f;
-    [SerializeField] private float Fer_Damage = 1f;
-    [SerializeField] private float Fer_Speed = 1f;
-    [SerializeField] private float Fer_AttSpeed = 1f;
+    [SerializeField] private float Fer_Health;
+    [SerializeField] private float Fer_Damage;
+    [SerializeField] private float Fer_Speed;
+    [SerializeField] private float Fer_AttSpeed;
     [SerializeField] private Sprite FerPortrait;
 
     //Marcos Stuff
     [Header("Marcos Properties")]
-    [SerializeField] private float Marcos_Health = 1f;
-    [SerializeField] private float Marcos_Damage = 1f;
-    [SerializeField] private float Marcos_Speed = 1f;
-    [SerializeField] private float Marcos_AttSpeed = 1f;
+    [SerializeField] private float Marcos_Health;
+    [SerializeField] private float Marcos_Damage;
+    [SerializeField] private float Marcos_Speed;
+    [SerializeField] private float Marcos_AttSpeed;
     [SerializeField] private Sprite MarcosPortrait;
 
     [Header("Portrait")]
@@ -40,14 +41,18 @@ public class CharacterSelection : MonoBehaviour
     private List<Sprite> portraits;
     private int characterSelected;
 
+    private Dictionary<string, float> CProperties;
+    private Dictionary<string, float> FProperties;
+    private Dictionary<string, float> MProperties;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
         SRPortrait = portrait.GetComponent<SpriteRenderer>();
-        Dictionary<string, float> CProperties = new Dictionary<string, float>()
+        CProperties = new Dictionary<string, float>()
         {
             { "Health", Carlos_Health },
             { "Damage", Carlos_Damage },
@@ -55,7 +60,7 @@ public class CharacterSelection : MonoBehaviour
             { "AttSpeed", Carlos_AttSpeed }
         };
 
-        Dictionary<string, float> FProperties = new Dictionary<string, float>()
+        FProperties = new Dictionary<string, float>()
         {
             { "Health", Fer_Health },
             { "Damage", Fer_Damage },
@@ -63,7 +68,7 @@ public class CharacterSelection : MonoBehaviour
             { "AttSpeed", Fer_AttSpeed }
         };
 
-        Dictionary<string, float> MProperties = new Dictionary<string, float>()
+        MProperties = new Dictionary<string, float>()
         {
             { "Health", Marcos_Health },
             { "Damage", Marcos_Damage },
@@ -71,7 +76,7 @@ public class CharacterSelection : MonoBehaviour
             { "AttSpeed", Marcos_AttSpeed }
         };
 
-        characterSelection = new List<Dictionary<string, float>>(){ CProperties, FProperties,MProperties};
+        characterSelection = new List<Dictionary<string, float>>() { CProperties, FProperties, MProperties };
         portraits = new List<Sprite>() { CarlosPortrait, FerPortrait, MarcosPortrait };
         characterSelected = 0;
         SRPortrait.sprite = portraits[characterSelected];
@@ -83,16 +88,15 @@ public class CharacterSelection : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
+            GameManager.instance.setProperties(characterSelection[characterSelected]);
+            SceneManager.LoadScene("Escena_Pruebas");
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if(characterSelected == 2)
+            if (characterSelected == 2)
             {
                 characterSelected = 0;
-                
-                
             }
             else
             {
