@@ -103,9 +103,7 @@ public class CharacterSelection : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameManager.instance.setProperties(characterSelection[characterSelected]);
-            GameManager.instance.setAnimator(animations[characterSelected]);
-            SceneManager.LoadScene("Escena_Pruebas");
+           aceptarSeleccion();
         }
 
         if (Input.GetKeyDown(KeyCode.D))
@@ -125,6 +123,13 @@ public class CharacterSelection : MonoBehaviour
             Damage.text = Convert.ToString(characterSelection[characterSelected]["Damage"]);
             Speed.text = Convert.ToString(characterSelection[characterSelected]["Speed"]);
             AttSpeed.text = Convert.ToString(characterSelection[characterSelected]["AttSpeed"]);
+    }
+
+    public void aceptarSeleccion()
+    {
+        GameManager.instance.setProperties(characterSelection[characterSelected]);
+        GameManager.instance.setAnimator(animations[characterSelected]);
+        SceneManager.LoadScene("Escena_Pruebas");
     }
 
     public void changeBackwards()
