@@ -19,7 +19,23 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            //Prueba para acceder al diccionario de properties
+            properties = new Dictionary<string, float>();
+
+            InitializeProperties();
+
         }
+    }
+
+    private void InitializeProperties()
+    {
+        // Inicializamos el diccionario de propiedades con valores por defecto
+        properties = new Dictionary<string, float>();
+        properties.Add("Health", 100f); // Por ejemplo, asignamos un valor por defecto de 100 a la salud
+        properties.Add("Damage", 10f);  // Asignamos un valor por defecto de 10 al daño
+        properties.Add("Speed", 5f);    // Asignamos un valor por defecto de 5 a la velocidad
+        properties.Add("AttSpeed", 1f); // Asignamos un valor por defecto de 1 a la velocidad de ataque
     }
 
     public void setProperties(Dictionary<string, float> properties)
