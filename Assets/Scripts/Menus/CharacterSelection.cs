@@ -127,6 +127,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void aceptarSeleccion()
     {
+        AudioManager.instance.PlayClick();
         GameManager.instance.setProperties(characterSelection[characterSelected]);
         GameManager.instance.setAnimator(animations[characterSelected]);
         SceneManager.LoadScene("Escena_Pruebas");
@@ -137,6 +138,7 @@ public class CharacterSelection : MonoBehaviour
         if (characterSelected == 0)
         {
             characterSelected = 2;
+            
         }
         else
         {
@@ -144,6 +146,7 @@ public class CharacterSelection : MonoBehaviour
         }
 
 
+        AudioManager.instance.PlayClick();
         SRPortrait.sprite = portraits[characterSelected];
         UnityEngine.Debug.Log(characterSelected);
     }
@@ -158,8 +161,9 @@ public class CharacterSelection : MonoBehaviour
         {
             characterSelected++;
         }
-
+        AudioManager.instance.PlayClick();
         SRPortrait.sprite = portraits[characterSelected];
         UnityEngine.Debug.Log(characterSelected);
+        
     }
 }
