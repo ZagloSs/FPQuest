@@ -12,9 +12,13 @@ public class AudioManager : MonoBehaviour
 
 
     [Header("Audio Clips")]
+    [SerializeField] private AudioClip background;
+    [SerializeField] private AudioClip menus;
+    [SerializeField] private AudioClip bossBattle;
     [SerializeField] private AudioClip click;
 
-    private AudioClip background;
+    private bool isJugar = true;
+
 
 
     private void Awake()
@@ -29,9 +33,27 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        musicaSource.clip = background;
+        musicaSource.clip = menus;
         musicaSource.Play();
     }
+
+    private void Update()
+    {
+
+        if((SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 1) && !isJugar)
+        {
+            isJugar = true;
+            musicaSource.clip = background;
+            musicaSource.Play();
+        }
+        else if((SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 1) && isJugar)
+        {
+            isJugar = false;
+            musicaSource.clip = menus;
+            musicaSource.Play();
+        }
+    }
+
 
 
     //Llamar a efectos de sonido
