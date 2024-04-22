@@ -12,11 +12,10 @@ public class AudioManager : MonoBehaviour
 
 
     [Header("Audio Clips")]
-    [SerializeField] private AudioClip background;
     [SerializeField] private AudioClip click;
 
+    private AudioClip background;
 
-    
 
     private void Awake()
     {

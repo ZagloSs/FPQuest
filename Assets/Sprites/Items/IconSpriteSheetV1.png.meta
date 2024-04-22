@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d831254f10e14f64f9472e869215ec59
+guid: 18b4b5de59604264cb67483d7cdd270f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -107,33 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -162,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jamon_Item
+      name: batidoProte
       rect:
         serializedVersion: 2
-        x: 82
-        y: 340
-        width: 79
-        height: 78
+        x: 5
+        y: 118
+        width: 24
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fce7bf89b3ba1054a80063a45a6ee2f3
-      internalID: 786902927
+      spriteID: 133eae3a6482c4d408fc16df7135383f
+      internalID: -587144220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_1
+      name: bocaton
       rect:
         serializedVersion: 2
-        x: 183
-        y: 335
-        width: 59
-        height: 71
+        x: 33
+        y: 121
+        width: 24
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a81fcfcd10a8640a5d297b6b53a7a4
-      internalID: 268287593
+      spriteID: b6a3ecc9f5b3c2149805d4d7996519ac
+      internalID: -1185550020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_2
+      name: cafe
       rect:
         serializedVersion: 2
-        x: 242
-        y: 344
-        width: 86
-        height: 90
+        x: 60
+        y: 118
+        width: 29
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4af290d6b56c3a542bb3535ec44e4e25
-      internalID: 224620273
+      spriteID: d62c955e84431dd409b1e87fab8548c3
+      internalID: -853644157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_3
+      name: cargador
       rect:
         serializedVersion: 2
-        x: 340
-        y: 340
-        width: 79
-        height: 99
+        x: 93
+        y: 119
+        width: 30
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c965456a5c87c8449f6894570d94450
-      internalID: -108747427
+      spriteID: 6b34625fd980037449f6bd58546a587f
+      internalID: -598073102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_4
+      name: coca
       rect:
         serializedVersion: 2
-        x: 436
-        y: 344
-        width: 98
-        height: 101
+        x: 4
+        y: 78
+        width: 26
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed73d9f56234e8c498a7df2f2afe9c77
-      internalID: -354142345
+      spriteID: 9212537b258b2cd40bee49fb5e5836e8
+      internalID: -250944182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_5
+      name: gafas
       rect:
         serializedVersion: 2
-        x: 13
-        y: 213
-        width: 128
-        height: 107
+        x: 32
+        y: 87
+        width: 27
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21b973ee3dbbec64bb3e6ca511d1f987
-      internalID: -1411318953
+      spriteID: 8ecfe0aef0a917042b542f92514c5f4d
+      internalID: 1004478336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_6
+      name: gorraRoja
       rect:
         serializedVersion: 2
-        x: 164
-        y: 228
-        width: 64
-        height: 84
+        x: 62
+        y: 86
+        width: 35
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59c5695bd583c0e4ba68a8de6012fc79
-      internalID: 588141453
+      spriteID: e8688d4a34e62fc4291bcd11ca13aafc
+      internalID: -492394069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_7
+      name: deChill
       rect:
         serializedVersion: 2
-        x: 247
-        y: 236
-        width: 72
-        height: 81
+        x: 97
+        y: 86
+        width: 29
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5474b3d273448642a53560e648ee7d6
-      internalID: 1778290332
+      spriteID: 0585923fbc48d9440a43910d13286304
+      internalID: 1780821634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_8
+      name: webdev
       rect:
         serializedVersion: 2
-        x: 342
-        y: 247
-        width: 74
-        height: 73
+        x: 3
+        y: 43
+        width: 29
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7c9da48d1eb11b43aaa048324aa8cd7
-      internalID: -1126624249
+      spriteID: c46ee99aa490a2a48a41f0ac1653e9b7
+      internalID: -474944289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_9
+      name: pelucon
       rect:
         serializedVersion: 2
-        x: 427
-        y: 115
-        width: 118
-        height: 210
+        x: 35
+        y: 45
+        width: 30
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7e1302d6d0ccd04bb293dfa9e68d697
-      internalID: 888922619
+      spriteID: 7bdbc2cfcd0dd8e4cb085d3857484cd5
+      internalID: -440997154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_10
+      name: spraypaint
       rect:
         serializedVersion: 2
-        x: 1
-        y: 69
-        width: 160
-        height: 138
+        x: 69
+        y: 42
+        width: 28
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,20 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48d346c195e3f614a88c1140c4a8e95b
-      internalID: 809834731
+      spriteID: d7344392a9871904496962476f7ede47
+      internalID: 1727920289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_11
+      name: taxi
       rect:
         serializedVersion: 2
-        x: 47
-        y: 13
-        width: 97
-        height: 117
+        x: 100
+        y: 56
+        width: 28
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,20 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3367271752d444b49a527c42af16de7a
-      internalID: -1933434947
+      spriteID: 69367f70bbf744346aafe50d5cac0263
+      internalID: -439172770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_12
+      name: victini
       rect:
         serializedVersion: 2
-        x: 153
-        y: 28
-        width: 89
-        height: 71
+        x: 6
+        y: 4
+        width: 26
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,113 +389,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c64dabaa18ea0348b467ab1b6a8f184
-      internalID: -939489018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_13
-      rect:
-        serializedVersion: 2
-        x: 170
-        y: 128
-        width: 76
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20f132119a3038648a3d95c4ee72f126
-      internalID: -755042979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_14
-      rect:
-        serializedVersion: 2
-        x: 254
-        y: 143
-        width: 74
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c89eb32d3c57bc40a3e7da8356b4cc0
-      internalID: 1675753112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_15
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 29
-        width: 69
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7a9423415273c240b4bb97cdc6f139b
-      internalID: 975618040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_16
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 12
-        width: 160
-        height: 106
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db44190597eb9324faf68ecf56b02398
-      internalID: 1809207782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_17
-      rect:
-        serializedVersion: 2
-        x: 345
-        y: 150
-        width: 73
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05abefb495f1ddf4c84151ad48a7789b
-      internalID: 903637601
+      spriteID: 30cf7e4698501ce4cb1abde49f75566d
+      internalID: -78407653
       vertices: []
       indices: 
       edges: []
@@ -550,25 +406,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Items_1: 268287593
-      Items_10: 809834731
-      Items_11: -1933434947
-      Items_12: -939489018
-      Items_13: -755042979
-      Items_14: 1675753112
-      Items_15: 975618040
-      Items_16: 1809207782
-      Items_17: 903637601
-      Items_18: -2033679312
-      Items_2: 224620273
-      Items_3: -108747427
-      Items_4: -354142345
-      Items_5: -1411318953
-      Items_6: 588141453
-      Items_7: 1778290332
-      Items_8: -1126624249
-      Items_9: 888922619
-      Jamon_Item: 786902927
+      batidoProte: -587144220
+      bocaton: -1185550020
+      cafe: -853644157
+      cargador: -598073102
+      coca: -250944182
+      deChill: 1780821634
+      gafas: 1004478336
+      gorraRoja: -492394069
+      pelucon: -440997154
+      spraypaint: 1727920289
+      taxi: -439172770
+      victini: -78407653
+      webdev: -474944289
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
