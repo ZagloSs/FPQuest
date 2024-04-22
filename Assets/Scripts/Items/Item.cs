@@ -21,13 +21,13 @@ public class Item : MonoBehaviour
     }
 
     // Detectar colisión con el jugador
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             Debug.Log("Colisión con el jugador detectada.");
 
-            Properties player = collision.collider.GetComponent<Properties>();
+            Properties player = collision.GetComponent<Properties>();
             if (player != null)
             {
                 Debug.Log("Componente Properties encontrado.");
