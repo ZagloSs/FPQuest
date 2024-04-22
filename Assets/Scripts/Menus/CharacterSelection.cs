@@ -130,7 +130,7 @@ public class CharacterSelection : MonoBehaviour
         AudioManager.instance.PlayClick();
         GameManager.instance.setProperties(characterSelection[characterSelected]);
         GameManager.instance.setAnimator(animations[characterSelected]);
-        SceneManager.LoadScene("Escena_Pruebas");
+        GameManager.instance.goToGame("Escena_pruebas");
     }
 
     public void changeBackwards()

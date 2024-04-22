@@ -70,6 +70,11 @@ public class GameManager : MonoBehaviour
         LoadingScreen("Character Selection");
     }
 
+    public void goToGame(string sceneName)
+    {
+        LoadingScreen(sceneName);
+    }
+
     public void quitGame()
     {
         Application.Quit();
