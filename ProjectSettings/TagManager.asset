@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Item
   - Enemy
+  - Obstacle
+  - Door
   layers:
   - Default
   - TransparentFX
