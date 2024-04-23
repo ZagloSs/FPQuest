@@ -9,7 +9,6 @@ public class EnemyController : MonoBehaviour
     public int damage = 10; // Daño a jugador
     public float knockbackForce = 100f; //Retroceso
 
-    private bool canDamage = true; // Controla si el enemigo puede hacer daño al jugador
     private SpriteRenderer spriteRenderer; // Referencia al componente SpriteRenderer del enemigo
 
 
