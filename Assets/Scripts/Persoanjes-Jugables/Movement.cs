@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 3f;
     private Rigidbody2D _rb;
     public Animator animator;
 
@@ -27,7 +26,7 @@ public class Movement : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
-        _rb.velocity = new Vector2(moveX, moveY) * speed;
+        _rb.velocity = new Vector2(moveX, moveY) * GetComponent<Properties>().Speed;
         if (moveX < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);

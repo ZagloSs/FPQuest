@@ -67,4 +67,14 @@ public class Properties : MonoBehaviour
         Debug.Log("Velocidad de ataque del jugador modificada: " + AttSpeed);
 
     }
+
+    //Daño enemigo hacia jugador
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            Health -= 1; // Reducir la vida del jugador cuando colisiona con el enemigo
+            Debug.Log("Player health: " + Health);
+        }
+    }
 }
