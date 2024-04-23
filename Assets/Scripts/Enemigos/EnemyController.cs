@@ -35,23 +35,5 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Player") && canDamage)
-        {
-            Properties properties= collision.gameObject.GetComponent<Properties>();
-            if (properties != null)
-            {
-                properties.Health -= damage; // Reducir la vida del jugador
-                Debug.Log("Player health: " + properties.Health);
-                canDamage = false; // Activar cooldown
-                Invoke("ResetCooldown", 5f);
-            }
-        }
-    }
-
-    private void ResetCooldown()
-    {
-        canDamage = true; // Reestablecer la capacidad de hacer daño al jugador
-    }
+    
 }

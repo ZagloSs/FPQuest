@@ -5,10 +5,15 @@ using UnityEngine;
 public class Properties : MonoBehaviour
 {
 
+    public float MaxHealth;
     public float Health;
     public float Damage;
     public float Speed;
     public float AttSpeed;
+
+    public HealthBar healthBar;
+
+    private bool canDamage = true;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +23,8 @@ public class Properties : MonoBehaviour
         if(properties != null)
         {
 
-            Health = properties["Health"];
+            MaxHealth = properties["Health"];
+            Health = MaxHealth;
             Damage = properties["Damage"];
             Speed = properties["Speed"];
             AttSpeed = properties["AttSpeed"];
@@ -47,8 +53,11 @@ public class Properties : MonoBehaviour
     //Vida Jugador
     public void ModifyHealth(float modifier)
     {
+        MaxHealth += modifier;
         Health += modifier;
-        Debug.Log("Vida del jugador modificada: " + Health);
+        Debug.Log("Vida del jugador modificada: " + MaxHealth);
+        healthBar.setHealth(Health);
+        healthBar.setMaxHealth(MaxHealth);
 
     }
 
@@ -71,10 +80,22 @@ public class Properties : MonoBehaviour
     //Daño enemigo hacia jugador
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Enemy"))
+        if (collision.collider.CompareTag("Enemy") && canDamage)
         {
-            Health -= 1; // Reducir la vida del jugador cuando colisiona con el enemigo
-            Debug.Log("Player health: " + Health);
+            EnemyController Enemy = collision.gameObject.GetComponent<EnemyController>();
+            if (Enemy != null)
+            {
+                Health -= Enemy.damage; // Reducir la vida del jugador
+                healthBar.setHealth(Health);
+                Debug.Log("Player health: " + Health);
+                canDamage = false; // Activar cooldown
+                Invoke("ResetCooldown", 1f);
+            }
         }
+    }
+
+    private void ResetCooldown()
+    {
+        canDamage = true; // Reestablecer la capacidad de hacer daño al jugador
     }
 }

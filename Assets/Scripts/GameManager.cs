@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject LoadingScene;
     private AnimatorController animator;
     private Dictionary<string, float> properties;
+    [SerializeField] private GameObject healthBar;
 
 
     private void Awake()
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
         properties.Add("Damage", 5f);  // Asignamos un valor por defecto de 10 al daño
         properties.Add("Speed", 0.5f);    // Asignamos un valor por defecto de 5 a la velocidad
         properties.Add("AttSpeed", 5f); // Asignamos un valor por defecto de 1 a la velocidad de ataque
+        
     }
 
     public void setProperties(Dictionary<string, float> properties)

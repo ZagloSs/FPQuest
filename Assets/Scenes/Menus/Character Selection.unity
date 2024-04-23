@@ -441,7 +441,7 @@ MonoBehaviour:
   CarlosAnimator: {fileID: 9100000, guid: 002aa66c2415a4f49986c298c88d31d1, type: 2}
   Fer_Health: 35
   Fer_Damage: 10
-  Fer_Speed: 35
+  Fer_Speed: 2
   Fer_AttSpeed: 10
   FerPortrait: {fileID: 21300000, guid: 6801b3d4e0cd6e048b22158e7162a10b, type: 3}
   FerAnimator: {fileID: 9100000, guid: 733904bbe44f3c14c87e1c86e8d40aa9, type: 2}
@@ -501,6 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadingScene: {fileID: 1430674915}
+  healthBar: {fileID: 0}
 --- !u!1 &667427494
 GameObject:
   m_ObjectHideFlags: 0
