@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8711213958887907905}
   - component: {fileID: 1838809657295383271}
+  - component: {fileID: 6199405485756624492}
   m_Layer: 0
   m_Name: BottomWall
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &6199405485756624492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153923225248743714}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.2299995, y: 0.23999998, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3505171364598107957
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,9 +116,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7691552068299302535}
   - component: {fileID: 6062534070618278731}
+  - component: {fileID: 5000523147078465987}
   m_Layer: 0
   m_Name: TopDoor
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,6 +191,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &5000523147078465987
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505171364598107957}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.28999996, y: 0.15999998, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3898833184905089846
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3041457453640957980}
   - component: {fileID: 3751993882934555887}
+  - component: {fileID: 1144160527400519732}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -220,6 +265,27 @@ MonoBehaviour:
   bottomDoor: {fileID: 5787498376542323983}
   leftDoor: {fileID: 8599667912833298453}
   rightDoor: {fileID: 7529175007045161912}
+--- !u!65 &1144160527400519732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898833184905089846}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5444467089414840546
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8702645912710082228}
   - component: {fileID: 7469507021697097320}
+  - component: {fileID: 7102094427271748409}
   m_Layer: 0
   m_Name: RightWall
   m_TagString: Untagged
@@ -304,6 +371,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &7102094427271748409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5444467089414840546}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.24, y: 1.8999999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5787498376542323983
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,9 +402,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6955156471815577406}
   - component: {fileID: 5854931217075392305}
+  - component: {fileID: 4905656711694558399}
   m_Layer: 0
   m_Name: BottomDoor
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -388,6 +477,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &4905656711694558399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787498376542323983}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.28999996, y: 0.15999998, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6260055153467983145
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,9 +576,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3957392520132890936}
   - component: {fileID: 2824960033366651299}
+  - component: {fileID: 132497218768241222}
   m_Layer: 0
   m_Name: RightDoor
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,6 +651,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &132497218768241222
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529175007045161912}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.29000005, y: 0.16000004, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7716518332066407442
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3041434790340065827}
   - component: {fileID: 168489000145062070}
+  - component: {fileID: 6447121859742941345}
   m_Layer: 0
   m_Name: LeftWall
   m_TagString: Untagged
@@ -624,6 +757,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &6447121859742941345
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716518332066407442}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.23999998, y: 1.8999999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8599667912833298453
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,9 +788,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3810383078531564628}
   - component: {fileID: 587043426449002923}
+  - component: {fileID: 6405511545045409351}
   m_Layer: 0
   m_Name: LeftDoor
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -708,6 +863,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &6405511545045409351
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599667912833298453}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.29000005, y: 0.16000004, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8949822044194704700
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 48229853582358573}
   - component: {fileID: 507944834872749714}
+  - component: {fileID: 2296574995370802493}
   m_Layer: 0
   m_Name: TopWall
   m_TagString: Untagged
@@ -792,6 +969,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &2296574995370802493
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8949822044194704700}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.2299995, y: 0.23999998, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9137172509770117488
 GameObject:
   m_ObjectHideFlags: 0

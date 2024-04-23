@@ -130,7 +130,7 @@ public class CharacterSelection : MonoBehaviour
         AudioManager.instance.PlayClick();
         GameManager.instance.setProperties(characterSelection[characterSelected]);
         GameManager.instance.setAnimator(animations[characterSelected]);
-        GameManager.instance.goToGame("Escena_pruebas");
+        GameManager.instance.goToGame("Escena_Pruebas");
     }
 
     public void changeBackwards()
@@ -138,7 +138,7 @@ public class CharacterSelection : MonoBehaviour
         if (characterSelected == 0)
         {
             characterSelected = 2;
-            
+
         }
         else
         {
@@ -164,6 +164,6 @@ public class CharacterSelection : MonoBehaviour
         AudioManager.instance.PlayClick();
         SRPortrait.sprite = portraits[characterSelected];
         UnityEngine.Debug.Log(characterSelected);
-        
+
     }
 }
