@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 536014176752651456}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.98, y: 1.6501933, z: -0.14447407}
+  m_LocalPosition: {x: 0.62, y: -0.45, z: -0.10444741}
   m_LocalScale: {x: 3.19875, y: 3.1499999, z: 3.196125}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -140,7 +140,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2251898566790787492, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.25
+      value: -0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251898566790787492, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251898566790787492, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2281620194144657360, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
       propertyPath: m_Size.x
@@ -201,6 +209,18 @@ PrefabInstance:
     - target: {fileID: 7273114877329794878, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
       propertyPath: m_Name
       value: obstaculo_Mesa_Sillas Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984852439166277817, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984852439166277817, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984852439166277817, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
