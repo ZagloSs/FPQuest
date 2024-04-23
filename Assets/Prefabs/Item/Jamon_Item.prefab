@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageModifier: 10
   healthModifier: 10
-  speedModifier: 10
+  speedModifier: 0.5
   attackSpeedModifier: 10
 --- !u!212 &5518162727185177116
 SpriteRenderer:
