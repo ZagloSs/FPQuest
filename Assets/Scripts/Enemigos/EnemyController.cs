@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
                 properties.Health -= damage; // Reducir la vida del jugador
                 Debug.Log("Player health: " + properties.Health);
                 canDamage = false; // Activar cooldown
-                Invoke("ResetCooldown", cooldownDuration);
+                Invoke("ResetCooldown", 5f);
             }
         }
     }

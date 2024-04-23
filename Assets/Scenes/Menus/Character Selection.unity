@@ -435,7 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Carlos_Health: 20
   Carlos_Damage: 20
-  Carlos_Speed: 20
+  Carlos_Speed: 2
   Carlos_AttSpeed: 20
   CarlosPortrait: {fileID: 21300000, guid: 6bf7c44321caa1d478eb0e645df1c85d, type: 3}
   CarlosAnimator: {fileID: 9100000, guid: 002aa66c2415a4f49986c298c88d31d1, type: 2}
