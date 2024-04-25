@@ -54,6 +54,25 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void setVolumeMusica(float volume)
+    {
+        musicaSource.volume = volume;     
+    }
+
+    public void setVolumeSFX(float volume)
+    {
+        SFXSource.volume = volume;
+    }
+
+    public float getVolumeMusica()
+    {
+        return musicaSource.volume;
+    }
+    public float getVolumeSFX()
+    {
+        return SFXSource.volume;
+    }
+
 
 
     //Llamar a efectos de sonido
