@@ -33,8 +33,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+
         musicaSource.clip = menus;
         musicaSource.Play();
+        musicaSource.volume = PlayerPrefs.GetFloat("musicVol", 1);
+        SFXSource.volume = PlayerPrefs.GetFloat("sfxVol", 1);
     }
 
     private void Update()
@@ -56,12 +59,14 @@ public class AudioManager : MonoBehaviour
 
     public void setVolumeMusica(float volume)
     {
-        musicaSource.volume = volume;     
+        musicaSource.volume = volume;
+        PlayerPrefs.SetFloat("musicVol", volume);
     }
 
     public void setVolumeSFX(float volume)
     {
         SFXSource.volume = volume;
+        PlayerPrefs.SetFloat("sfxVol", volume);
     }
 
     public float getVolumeMusica()
