@@ -675,7 +675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97946a9b04db0f04f88bcf44c12e9945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 0
   Health: 0
   Damage: 0
   Speed: 0
@@ -736,7 +735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &503247894
 Animator:
   serializedVersion: 5
@@ -819,7 +818,7 @@ Transform:
   m_GameObject: {fileID: 503247893}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.844, y: 0.673, z: 0}
+  m_LocalPosition: {x: 0.455, y: 0.649, z: 0}
   m_LocalScale: {x: 0.9876, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Properties : MonoBehaviour
 {
 
-    public float MaxHealth;
     public float Health;
     public float Damage;
     public float Speed;
@@ -13,6 +12,8 @@ public class Properties : MonoBehaviour
 
     public HealthBar healthBar;
 
+
+    private float MaxHealth;
     private bool canDamage = true;
 
     // Start is called before the first frame update
@@ -23,11 +24,14 @@ public class Properties : MonoBehaviour
         if(properties != null)
         {
 
+
+            Health = properties["Health"];
             MaxHealth = properties["Health"];
-            Health = MaxHealth;
             Damage = properties["Damage"];
             Speed = properties["Speed"];
             AttSpeed = properties["AttSpeed"];
+
+            healthBar.setMaxValue(Health);
 
             Debug.Log("Valores de propiedades obtenidos con éxito.");
             Debug.Log("Health: " + Health);
@@ -53,11 +57,17 @@ public class Properties : MonoBehaviour
     //Vida Jugador
     public void ModifyHealth(float modifier)
     {
-        MaxHealth += modifier;
-        Health += modifier;
-        Debug.Log("Vida del jugador modificada: " + MaxHealth);
+        if(Health + modifier >= MaxHealth)
+        {
+            Health += (MaxHealth - Health);
+        }
+        else
+        {
+            Health += modifier;
+        }
+        Debug.Log("Vida del jugador modificada: " + Health);
         healthBar.setHealth(Health);
-        healthBar.setMaxHealth(MaxHealth);
+       
 
     }
 
