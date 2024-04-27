@@ -17,6 +17,7 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private float Carlos_Speed;
     [SerializeField] private float Carlos_AttSpeed;
     [SerializeField] private Sprite CarlosPortrait;
+    [SerializeField] private Sprite CarlosHealhtBarPortrait;
     [SerializeField] private AnimatorController CarlosAnimator;
 
     //Fer Stuff
@@ -26,6 +27,7 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private float Fer_Speed;
     [SerializeField] private float Fer_AttSpeed;
     [SerializeField] private Sprite FerPortrait;
+    [SerializeField] private Sprite FerHealhtBarPortrait;
     [SerializeField] private AnimatorController FerAnimator;
 
     //Marcos Stuff
@@ -35,6 +37,7 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] private float Marcos_Speed;
     [SerializeField] private float Marcos_AttSpeed;
     [SerializeField] private Sprite MarcosPortrait;
+    [SerializeField] private Sprite MarcosHealhtBarPortrait;
     [SerializeField] private AnimatorController MarcosAnimator;
 
     [Header("Portrait")]
@@ -50,6 +53,7 @@ public class CharacterSelection : MonoBehaviour
     private SpriteRenderer SRPortrait;
     private List<Dictionary<string, float>> characterSelection;
     private List<Sprite> portraits;
+    private List<Sprite> healtraits;    
     private int characterSelected;
     private List<AnimatorController> animations;
 
@@ -91,6 +95,7 @@ public class CharacterSelection : MonoBehaviour
 
         characterSelection = new List<Dictionary<string, float>>() { CProperties, FProperties, MProperties };
         portraits = new List<Sprite>() { CarlosPortrait, FerPortrait, MarcosPortrait };
+        healtraits = new List<Sprite>() { CarlosHealhtBarPortrait, FerHealhtBarPortrait, MarcosHealhtBarPortrait };
         characterSelected = 0;
         SRPortrait.sprite = portraits[characterSelected];
 
@@ -130,6 +135,7 @@ public class CharacterSelection : MonoBehaviour
         AudioManager.instance.PlayClick();
         GameManager.instance.setProperties(characterSelection[characterSelected]);
         GameManager.instance.setAnimator(animations[characterSelected]);
+        GameManager.instance.setHealthPortrait(healtraits[characterSelected]);
         GameManager.instance.goToGame("Escena_Pruebas");
     }
 

@@ -5,7 +5,14 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+    public GameObject portrait;
     public Slider slider;
+
+    private void Start()
+    {
+        Image img = portrait.GetComponent<Image>();
+        img.sprite = GameManager.instance.getHealthPortrait();
+    }
 
     public void setHealth(float health)
     {
