@@ -11,6 +11,13 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private int gridSizeX = 10;
     [SerializeField] private int gridSizeY = 10;
 
+    [SerializeField] GameObject[] itemPrefabs;
+    [SerializeField] GameObject itemPedestal;
+    [SerializeField] GameObject bossRoomPrefab;
+
+    private bool hasGeneratedItemRoom = false;
+    private bool hasGeneratedBossRoom = false;
+
     private int roomWidth = 20;
     private int roomHeight = 12;
 
@@ -56,6 +63,15 @@ public class RoomManager : MonoBehaviour
         {
             generationComplete = true;
             Debug.Log($"Generation Complete, {roomCount} rooms created");
+        }
+        if (roomCount >= minRooms && !hasGeneratedItemRoom)
+        {
+            GenerateItemRoom();
+        }
+
+        if (generationComplete && !hasGeneratedBossRoom)
+        {
+            GenerateBossRoom();
         }
     }
     private void StartRoomGenerationFromRoom(Vector2Int roomIndex)
@@ -191,6 +207,56 @@ public class RoomManager : MonoBehaviour
         int gridX = gridIndex.x;
         int gridY = gridIndex.y;
         return new Vector3(roomWidth *(gridX - gridSizeX / 2), roomHeight * (gridY - gridSizeY / 2));
+    }
+    private void GenerateItemRoom()
+    {
+        hasGeneratedItemRoom = true;
+
+        // Choose a random room from the existing rooms
+        int randomRoomIndex = Random.Range(1, roomObjects.Count);
+        GameObject itemRoom = roomObjects[randomRoomIndex];
+
+        // Find the RoomFill object in the room
+        Transform roomFill = itemRoom.transform.Find("RoomFill");
+
+        // Clear the room of any existing RoomFill objects
+        ClearRoom(roomFill);
+
+        // Instantiate the item prefab in the room with a pedestal
+        GameObject item = Instantiate(itemPrefabs[Random.Range(0, itemPrefabs.Length)], itemRoom.transform.position, Quaternion.identity, roomFill);
+        item.name = "Item";
+        GameObject pedestal = Instantiate(itemPedestal, itemRoom.transform.position, Quaternion.identity, roomFill);
+        GameObject fill = Instantiate(fillPrefab[0], roomFill.position, Quaternion.identity, roomFill);
+
+    }
+
+    private void GenerateBossRoom()
+    {
+        hasGeneratedBossRoom = true;
+
+        // Choose a random room from the existing rooms
+        GameObject bossRoom = roomObjects[roomObjects.Count - 1];
+
+        // Find the RoomFill object in the room
+        Transform roomFill = bossRoom.transform.Find("RoomFill");
+
+        // Clear the contents of the previous room
+        ClearRoom(roomFill);
+
+        // Instantiate the boss room prefab as a child of the room
+        GameObject bossRoomInstance = Instantiate(bossRoomPrefab, roomFill.position, Quaternion.identity, roomFill);
+    }
+
+    private void ClearRoom(Transform room)
+    {
+        // Remove all RoomFill objects from the room
+        foreach (Transform child in room.transform)
+        {
+            if (child.gameObject.tag == "RoomFill")
+            {
+                Destroy(child.gameObject);
+            }
+        }
     }
 
     private void OnDrawGizmos()

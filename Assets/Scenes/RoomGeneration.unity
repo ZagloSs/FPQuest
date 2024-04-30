@@ -153,11 +153,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomPrefab: {fileID: 3898833184905089846, guid: ad8249d12d530bb42a5dcd5b44df3395, type: 3}
-  fillPrefab: []
+  fillPrefab:
+  - {fileID: 1190144646390510974, guid: 503fdb1ea3eb2364a8450dfd00120ae2, type: 3}
   maxRooms: 40
   minRooms: 30
   gridSizeX: 20
   gridSizeY: 20
+  itemPrefabs:
+  - {fileID: 1499588497418908167, guid: 85b15df9f76201848baab58fd4102b7b, type: 3}
+  itemPedestal: {fileID: 7220347311511442308, guid: b2b9cdd20a1186e43a06ccec4ca2938c, type: 3}
+  bossRoomPrefab: {fileID: 381536782758281193, guid: e75d54a5e9ab31e43a5653283a9fdbe1, type: 3}
 --- !u!4 &398604918
 Transform:
   m_ObjectHideFlags: 0
@@ -412,7 +417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97946a9b04db0f04f88bcf44c12e9945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 0
   Health: 1
   Damage: 1
   Speed: 1
