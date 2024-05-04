@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 {
     private Rigidbody2D _rb;
     public Animator animator;
+    public Vector2 moveDir;
 
 
 
@@ -17,15 +18,18 @@ public class Movement : MonoBehaviour
         animator.runtimeAnimatorController = GameManager.instance.GetAnimator();
         //Pruebas
         animator.SetBool("IsWalkingSide", false);
-        //FIn Pruebas (Borrar Luego)
+        //Fin Pruebas (Borrar Luego)
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
+        
+        moveDir = new Vector2(moveX, moveY).normalized;
+
         _rb.velocity = new Vector2(moveX, moveY) * GetComponent<Properties>().Speed;
         if (moveX < 0)
         {

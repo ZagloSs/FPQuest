@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField] private float vida;
     public GameObject player; // Bucar al player
     public float speed = 3f; // Velocidad Enemigo
     public int damage = 10; // Daño a jugador
@@ -31,6 +32,15 @@ public class EnemyController : MonoBehaviour
                 spriteRenderer.flipX = false;
             else if (direction.x < 0) // Mirando hacia la izquierda
                 spriteRenderer.flipX = true;
+        }
+    }
+
+    public void TomarDaño(float daño)
+    {
+        vida -= daño;
+        if(vida<=0)
+        {
+            Destroy(gameObject);
         }
     }
 
