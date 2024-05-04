@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         properties.Add("Speed", 0.5f);    // Asignamos un valor por defecto de 5 a la velocidad
         properties.Add("AttSpeed", 5f); // Asignamos un valor por defecto de 1 a la velocidad de ataque
 
-        
+
     }
 
     public void setHealthPortrait(Sprite sprite)
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     {
         return this.animator;
     }
-    
+
 
 
     public void backToMenu()
@@ -95,8 +95,8 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void LoadingScreen(string sceneName) 
-    {  
+    public void LoadingScreen(string sceneName)
+    {
         StartCoroutine(LoadSceneAynchronously(sceneName));
     }
 

@@ -53,7 +53,7 @@ public class CharacterSelection : MonoBehaviour
     private SpriteRenderer SRPortrait;
     private List<Dictionary<string, float>> characterSelection;
     private List<Sprite> portraits;
-    private List<Sprite> healtraits;    
+    private List<Sprite> healtraits;
     private int characterSelected;
     private List<AnimatorController> animations;
 
@@ -136,7 +136,7 @@ public class CharacterSelection : MonoBehaviour
         GameManager.instance.setProperties(characterSelection[characterSelected]);
         GameManager.instance.setAnimator(animations[characterSelected]);
         GameManager.instance.setHealthPortrait(healtraits[characterSelected]);
-        GameManager.instance.goToGame("Escena_Pruebas");
+        GameManager.instance.goToGame("RoomGeneration");
     }
 
     public void changeBackwards()
