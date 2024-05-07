@@ -169,7 +169,7 @@ MonoBehaviour:
   vida: 0
   player: {fileID: 0}
   speed: 1
-  damage: 5
+  damage: 0
   knockbackForce: 10
 --- !u!50 &6118381258254503225
 Rigidbody2D:

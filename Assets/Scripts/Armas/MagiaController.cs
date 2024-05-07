@@ -12,8 +12,8 @@ public class MagiaController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        GameObject spawnedMagic = Instantiate(prefab);
+        GameObject spawnedMagic = Instantiate(weaponData.prefab);
         spawnedMagic.transform.position = transform.position;
-        spawnedMagic.GetComponent<MagicBehaviour>().DirectionChecker(pm.moveDir);
+        spawnedMagic.GetComponent<MagicBehaviour>().DirectionChecker(pm.lastMovedVector);
     }
 }
