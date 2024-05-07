@@ -15,6 +15,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject itemPedestal;
     [SerializeField] GameObject bossRoomPrefab;
 
+    [SerializeField] GameObject playerPrefab;
+
     private bool hasGeneratedItemRoom = false;
     private bool hasGeneratedBossRoom = false;
 
@@ -39,6 +41,7 @@ public class RoomManager : MonoBehaviour
 
         Vector2Int initialRoomIndex = new Vector2Int(gridSizeX / 2, gridSizeY / 2);
         StartRoomGenerationFromRoom(initialRoomIndex);
+        Instantiate(playerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     private void Update()
@@ -81,7 +84,13 @@ public class RoomManager : MonoBehaviour
         int y = roomIndex.y;
         roomGrid[x, y] = 1;
         roomCount++;
+
         var initialRoom = Instantiate(roomPrefab, GetPositionFromGridIndex(roomIndex), Quaternion.identity);
+
+        Transform roomFill = initialRoom.transform.Find("RoomFill");
+
+        GameObject fill = Instantiate(fillPrefab[0], roomFill.position, Quaternion.identity, roomFill);
+
         initialRoom.name = $"Room-{roomCount}";
         initialRoom.GetComponent<Room>().RoomIndex = roomIndex;
         roomObjects.Add(initialRoom);
@@ -91,6 +100,9 @@ public class RoomManager : MonoBehaviour
     {
         int x = roomIndex.x;
         int y = roomIndex.y;
+
+        if (x < 0 || y < 0 || x >= gridSizeX || y >= gridSizeY)
+            return false;
 
         if (x >= gridSizeX || y >= gridSizeY || x < 0 || y < 0)
             return false;
@@ -112,6 +124,11 @@ public class RoomManager : MonoBehaviour
         roomCount++;
 
         var newRoom = Instantiate(roomPrefab, GetPositionFromGridIndex(roomIndex), Quaternion.identity);
+
+        Transform roomFill = newRoom.transform.Find("RoomFill");
+
+        GameObject fill = Instantiate(fillPrefab[Random.Range(1, fillPrefab.Length)], roomFill.position, Quaternion.identity, roomFill);
+
         newRoom.GetComponent<Room>().RoomIndex = roomIndex;
         newRoom.name = $"Room-{roomCount}";
         roomObjects.Add(newRoom);
@@ -150,25 +167,25 @@ public class RoomManager : MonoBehaviour
         Room bottomRoom = GetRoomScriptAt(new Vector2Int(x, y - 1));
 
         //Open doors
-        if (x > 0 && roomGrid[x - 1, y] != 0)
+        if (leftRoom != null)
         {
             //Neighbour left
             newRoom.OpenDoor(Vector2Int.left);
             leftRoom.OpenDoor(Vector2Int.right);
         }
-        if (x < gridSizeX - 1 && roomGrid[x + 1, y] != 0)
+        if (rightRoom != null)
         {
             //Neighbour right
             newRoom.OpenDoor(Vector2Int.right);
             rightRoom.OpenDoor(Vector2Int.left);
         }
-        if (y > 0 && roomGrid[x, y - 1] != 0)
+        if (bottomRoom != null)
         {
             //Neighbour below
             newRoom.OpenDoor(Vector2Int.down);
             bottomRoom.OpenDoor(Vector2Int.up);
         }
-        if (x < gridSizeY - 1 && roomGrid[x, y + 1] != 0)
+        if (topRoom != null)
         {
             //Neighbour above
             newRoom.OpenDoor(Vector2Int.up);
@@ -178,11 +195,7 @@ public class RoomManager : MonoBehaviour
 
     Room GetRoomScriptAt(Vector2Int roomIndex)
     {
-       GameObject room = roomObjects.Find(r => r.GetComponent<Room>().RoomIndex == roomIndex);
-        if (room != null)
-            return room.GetComponent<Room>();
-        else
-            return null;
+        return roomObjects.Find(r => r.GetComponent<Room>().RoomIndex == roomIndex)?.GetComponent<Room>();
     }
 
     private int CountAdjacentRooms(Vector2Int roomIndex)

@@ -29,12 +29,12 @@ public class Movement : MonoBehaviour
         _rb.velocity = new Vector2(moveX, moveY) * GetComponent<Properties>().Speed;
         if (moveX < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-2, 2, 2);
             animator.SetBool("IsWalkingSide", true);
         }
         else if(moveX > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(2, 2, 2);
             animator.SetBool("IsWalkingSide", true);
         }
         else

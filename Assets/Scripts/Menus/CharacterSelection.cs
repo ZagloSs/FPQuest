@@ -53,7 +53,7 @@ public class CharacterSelection : MonoBehaviour
     private SpriteRenderer SRPortrait;
     private List<Dictionary<string, float>> characterSelection;
     private List<Sprite> portraits;
-    private List<Sprite> healtraits;    
+    private List<Sprite> healtraits;
     private int characterSelected;
     private List<AnimatorController> animations;
 
