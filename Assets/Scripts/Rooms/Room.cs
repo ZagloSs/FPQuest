@@ -13,10 +13,6 @@ public class Room : MonoBehaviour
 
     public Vector2Int RoomIndex { get; set; }
 
-    public void Start()
-    {
-        fillRoomParent.transform.GetChild(Random.Range(0,2)).gameObject.SetActive(true);
-    }
     public void OpenDoor(Vector2Int direction)
     {
         if (direction == Vector2Int.up)

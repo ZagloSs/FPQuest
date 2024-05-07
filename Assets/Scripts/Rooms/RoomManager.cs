@@ -15,6 +15,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject itemPedestal;
     [SerializeField] GameObject bossRoomPrefab;
 
+    [SerializeField] GameObject playerPrefab;
+
     private bool hasGeneratedItemRoom = false;
     private bool hasGeneratedBossRoom = false;
 
@@ -39,6 +41,7 @@ public class RoomManager : MonoBehaviour
 
         Vector2Int initialRoomIndex = new Vector2Int(gridSizeX / 2, gridSizeY / 2);
         StartRoomGenerationFromRoom(initialRoomIndex);
+        Instantiate(playerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     private void Update()
@@ -81,7 +84,13 @@ public class RoomManager : MonoBehaviour
         int y = roomIndex.y;
         roomGrid[x, y] = 1;
         roomCount++;
+
         var initialRoom = Instantiate(roomPrefab, GetPositionFromGridIndex(roomIndex), Quaternion.identity);
+
+        Transform roomFill = initialRoom.transform.Find("RoomFill");
+
+        GameObject fill = Instantiate(fillPrefab[0], roomFill.position, Quaternion.identity, roomFill);
+
         initialRoom.name = $"Room-{roomCount}";
         initialRoom.GetComponent<Room>().RoomIndex = roomIndex;
         roomObjects.Add(initialRoom);
@@ -115,6 +124,11 @@ public class RoomManager : MonoBehaviour
         roomCount++;
 
         var newRoom = Instantiate(roomPrefab, GetPositionFromGridIndex(roomIndex), Quaternion.identity);
+
+        Transform roomFill = newRoom.transform.Find("RoomFill");
+
+        GameObject fill = Instantiate(fillPrefab[Random.Range(1, fillPrefab.Length)], roomFill.position, Quaternion.identity, roomFill);
+
         newRoom.GetComponent<Room>().RoomIndex = roomIndex;
         newRoom.name = $"Room-{roomCount}";
         roomObjects.Add(newRoom);
