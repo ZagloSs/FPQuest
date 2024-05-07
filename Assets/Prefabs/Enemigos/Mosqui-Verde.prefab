@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17db858c01eff5645948e5af3790c844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 0
+  vida: 10
   player: {fileID: 0}
   speed: 1
   damage: 0

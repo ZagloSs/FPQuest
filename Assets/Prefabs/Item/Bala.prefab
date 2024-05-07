@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3291710341709407837}
   - component: {fileID: 6902161981776209590}
   - component: {fileID: 578136397559271406}
-  - component: {fileID: 314422177721111781}
   - component: {fileID: 6419825000616433209}
+  - component: {fileID: 7451330462745066069}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Untagged
@@ -114,8 +114,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &314422177721111781
-BoxCollider2D:
+--- !u!114 &6419825000616433209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511635187927492584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136979bbf30d8404da55df9c3f1ff2f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: bf0f959386d89254289b533a7a8a1841, type: 2}
+  destroyAfterSeconds: 3
+--- !u!58 &7451330462745066069
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -143,33 +157,9 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.48}
-    newSize: {x: 0.5, y: 0.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.02576378, y: 0.009303629}
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.48}
-  m_EdgeRadius: 0
---- !u!114 &6419825000616433209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511635187927492584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 136979bbf30d8404da55df9c3f1ff2f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: bf0f959386d89254289b533a7a8a1841, type: 2}
-  destroyAfterSeconds: 3
+  m_Radius: 0.10185784

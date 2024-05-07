@@ -13,6 +13,20 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected Vector3 direction;
     public float destroyAfterSeconds;
 
+    //Stats de ahora
+    protected float currentDamage;
+    protected float currentSpeed;
+    protected float currentCooldownDuration;
+    protected int currentPierce;
+
+
+    private void Awake()
+    {
+        currentDamage = weaponData.Damage;
+        currentSpeed = weaponData.Speed;
+        currentCooldownDuration = weaponData.CooldownDuration;
+        currentPierce = weaponData.Pierce;
+    }
     protected virtual void Start()
     {
         Destroy(gameObject, destroyAfterSeconds);
@@ -30,12 +44,12 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
 
         //Cambiar la direccion del sprite segun el personaje
 
-        if(dirx < 0 && diry == 0)//Izquierda
+        if (dirx < 0 && diry == 0)//Izquierda
         {
-            scale.x = scale.x *-1;
-            scale.y = scale.y *-1;
+            scale.x = scale.x * -1;
+            scale.y = scale.y * -1;
         }
-        else if(dirx == 0 && diry < 0) //Abajo
+        else if (dirx == 0 && diry < 0) //Abajo
         {
             scale.y = scale.y * -1;
         }
@@ -67,5 +81,18 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         transform.localScale = scale;
         transform.rotation = Quaternion.Euler(rotation);
 
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Enemy"))
+        {
+            EnemyController enemy = col.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                enemy.TomarDaño(currentDamage);
+                Destroy(gameObject); // Optionally destroy the projectile upon hitting an enemy
+            }
+        }
     }
 }
