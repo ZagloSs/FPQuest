@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4650625995054315416}
-  - component: {fileID: 6870751482450664476}
+  - component: {fileID: 6538367001280323820}
   - component: {fileID: 1945552247550404088}
   - component: {fileID: 1823998593494795659}
   - component: {fileID: 2150835351238342592}
@@ -38,6 +38,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6538367001280323820
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,16 +78,16 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 1145199061, guid: 4767eade5e7610b4692e9a294f05117a, type: 3}
+  m_SortingOrder: 100
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.3, y: 0.41}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!70 &1945552247550404088
@@ -185,6 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2150835351238342592}
+  moveDir: {x: 0, y: 0}
+  lastMovedVector: {x: 0, y: 0}
 --- !u!114 &7852586295335480142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,3 +219,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraAnimationDuration: 0.3
   cameraMovementSpeed: 2
+  playerMovementSpeed: 5
