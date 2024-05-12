@@ -435,21 +435,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Carlos_Health: 20
   Carlos_Damage: 20
-  Carlos_Speed: 2
+  Carlos_Speed: 4
   Carlos_AttSpeed: 20
   CarlosPortrait: {fileID: 21300000, guid: 6bf7c44321caa1d478eb0e645df1c85d, type: 3}
   CarlosHealhtBarPortrait: {fileID: 21300000, guid: 9f370e3141e5a754cb31d732b6dc637e, type: 3}
   CarlosAnimator: {fileID: 9100000, guid: 002aa66c2415a4f49986c298c88d31d1, type: 2}
   Fer_Health: 35
   Fer_Damage: 10
-  Fer_Speed: 2
+  Fer_Speed: 3
   Fer_AttSpeed: 10
   FerPortrait: {fileID: 21300000, guid: 6801b3d4e0cd6e048b22158e7162a10b, type: 3}
   FerHealhtBarPortrait: {fileID: 21300000, guid: 0a929516265e464449ccb40b80f2d145, type: 3}
   FerAnimator: {fileID: 9100000, guid: 733904bbe44f3c14c87e1c86e8d40aa9, type: 2}
   Marcos_Health: 30
   Marcos_Damage: 50
-  Marcos_Speed: 20
+  Marcos_Speed: 3.5
   Marcos_AttSpeed: 2
   MarcosPortrait: {fileID: 21300000, guid: 10457902ababee04f81cd68cc74f7bcf, type: 3}
   MarcosHealhtBarPortrait: {fileID: 21300000, guid: 943222380f7eaa94e8e97b473df1061e, type: 3}

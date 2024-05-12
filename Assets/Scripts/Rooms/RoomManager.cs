@@ -15,8 +15,6 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject itemPedestal;
     [SerializeField] GameObject bossRoomPrefab;
 
-    [SerializeField] GameObject playerPrefab;
-
     private bool hasGeneratedItemRoom = false;
     private bool hasGeneratedBossRoom = false;
 
@@ -41,7 +39,6 @@ public class RoomManager : MonoBehaviour
 
         Vector2Int initialRoomIndex = new Vector2Int(gridSizeX / 2, gridSizeY / 2);
         StartRoomGenerationFromRoom(initialRoomIndex);
-        Instantiate(playerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     private void Update()
