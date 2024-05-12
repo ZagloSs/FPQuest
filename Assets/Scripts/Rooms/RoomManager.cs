@@ -235,8 +235,10 @@ public class RoomManager : MonoBehaviour
         // Instantiate the item prefab in the room with a pedestal
         GameObject item = Instantiate(itemPrefabs[Random.Range(0, itemPrefabs.Length)], itemRoom.transform.position, Quaternion.identity, roomFill);
         item.name = "Item";
+        item.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         GameObject pedestal = Instantiate(itemPedestal, itemRoom.transform.position, Quaternion.identity, roomFill);
         GameObject fill = Instantiate(fillPrefab[0], roomFill.position, Quaternion.identity, roomFill);
+        
 
     }
 

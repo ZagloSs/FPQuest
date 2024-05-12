@@ -447,8 +447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f217ebb03a254b445947f3ffaf68d73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraAnimationDuration: 1
-  cameraMovementSpeed: 6
+  cameraAnimationDuration: 0.2
+  cameraMovementSpeed: 2
   playerMovementSpeed: 5
 --- !u!1 &398604916
 GameObject:
@@ -492,6 +492,7 @@ MonoBehaviour:
   gridSizeY: 20
   itemPrefabs:
   - {fileID: 1499588497418908167, guid: 85b15df9f76201848baab58fd4102b7b, type: 3}
+  - {fileID: 4380225394526594851, guid: c6edf96c9c95fb04aa008e6e945ab199, type: 3}
   itemPedestal: {fileID: 7220347311511442308, guid: b2b9cdd20a1186e43a06ccec4ca2938c, type: 3}
   bossRoomPrefab: {fileID: 381536782758281193, guid: e75d54a5e9ab31e43a5653283a9fdbe1, type: 3}
 --- !u!4 &398604918
