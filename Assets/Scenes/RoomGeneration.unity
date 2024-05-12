@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 362041858}
   - component: {fileID: 362041857}
   - component: {fileID: 362041856}
-  - component: {fileID: 362041855}
+  - component: {fileID: 362041860}
   - component: {fileID: 362041854}
   - component: {fileID: 362041853}
   - component: {fileID: 362041852}
@@ -319,18 +319,6 @@ MonoBehaviour:
   animator: {fileID: 362041856}
   moveDir: {x: 0, y: 0}
   lastMovedVector: {x: 0, y: 0}
---- !u!114 &362041855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362041851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e4dd2844ead37d41b3264fe92d13484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &362041856
 Animator:
   serializedVersion: 5
@@ -447,6 +435,21 @@ Transform:
   - {fileID: 1786748236}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &362041860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362041851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f217ebb03a254b445947f3ffaf68d73e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraAnimationDuration: 1
+  cameraMovementSpeed: 2
+  playerMovementSpeed: 5
 --- !u!1 &398604916
 GameObject:
   m_ObjectHideFlags: 0
