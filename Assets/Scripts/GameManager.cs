@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
     public void backToMenu()
     {
         LoadingScreen("MainMenu");
+        AudioManager.instance.PlayClick();
     }
 
     public void goToCharacterSelection()
@@ -93,7 +94,7 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-
+    
 
     public void LoadingScreen(string sceneName)
     {
@@ -109,5 +110,11 @@ public class GameManager : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    //Pequeño parche para arreglar un bug.
+    public void AuidoManagerPlayClick()
+    {
+        AudioManager.instance.PlayClick();
     }
 }

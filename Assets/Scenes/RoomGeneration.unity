@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraAnimationDuration: 1
-  cameraMovementSpeed: 2
+  cameraMovementSpeed: 6
   playerMovementSpeed: 5
 --- !u!1 &398604916
 GameObject:
