@@ -139,6 +139,7 @@ public class CharacterSelection : MonoBehaviour
         GameManager.instance.goToGame("RoomGeneration");
     }
 
+    // Cambiar personaje hacia atras
     public void changeBackwards()
     {
         if (characterSelected == 0)
@@ -157,6 +158,7 @@ public class CharacterSelection : MonoBehaviour
         UnityEngine.Debug.Log(characterSelected);
     }
 
+    // Cambiar personaje hacia delante
     public void changeForwards()
     {
         if (characterSelected == 2)
