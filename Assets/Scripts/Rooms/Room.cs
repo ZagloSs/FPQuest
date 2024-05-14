@@ -11,9 +11,16 @@ public class Room : MonoBehaviour
     [SerializeField] GameObject leftDoor;
     [SerializeField] GameObject rightDoor;
 
+    public bool completed = false;
+
     public Vector2Int RoomIndex { get; set; }
 
-    public void OpenDoor(Vector2Int direction)
+    public bool IsPlayerInRoom(PlayerPosition player)
+    {
+        return player.RoomIndex == RoomIndex;
+    }
+
+    public void SpawnDoor(Vector2Int direction)
     {
         if (direction == Vector2Int.up)
         {
@@ -31,5 +38,26 @@ public class Room : MonoBehaviour
         {
             rightDoor.SetActive(true);
         }
+    }
+    public void CloseDoors()
+    {
+        topDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_0");
+        bottomDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_0");
+        leftDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_0");
+        rightDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_0");
+    }
+    public void OpenDoors()
+    {
+        topDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_1");
+        bottomDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_1");
+        leftDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_1");
+        rightDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_1");
+    }
+
+    public void RoomCompleted()
+    {
+        completed = true;
+        GetComponent<EnemySpawner>().MarkRoomAsCompleted();
+        OpenDoors();
     }
 }

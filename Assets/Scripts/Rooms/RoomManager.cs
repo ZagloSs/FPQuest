@@ -167,26 +167,26 @@ public class RoomManager : MonoBehaviour
         if (leftRoom != null)
         {
             //Neighbour left
-            newRoom.OpenDoor(Vector2Int.left);
-            leftRoom.OpenDoor(Vector2Int.right);
+            newRoom.SpawnDoor(Vector2Int.left);
+            leftRoom.SpawnDoor(Vector2Int.right);
         }
         if (rightRoom != null)
         {
             //Neighbour right
-            newRoom.OpenDoor(Vector2Int.right);
-            rightRoom.OpenDoor(Vector2Int.left);
+            newRoom.SpawnDoor(Vector2Int.right);
+            rightRoom.SpawnDoor(Vector2Int.left);
         }
         if (bottomRoom != null)
         {
             //Neighbour below
-            newRoom.OpenDoor(Vector2Int.down);
-            bottomRoom.OpenDoor(Vector2Int.up);
+            newRoom.SpawnDoor(Vector2Int.down);
+            bottomRoom.SpawnDoor(Vector2Int.up);
         }
         if (topRoom != null)
         {
             //Neighbour above
-            newRoom.OpenDoor(Vector2Int.up);
-            topRoom.OpenDoor(Vector2Int.down);
+            newRoom.SpawnDoor(Vector2Int.up);
+            topRoom.SpawnDoor(Vector2Int.down);
         }
     }
 
