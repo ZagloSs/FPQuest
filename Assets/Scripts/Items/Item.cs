@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     [SerializeField] private float healthModifier = 0;
     [SerializeField] private float speedModifier = 0f;
     [SerializeField] private float attackSpeedModifier = 0f;
+    private string str;
 
     // Método para aplicar los modificadores al jugador
     public void ApplyModifiers(Properties player)
@@ -18,7 +19,8 @@ public class Item : MonoBehaviour
         player.ModifySpeed(speedModifier);
         player.ModifyAttackSpeed(attackSpeedModifier);
         Debug.Log("Modificadores aplicados al jugador: " + damageModifier + " de daño, " + healthModifier + " de vida, " + speedModifier + " de velocidad, " + attackSpeedModifier + " de velocidad de ataque.");
-    }
+        
+}
 
     // Detectar colisión con el jugador
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,10 +35,16 @@ public class Item : MonoBehaviour
                 Debug.Log("Componente Properties encontrado.");
 
                 ApplyModifiers(player);
+                str = string.Format("A: {0}   Sp: {1}    Hp: {2}   As: {3}", damageModifier, speedModifier, healthModifier, attackSpeedModifier);
+                mostrarCanvasModificacionItem();
             }
-
             // Destruir este objeto
             Destroy(gameObject);
         }
+    }
+
+    public void mostrarCanvasModificacionItem()
+    {
+
     }
 }
