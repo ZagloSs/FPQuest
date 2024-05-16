@@ -60,4 +60,8 @@ public class Room : MonoBehaviour
         GetComponent<EnemySpawner>().MarkRoomAsCompleted();
         OpenDoors();
     }
+    public Transform TopDoorTransform { get { return topDoor.transform; } }
+    public Transform BottomDoorTransform { get { return bottomDoor.transform; } }
+    public Transform LeftDoorTransform { get { return leftDoor.transform; } }
+    public Transform RightDoorTransform { get { return rightDoor.transform; } }
 }

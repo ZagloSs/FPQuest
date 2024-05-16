@@ -510,6 +510,7 @@ MonoBehaviour:
   - {fileID: 4380225394526594851, guid: c6edf96c9c95fb04aa008e6e945ab199, type: 3}
   itemPedestal: {fileID: 7220347311511442308, guid: b2b9cdd20a1186e43a06ccec4ca2938c, type: 3}
   bossRoomPrefab: {fileID: 381536782758281193, guid: e75d54a5e9ab31e43a5653283a9fdbe1, type: 3}
+  enemyPrefab: {fileID: 6929958692872619665, guid: 30fb212fba7f1aa4d99f3921ba31f0f1, type: 3}
 --- !u!4 &398604918
 Transform:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>(); // Obtener el componente SpriteRenderer del enemigo
 
     }
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (player != null)
         {
@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
                 spriteRenderer.flipX = true;
         }
     }
+
 
     public void TomarDaño(float daño)
     {

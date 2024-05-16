@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < enemyCount; i++)
         {
-            Instantiate(enemyPrefab, new Vector2(Random.Range(transform.position.x - 7.5f, transform.position.x + 7.5f), Random.Range(transform.position.y - 3.5f, transform.position.y - 3.5f)), Quaternion.identity);
+            Instantiate(enemyPrefab, new Vector2(Random.Range(transform.position.x - 6.5f, transform.position.x + 6.5f), Random.Range(transform.position.y - 2.5f, transform.position.y - 2.5f)), Quaternion.identity);
         }
     }
 

@@ -15,6 +15,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject itemPedestal;
     [SerializeField] GameObject bossRoomPrefab;
 
+    [SerializeField] GameObject enemyPrefab;
+
     private bool hasGeneratedItemRoom = false;
     private bool hasGeneratedBossRoom = false;
 
@@ -131,7 +133,10 @@ public class RoomManager : MonoBehaviour
         roomObjects.Add(newRoom);
 
         OpenDoors(newRoom, x, y);
-
+        for (int i = 0; i < Random.Range(1,5); i++)
+        {
+            SpawnEnemy(newRoom);
+        }
         return true;
     }
 
@@ -285,4 +290,55 @@ public class RoomManager : MonoBehaviour
             }
         }
     }
+    private void SpawnEnemy(GameObject room)
+    {
+        // Find the RoomFill object in the room
+        Transform roomFill = room.transform.Find("RoomFill");
+
+        // Generate a random position within the room
+        Vector3 spawnPosition = roomFill.position;
+        spawnPosition.x += Random.Range(-roomWidth / 2f + 2f, roomWidth / 2f - 2f);
+        spawnPosition.y += Random.Range(-roomHeight / 2f + 2f, roomHeight / 2f - 2f);
+
+        // Check the distance between the spawn position and the door positions
+        float minDistance = 3f;
+        bool validSpawnPosition = true;
+        Vector3 doorPosition;
+        Transform doorTransform;
+
+        /*do
+        {
+            validSpawnPosition = true;
+            // Check the top door
+            doorTransform = room.TopDoorTransform;
+            doorPosition = doorTransform.position;
+            if (Vector3.Distance(spawnPosition, doorPosition) < minDistance)
+            {
+                validSpawnPosition = false;
+                spawnPosition.y += minDistance;
+            }
+            doorPosition = room.BottomDoorTransform.position;
+            if (Vector3.Distance(spawnPosition, doorPosition) < minDistance)
+            {
+                validSpawnPosition = false;
+                spawnPosition.y -= minDistance;
+            }
+            doorPosition = room.LeftDoorTransform.position;
+            if (Vector3.Distance(spawnPosition, doorPosition) < minDistance)
+            {
+                validSpawnPosition = false;
+                spawnPosition.x -= minDistance;
+            }
+            doorPosition = room.RightDoorTransform.position;
+            if (Vector3.Distance(spawnPosition, doorPosition) < minDistance)
+            {
+                validSpawnPosition = false;
+                spawnPosition.x += minDistance;
+            }
+        } while (!validSpawnPosition);*/
+
+        // Instantiate the enemy prefab at the spawn position
+        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+    }
 }
+
