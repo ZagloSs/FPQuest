@@ -129,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28, y: 0.4}
+  m_Size: {x: 0.28, y: 0.58}
   m_EdgeRadius: 0
 --- !u!114 &-5645195708970813252
 MonoBehaviour:
@@ -147,4 +147,3 @@ MonoBehaviour:
   healthModifier: 7
   speedModifier: 1
   attackSpeedModifier: -3
-  pickUpCanvas: {fileID: 2001714189326906959, guid: e2f7b54a09a4935459a305951c077ca8, type: 3}

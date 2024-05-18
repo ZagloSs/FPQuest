@@ -19,7 +19,7 @@ public class PickUpItem : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (gameObject)
+        if (gameObject.GetComponent<Canvas>().enabled)
         {
 
             if (timer > 2.5f)
