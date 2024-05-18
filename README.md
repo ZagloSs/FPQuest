@@ -1,6 +1,7 @@
 ![banner fpquest](https://raw.githubusercontent.com/ZagloSs/SpritesFPQuest/main/Banner.png)
 # FpQuest
 Una aventura roguelike ambientada en... bueno ya sabeis ;)
+
 Realizada como proyecto de fin de grado de Desarrollo de aplicaciones multiplataforma.
 
 
