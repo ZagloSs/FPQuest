@@ -14,4 +14,5 @@ Realizada como proyecto de fin de grado de Desarrollo de aplicaciones multiplata
 
 ## Creditos
 Puedes encontrar todos los recursos visuales haciendo click [aquí](https://github.com/ZagloSs/SpritesFPQuest/tree/main/Sprites)
+
 Desarrollado por 3horseman
