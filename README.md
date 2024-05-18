@@ -7,9 +7,9 @@ Realizada como proyecto de fin de grado de Desarrollo de aplicaciones multiplata
 
 
 ## Descargas
-|Repositorio |[Descargar](https://github.com/ZagloSs/FPQuest/archive/refs/heads/main.zip)  |
+| ![enter image description here](https://github.com/ZagloSs/SpritesFPQuest/blob/main/2.png?raw=true) Repositorio|[Descargar](https://github.com/ZagloSs/FPQuest/archive/refs/heads/main.zip)  |
 |--|--|
-| Build | (Aún no disponible) |
+|  ![enter image description here](https://github.com/ZagloSs/SpritesFPQuest/blob/main/Si3.png?raw=true) Build v1.0 | (Aún no disponible) |
 
 
 ## Creditos
