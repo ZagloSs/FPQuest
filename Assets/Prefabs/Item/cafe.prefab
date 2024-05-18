@@ -102,6 +102,7 @@ MonoBehaviour:
   healthModifier: -5
   speedModifier: 1.2
   attackSpeedModifier: 0
+  pickUpCanvas: {fileID: 2001714189326906959, guid: e2f7b54a09a4935459a305951c077ca8, type: 3}
 --- !u!61 &704253125338449799
 BoxCollider2D:
   m_ObjectHideFlags: 0

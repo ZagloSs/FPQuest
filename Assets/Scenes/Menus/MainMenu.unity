@@ -1737,6 +1737,7 @@ MonoBehaviour:
   menus: {fileID: 8300000, guid: 703de95abf3f0cc44930f48112b97da4, type: 3}
   bossBattle: {fileID: 8300000, guid: d2121b1d871d5724d8a8bdf42ec77bce, type: 3}
   click: {fileID: 8300000, guid: 03d042b40a0705346b3ea9e5020decc6, type: 3}
+  pickUpItem: {fileID: 8300000, guid: 3ca88c9efb97efe4e98377db2aa359c0, type: 3}
 --- !u!1 &1198029801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,6 +2791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadingScene: {fileID: 1424003905}
   healthBar: {fileID: 0}
+  pickUpCanvas: {fileID: 0}
 --- !u!1 &1842694756
 GameObject:
   m_ObjectHideFlags: 0

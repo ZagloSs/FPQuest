@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip menus;
     [SerializeField] private AudioClip bossBattle;
     [SerializeField] private AudioClip click;
+    [SerializeField] private AudioClip pickUpItem;
 
     private bool isJugar = true;
 
@@ -88,5 +89,10 @@ public class AudioManager : MonoBehaviour
     public void PlayClick()
     {
         SFXSource.PlayOneShot(click);
+    }
+
+    public void PlayPickUpItem()
+    {
+        SFXSource.PlayOneShot(pickUpItem);
     }
 }

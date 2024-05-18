@@ -1,5 +1,6 @@
  using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -9,10 +10,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] GameObject LoadingScene;
+    [SerializeField] private GameObject healthBar;
+    [SerializeField] private GameObject pickUpCanvas;
     private AnimatorController animator;
     private Dictionary<string, float> properties;
-    [SerializeField] private GameObject healthBar;
     private Sprite healtrait;
+    private float timer = 0;
+
 
 
     private void Awake()
@@ -28,8 +32,12 @@ public class GameManager : MonoBehaviour
             InitializeProperties();
 
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-
+   
     private void InitializeProperties()
     {
         // Inicializamos el diccionario de propiedades con valores por defecto
@@ -116,5 +124,11 @@ public class GameManager : MonoBehaviour
     public void AuidoManagerPlayClick()
     {
         AudioManager.instance.PlayClick();
+    }
+
+    public void mostrarCanvasModificacionItem(string str)
+    {
+        pickUpCanvas.GetComponentInChildren<TextMeshProUGUI>().text = str;
+        pickUpCanvas.SetActive(true);
     }
 }
