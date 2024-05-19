@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Properties : MonoBehaviour
 {
-
+    public static Properties instance;
     public float Health;
     public float Damage;
     public float Speed;
@@ -15,6 +15,13 @@ public class Properties : MonoBehaviour
 
     private float MaxHealth;
     private bool canDamage = true;
+    private void Awake()
+    {
+        if(!instance)
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
