@@ -12,6 +12,9 @@ public class HealthBar : MonoBehaviour
     {
         Image img = portrait.GetComponent<Image>();
         img.sprite = GameManager.instance.getHealthPortrait();
+
+        setMaxValue(GameManager.instance.getProperties()["Health"]);
+        setHealth(GameManager.instance.getProperties()["Health"]);
     }
 
     public void setHealth(float health)
