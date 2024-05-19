@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] int enemyCount;
+    [SerializeField] int maxEnemyCount;
+    [SerializeField] int minEnemyCount;
 
     private Room room;
     private PlayerPosition player;
@@ -29,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
     }
     public void SpawnEnemies()
     {
+        int enemyCount = Random.Range(minEnemyCount, maxEnemyCount + 1);
         for (int i = 0; i < enemyCount; i++)
         {
             Instantiate(enemyPrefab, new Vector2(Random.Range(transform.position.x - 6.5f, transform.position.x + 6.5f), Random.Range(transform.position.y - 2.5f, transform.position.y - 2.5f)), Quaternion.identity);
