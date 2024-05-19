@@ -115,18 +115,8 @@ public class AudioManager : MonoBehaviour
         SFXSource.PlayOneShot(monsterHitted);
     }
 
-    public void PlayMerodeadorDeath()
+    public void playMonsterDeathSound(AudioClip ac)
     {
-        SFXSource.PlayOneShot(merodeadorDeath);
-    }
-
-    public void PlayEyeDeath()
-    {
-        SFXSource.PlayOneShot(eyeDeath);
-    }
-
-    public void PlayFlyDeath()
-    {
-        SFXSource.PlayOneShot(flyDeath);
+        SFXSource.PlayOneShot(ac);
     }
 }

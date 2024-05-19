@@ -139,8 +139,8 @@ public class CharacterSelection : MonoBehaviour
         GameManager.instance.setProperties(characterSelection[characterSelected]);
         GameManager.instance.setAnimator(animations[characterSelected]);
         GameManager.instance.setHealthPortrait(healtraits[characterSelected]);
-        GameManager.instance.goToGame("RoomGeneration"); 
-        //GameManager.instance.goToGame("Escena_Pruebas");
+       // MenuManager.instance.goToGame("RoomGeneration"); 
+        MenuManager.instance.goToGame("Escena_Pruebas");
     }
 
     // Cambiar personaje hacia atras

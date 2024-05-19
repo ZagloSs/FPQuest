@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D _rb;
     public Animator animator;
     public Vector2 moveDir;
-    public Vector2 lastMovedVector;
+
 
 
     private void Start()
@@ -20,8 +20,7 @@ public class Movement : MonoBehaviour
         //Fin Pruebas (Borrar Luego)
         _rb = GetComponent<Rigidbody2D>();
 
-        //Movimiento de magia
-        lastMovedVector = new Vector2(1, 0f);
+
     }
 
 
@@ -37,40 +36,30 @@ public class Movement : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = true;
             animator.SetBool("IsWalkingSide", true);
-            lastMovedVector = new Vector2(moveDir.x, 0f);
+
         }
         else if(moveX > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
             animator.SetBool("IsWalkingSide", true);
-            lastMovedVector = new Vector2(moveDir.x, 0f);
         }
         else
-        {
-           
+        {   
             animator.SetBool("IsWalkingSide", false);
-            lastMovedVector = new Vector2(moveDir.x , moveDir.y);
         }
 
         if (moveY < 0)
         {
-           
             animator.SetBool("IsWalkingDown", true);
-            lastMovedVector = new Vector2(0f, moveDir.y);
         }
         else if (moveY > 0)
         {
-            
             animator.SetBool("IsWalkingUp", true);
-            lastMovedVector = new Vector2(0f, moveDir.y);
         }
         else
         {
-            
             animator.SetBool("IsWalkingDown", false);
             animator.SetBool("IsWalkingUp", false);
-            lastMovedVector = new Vector2(moveDir.x, moveDir.y);
-
         }
     }
 }

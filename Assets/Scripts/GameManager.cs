@@ -16,9 +16,6 @@ public class GameManager : MonoBehaviour
     private Dictionary<string, float> properties;
     private Sprite healtrait;
 
-
-
-
     private void Awake()
     {
         if (!instance)
@@ -79,51 +76,9 @@ public class GameManager : MonoBehaviour
         return this.animator;
     }
 
-
-
     public void backToMenu()
     {
-        LoadingScreen("MainMenu");
-        AudioManager.instance.PlayClick();
-    }
-
-    public void goToCharacterSelection()
-    {
-        LoadingScreen("Character Selection");
-    }
-
-    public void goToGame(string sceneName)
-    {
-        LoadingScreen(sceneName);
-    }
-
-    public void quitGame()
-    {
-        Application.Quit();
-    }
-
-    
-
-    public void LoadingScreen(string sceneName)
-    {
-        StartCoroutine(LoadSceneAynchronously(sceneName));
-    }
-
-    IEnumerator LoadSceneAynchronously(string sceneName)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-        LoadingScene.SetActive(true);
-        while (!operation.isDone)
-        {
-
-            yield return null;
-        }
-    }
-
-    //Pequeño parche para arreglar un bug.
-    public void AuidoManagerPlayClick()
-    {
-        AudioManager.instance.PlayClick();
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void mostrarCanvasModificacionItem(string str)

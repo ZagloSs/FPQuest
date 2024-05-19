@@ -10,7 +10,7 @@ public class melePropertieas : MonoBehaviour
 
     void Update()
     {
-        if(gameObject && timer > Properties.instance.AttSpeed -0.05f)
+        if(gameObject && timer > 0.2f)
         {
             timer = 0f;
             gameObject.SetActive(false);
