@@ -17,9 +17,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip bossBattle;
     [SerializeField] private AudioClip click;
     [SerializeField] private AudioClip pickUpItem;
+    [SerializeField] private AudioClip magicSpelled;
+    [SerializeField] private AudioClip meleeAttackSound;
+    [SerializeField] private AudioClip monsterHitted;
+    [SerializeField] private AudioClip merodeadorDeath;
+    [SerializeField] private AudioClip flyDeath;
+    [SerializeField] private AudioClip eyeDeath;
+
 
     private bool isJugar = true;
-
 
 
     private void Awake()
@@ -94,5 +100,33 @@ public class AudioManager : MonoBehaviour
     public void PlayPickUpItem()
     {
         SFXSource.PlayOneShot(pickUpItem);
+    }
+    public void PlayFireball()
+    {
+        SFXSource.PlayOneShot(magicSpelled);
+    }
+    public void PlayMeleeAtt()
+    {
+        SFXSource.PlayOneShot(meleeAttackSound);
+    }
+
+    public void PlayEnemyHitted()
+    {
+        SFXSource.PlayOneShot(monsterHitted);
+    }
+
+    public void PlayMerodeadorDeath()
+    {
+        SFXSource.PlayOneShot(merodeadorDeath);
+    }
+
+    public void PlayEyeDeath()
+    {
+        SFXSource.PlayOneShot(eyeDeath);
+    }
+
+    public void PlayFlyDeath()
+    {
+        SFXSource.PlayOneShot(flyDeath);
     }
 }

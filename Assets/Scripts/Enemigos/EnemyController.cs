@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float vida;
-    public GameObject player; // Bucar al player
     public float speed = 3f; // Velocidad Enemigo
     public int damage = 10; // Daño a jugador
     public float knockbackForce = 100f; //Retroceso
 
+    private GameObject player; // Bucar al player
     private SpriteRenderer spriteRenderer; // Referencia al componente SpriteRenderer del enemigo
 
 
@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     }
     private void Update()
     {
-        if (player != null)
+        if (!player)
         {
             // Movimiento del enemigo hacia el jugador
             Vector3 direction = (player.transform.position - transform.position).normalized;
