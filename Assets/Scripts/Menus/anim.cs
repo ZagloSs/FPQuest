@@ -18,7 +18,7 @@ public class anim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //player.SetActive(false);
+        player.SetActive(false);
         canvas.SetActive(false);
         intro.SetActive(true);
     }
@@ -38,7 +38,7 @@ public class anim : MonoBehaviour
 
             }else if(timer > 4f && intro.GetComponent<SpriteRenderer>().color.r <= 0)
             {
-                //player.SetActive(true) ;
+                player.SetActive(true) ;
                 canvas.SetActive(true) ;
 
                 intro.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, (intro.GetComponent<SpriteRenderer>().color.a) - ((200 * Time.deltaTime) / 255));
