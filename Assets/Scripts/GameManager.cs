@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private AnimatorController animator;
     private Dictionary<string, float> properties;
     private Sprite healtrait;
-    private float timer = 0;
+
 
 
 
