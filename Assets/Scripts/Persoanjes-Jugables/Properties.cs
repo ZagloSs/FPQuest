@@ -97,7 +97,7 @@ public class Properties : MonoBehaviour
     //Daño enemigo hacia jugador
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Enemy") && canDamage)
+        if (collision.gameObject.CompareTag("Enemy") && canDamage)
         {
             EnemyController Enemy = collision.gameObject.GetComponent<EnemyController>();
             if (Enemy != null)
@@ -111,6 +111,15 @@ public class Properties : MonoBehaviour
         }
     }
 
+    public void gotHittedByBullet(float damage)
+    {
+        Health -= damage; // Reducir la vida del jugador
+        healthBar.setHealth(Health);
+        Debug.Log("Player health: " + Health);
+        canDamage = false; // Activar cooldown
+        Invoke("ResetCooldown", 1f);
+    }
+    
     private void ResetCooldown()
     {
         canDamage = true; // Reestablecer la capacidad de hacer daño al jugador

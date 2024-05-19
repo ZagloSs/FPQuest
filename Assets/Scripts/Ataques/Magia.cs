@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Magia : MonoBehaviour
 {
-    [SerializeField] private GameObject bala;
+
     [SerializeField] private GameObjectPool pool;
     private bool puedeDisparar = true;
     private float timer = 0f;

@@ -43,6 +43,7 @@ public class EnemyController : MonoBehaviour
 
     public IEnumerator Death()
     {
+        
         AudioManager.instance.playMonsterDeathSound(deathSound);
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
