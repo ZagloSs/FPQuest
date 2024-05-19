@@ -68,6 +68,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void stopmusic()
+    {
+        musicaSource.Stop();
+    }
+
     public void setVolumeMusica(float volume)
     {
         musicaSource.volume = volume;

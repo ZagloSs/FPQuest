@@ -62,4 +62,11 @@ public class Movement : MonoBehaviour
             animator.SetBool("IsWalkingUp", false);
         }
     }
+
+    public void death()
+    {
+        animator.SetBool("IsWalkingDown", false);
+        animator.SetBool("IsWalkingSide", false);
+        animator.SetBool("IsWalkingUp", false);
+    }
 }

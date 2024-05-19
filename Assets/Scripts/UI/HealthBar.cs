@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+
+
     public GameObject portrait;
     public Slider slider;
 
@@ -31,7 +33,9 @@ public class HealthBar : MonoBehaviour
     {
         if (slider.value <= 0) 
         {
-            GameManager.instance.backToMenu();
+            Properties.instance.Death();
         }
     }
+
+   
 }

@@ -1,9 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Properties : MonoBehaviour
 {
+
+    [SerializeField] private ParticleSystem exp1;
+    [SerializeField] private AudioClip DeathSound;
+
     public static Properties instance;
     public float Health;
     public float Damage;
@@ -12,6 +19,7 @@ public class Properties : MonoBehaviour
 
     public HealthBar healthBar;
 
+    [SerializeField] private List<GameObject> noDeletingWhenDying;
 
     private float MaxHealth;
     private bool canDamage = true;
@@ -26,6 +34,12 @@ public class Properties : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach(GameObject go in GameObject.FindGameObjectsWithTag("AudioManager"))
+        {
+            noDeletingWhenDying.Add(go);
+        }
+
+
         Dictionary<string, float> properties = GameManager.instance.getProperties();
 
         if(properties != null)
@@ -123,5 +137,34 @@ public class Properties : MonoBehaviour
     private void ResetCooldown()
     {
         canDamage = true; // Reestablecer la capacidad de hacer daño al jugador
+    }
+
+    public void Death()
+    {
+        StartCoroutine(DeadCorrutine());
+    }
+
+    public IEnumerator DeadCorrutine()
+    {
+        GameObject[] list =  FindObjectsOfType<GameObject>();
+        GameObject[] newList = list.Except(noDeletingWhenDying).ToArray();
+        
+        foreach (GameObject obj in newList)
+        {
+            obj.SetActive(false);
+        }
+
+        AudioManager.instance.stopmusic();
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<Movement>().death();
+        GetComponent<Movement>().enabled = false;
+
+        yield return new WaitForSeconds(1f);
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        AudioManager.instance.playMonsterDeathSound(DeathSound);
+        exp1.Play();
+        yield return new WaitForSeconds(2f);
+        GameManager.instance.backToMenu();
     }
 }

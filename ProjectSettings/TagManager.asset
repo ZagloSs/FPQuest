@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Door
   - RoomFill
+  - AudioManager
   layers:
   - Default
   - TransparentFX
