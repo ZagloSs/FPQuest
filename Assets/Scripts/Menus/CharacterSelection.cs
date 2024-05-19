@@ -74,7 +74,8 @@ public class CharacterSelection : MonoBehaviour
             { "Health", Carlos_Health },
             { "Damage", Carlos_Damage },
             { "Speed", Carlos_Speed },
-            { "AttSpeed", Carlos_AttSpeed }
+            { "AttSpeed", Carlos_AttSpeed },
+            { "AttType", 1f}
         };
 
         FProperties = new Dictionary<string, float>()
@@ -82,7 +83,8 @@ public class CharacterSelection : MonoBehaviour
             { "Health", Fer_Health },
             { "Damage", Fer_Damage },
             { "Speed", Fer_Speed },
-            { "AttSpeed", Fer_AttSpeed }
+            { "AttSpeed", Fer_AttSpeed },
+            { "AttType", 2f}
         };
 
         MProperties = new Dictionary<string, float>()
@@ -90,7 +92,8 @@ public class CharacterSelection : MonoBehaviour
             { "Health", Marcos_Health },
             { "Damage", Marcos_Damage },
             { "Speed", Marcos_Speed },
-            { "AttSpeed", Marcos_AttSpeed }
+            { "AttSpeed", Marcos_AttSpeed },
+            { "AttType", 1f}
         };
 
         characterSelection = new List<Dictionary<string, float>>() { CProperties, FProperties, MProperties };
@@ -136,8 +139,8 @@ public class CharacterSelection : MonoBehaviour
         GameManager.instance.setProperties(characterSelection[characterSelected]);
         GameManager.instance.setAnimator(animations[characterSelected]);
         GameManager.instance.setHealthPortrait(healtraits[characterSelected]);
-        //GameManager.instance.goToGame("RoomGeneration"); 
-        GameManager.instance.goToGame("Escena_Pruebas");
+        GameManager.instance.goToGame("RoomGeneration"); 
+        //GameManager.instance.goToGame("Escena_Pruebas");
     }
 
     // Cambiar personaje hacia atras

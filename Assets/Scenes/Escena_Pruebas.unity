@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 412290698}
   - component: {fileID: 412290699}
   - component: {fileID: 412290700}
+  - component: {fileID: 412290701}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -660,6 +661,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala: {fileID: 7693303986904201931, guid: 266c9f51579243b4296ac86b4877bcf3, type: 3}
   pool: {fileID: 1915323303}
+--- !u!114 &412290701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412290692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6af418bb6de504a84840c82cde7171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  melee: {fileID: 1374176012}
 --- !u!1 &521512161
 GameObject:
   m_ObjectHideFlags: 0
