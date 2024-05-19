@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 438059517150868358}
   - component: {fileID: 8862843022741337772}
   - component: {fileID: 3629235572915829448}
+  - component: {fileID: -5046281840418110906}
   m_Layer: 0
   m_Name: MeleAttack
   m_TagString: Untagged
@@ -106,3 +107,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5046281840418110906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768399535886818675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e9e35d6c7714b4b8774d52a9a2e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

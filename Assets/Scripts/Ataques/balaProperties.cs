@@ -7,7 +7,7 @@ public class balaProperties : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 mousePos;
     private float force = 2f;
-
+    private float timer = 0f;
 
     void Start()
     {
@@ -20,6 +20,16 @@ public class balaProperties : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,0,-rot);
     }
 
+    private void Update()
+    {
+        if(timer > 6f)
+        {
+            gameObject.SetActive(false);
+            timer = 0f;
+        }
+        timer += Time.deltaTime;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -27,7 +37,7 @@ public class balaProperties : MonoBehaviour
             AudioManager.instance.PlayEnemyHitted();
             EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
             enemy.TomarDaño(Properties.instance.Damage);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
