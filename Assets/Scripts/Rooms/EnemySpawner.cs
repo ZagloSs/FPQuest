@@ -9,36 +9,55 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] int minEnemyCount;
 
     private Room room;
+    RoomManager roomManager;
     private PlayerPosition player;
     private bool enemiesSpawned = false;
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
 
     private void Start()
     {
         room = GetComponent<Room>();
         player = FindObjectOfType<PlayerPosition>();
+        roomManager = GameObject.FindGameObjectWithTag("RoomManager").GetComponent<RoomManager>();
     }
 
     private void Update()
     {
-        if (room.IsPlayerInRoom(player) && !room.completed && !enemiesSpawned)
+        if (roomManager.generationComplete)
         {
-            SpawnEnemies();
-            enemiesSpawned = true;
-            room.CloseDoors();
-        }
+            if (room.IsPlayerInRoom(player) && !room.completed && !enemiesSpawned && room.name != "BossRoom" && room.name != "ItemRoom")
+            {
+                SpawnEnemies();
+                enemiesSpawned = true;
+                room.CloseDoors();
+            }
+            else if (room.name == "BossRoom" && room.name == "ItemRoom")
+            {
+                room.OpenDoors();
+            }
 
+            if (enemiesSpawned && AllEnemiesDefeated())
+            {
+                room.OpenDoors();
+                room.completed = true;
+            }
+        }
     }
+
     public void SpawnEnemies()
     {
         int enemyCount = Random.Range(minEnemyCount, maxEnemyCount + 1);
         for (int i = 0; i < enemyCount; i++)
         {
-            Instantiate(enemyPrefab, new Vector2(Random.Range(transform.position.x - 6.5f, transform.position.x + 6.5f), Random.Range(transform.position.y - 2.5f, transform.position.y - 2.5f)), Quaternion.identity);
+            Vector2 spawnPosition = new Vector2(Random.Range(transform.position.x - 6.5f, transform.position.x + 6.5f), Random.Range(transform.position.y - 2.5f, transform.position.y + 2.5f));
+            GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            spawnedEnemies.Add(enemy);
         }
     }
 
-    public void MarkRoomAsCompleted()
+    private bool AllEnemiesDefeated()
     {
-        room.completed = true;
+        spawnedEnemies.RemoveAll(enemy => enemy == null);  // Remove null references (destroyed enemies)
+        return spawnedEnemies.Count == 0;
     }
 }

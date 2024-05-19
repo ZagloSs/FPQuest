@@ -11,14 +11,12 @@ public class Room : MonoBehaviour
     [SerializeField] GameObject leftDoor;
     [SerializeField] GameObject rightDoor;
 
-    public bool completed = false;
+    public GameObject[] doors;  // Array de puertas de la habitación
+    public Sprite openDoorSprite;  // Sprite de puerta abierta (Puertas_0)
+    public Sprite closedDoorSprite;  // Sprite de puerta cerrada (Puertas_1)
+    public bool completed = false;  // Estado de la habitación
 
     public Vector2Int RoomIndex { get; set; }
-
-    public bool IsPlayerInRoom(PlayerPosition player)
-    {
-        return player.RoomIndex == RoomIndex;
-    }
 
     public void SpawnDoor(Vector2Int direction)
     {
@@ -39,29 +37,30 @@ public class Room : MonoBehaviour
             rightDoor.SetActive(true);
         }
     }
+    // Método para cerrar las puertas
     public void CloseDoors()
     {
-        topDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_0");
-        bottomDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_0");
-        leftDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_0");
-        rightDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_0");
-    }
-    public void OpenDoors()
-    {
-        topDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_1");
-        bottomDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_1");
-        leftDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_1");
-        rightDoor.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Salas/Puertas_1");
+        foreach (GameObject door in doors)
+        {
+            door.GetComponent<SpriteRenderer>().sprite = closedDoorSprite;
+            door.GetComponent<BoxCollider2D>().enabled = false;  // Activa el collider para cerrar la puerta
+        }
     }
 
-    public void RoomCompleted()
+    // Método para abrir las puertas
+    public void OpenDoors()
     {
-        completed = true;
-        GetComponent<EnemySpawner>().MarkRoomAsCompleted();
-        OpenDoors();
+        foreach (GameObject door in doors)
+        {
+            door.GetComponent<SpriteRenderer>().sprite = openDoorSprite;
+            door.GetComponent<BoxCollider2D>().enabled = true;  // Desactiva el collider para abrir la puerta
+        }
     }
-    public Transform TopDoorTransform { get { return topDoor.transform; } }
-    public Transform BottomDoorTransform { get { return bottomDoor.transform; } }
-    public Transform LeftDoorTransform { get { return leftDoor.transform; } }
-    public Transform RightDoorTransform { get { return rightDoor.transform; } }
+
+    // Verificar si el jugador está en la habitación
+    public bool IsPlayerInRoom(PlayerPosition player)
+    {
+        return GetComponent<Collider2D>().bounds.Contains(player.transform.position);
+    }
+
 }

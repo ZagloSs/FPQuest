@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Door
   - RoomFill
+  - RoomManager
   layers:
   - Default
   - TransparentFX

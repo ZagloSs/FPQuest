@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 3041457453640957980}
   - component: {fileID: 3751993882934555887}
   - component: {fileID: 6396682614856086046}
+  - component: {fileID: 2896359396055992408}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -313,6 +314,13 @@ MonoBehaviour:
   bottomDoor: {fileID: 5787498376542323983}
   leftDoor: {fileID: 8599667912833298453}
   rightDoor: {fileID: 7529175007045161912}
+  doors:
+  - {fileID: 8599667912833298453}
+  - {fileID: 7529175007045161912}
+  - {fileID: 3505171364598107957}
+  - {fileID: 5787498376542323983}
+  openDoorSprite: {fileID: 1889706236, guid: 523b27a7263b2504bb2f978608fde19d, type: 3}
+  closedDoorSprite: {fileID: -378854317, guid: 523b27a7263b2504bb2f978608fde19d, type: 3}
   completed: 0
 --- !u!114 &6396682614856086046
 MonoBehaviour:
@@ -329,6 +337,51 @@ MonoBehaviour:
   enemyPrefab: {fileID: 6929958692872619665, guid: 30fb212fba7f1aa4d99f3921ba31f0f1, type: 3}
   maxEnemyCount: 5
   minEnemyCount: 1
+--- !u!61 &2896359396055992408
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898833184905089846}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02576065, y: 0.051519156}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.949867, y: 9.964369}
+  m_EdgeRadius: 0
 --- !u!1 &5444467089414840546
 GameObject:
   m_ObjectHideFlags: 0

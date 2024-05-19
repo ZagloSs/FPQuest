@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 398604917}
   m_Layer: 0
   m_Name: RoomManager
-  m_TagString: Untagged
+  m_TagString: RoomManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
   - {fileID: 4387193763643438217, guid: ed66e1ebfda6e8848a8b39b130a35a39, type: 3}
   - {fileID: 4454803178079850173, guid: 6b9eec73ce1d68348aa341e35dbbe870, type: 3}
   - {fileID: 4454803178079850173, guid: c8989a93237e5dc4bbd8a07283f19249, type: 3}
-  - {fileID: 1190144646390510974, guid: bac196a1615b05a4ea5a6ffaea10cd1b, type: 3}
+  - {fileID: 4454803178079850173, guid: 8c2b6fbf6bf1f744da038fa2f4838a9a, type: 3}
   maxRooms: 10
   minRooms: 5
   gridSizeX: 20
@@ -511,6 +511,7 @@ MonoBehaviour:
   itemPedestal: {fileID: 7220347311511442308, guid: b2b9cdd20a1186e43a06ccec4ca2938c, type: 3}
   bossRoomPrefab: {fileID: 381536782758281193, guid: e75d54a5e9ab31e43a5653283a9fdbe1, type: 3}
   enemyPrefab: {fileID: 6929958692872619665, guid: 30fb212fba7f1aa4d99f3921ba31f0f1, type: 3}
+  generationComplete: 0
 --- !u!4 &398604918
 Transform:
   m_ObjectHideFlags: 0
