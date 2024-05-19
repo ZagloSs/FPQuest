@@ -6,19 +6,8 @@ public class balaProperties : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector3 mousePos;
-    private float force = 2f;
-    private float timer = 0f;
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePos - transform.position;
-        Vector3 rotation = transform.position - mousePos;
-        rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
-        float rot = Mathf.Atan2(rotation.x, rotation.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0,0,-rot);
-    }
+    private float timer = 0f;
 
     private void Update()
     {
@@ -38,6 +27,11 @@ public class balaProperties : MonoBehaviour
             EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
             enemy.TomarDaño(Properties.instance.Damage);
             gameObject.SetActive(false);
+
+            //Reiniciamos los valores a 0
+            transform.rotation = Quaternion.Euler(0,0,0);
+            transform.position = Vector3.zero;
+            rb.velocity = Vector2.zero;
         }
     }
 
