@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         room = GetComponent<Room>();
-        player = FindObjectOfType<PlayerPosition>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPosition>();
         roomManager = GameObject.FindGameObjectWithTag("RoomManager").GetComponent<RoomManager>();
     }
 
