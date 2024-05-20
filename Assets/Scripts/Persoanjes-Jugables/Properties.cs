@@ -42,10 +42,8 @@ public class Properties : MonoBehaviour
 
         Dictionary<string, float> properties = GameManager.instance.getProperties();
 
-        if(properties != null)
+        if (properties != null)
         {
-
-
             Health = properties["Health"];
             MaxHealth = properties["Health"];
             Damage = properties["Damage"];
@@ -64,23 +62,21 @@ public class Properties : MonoBehaviour
         {
             Debug.LogError("¡Error al obtener los valores de propiedades del GameManager!");
         }
-
     }
 
-    //Daño Jugador
+    // Daño Jugador
     public void ModifyDamage(float modifier)
     {
         Damage += modifier;
         Debug.Log("Daño del jugador modificado: " + Damage);
-
     }
 
-    //Vida Jugador
+    // Vida Jugador
     public void ModifyHealth(float modifier)
     {
-        if(Health + modifier >= MaxHealth)
+        if (Health + modifier >= MaxHealth)
         {
-            Health += (MaxHealth - Health);
+            Health = MaxHealth;
         }
         else
         {
@@ -88,35 +84,31 @@ public class Properties : MonoBehaviour
         }
         Debug.Log("Vida del jugador modificada: " + Health);
         healthBar.setHealth(Health);
-       
-
     }
 
-    //Velocidad Jugador
+    // Velocidad Jugador
     public void ModifySpeed(float modifier)
     {
         Speed += modifier;
         Debug.Log("Velocidad del jugador modificada: " + Speed);
-
     }
 
-    //Velocidad de Ataque
+    // Velocidad de Ataque
     public void ModifyAttackSpeed(float modifier)
     {
         AttSpeed += modifier;
         Debug.Log("Velocidad de ataque del jugador modificada: " + AttSpeed);
-
     }
 
-    //Daño enemigo hacia jugador
+    // Daño enemigo hacia jugador
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && canDamage)
         {
-            EnemyController Enemy = collision.gameObject.GetComponent<EnemyController>();
-            if (Enemy != null)
+            EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+            if (enemy != null)
             {
-                Health -= Enemy.damage; // Reducir la vida del jugador
+                Health -= enemy.damage; // Reducir la vida del jugador
                 healthBar.setHealth(Health);
                 Debug.Log("Player health: " + Health);
                 canDamage = false; // Activar cooldown
@@ -136,7 +128,7 @@ public class Properties : MonoBehaviour
     
     private void ResetCooldown()
     {
-        canDamage = true; // Reestablecer la capacidad de hacer daño al jugador
+        canDamage = true; // Restablecer la capacidad de recibir daño del jugador
     }
 
     public void Death()
@@ -168,3 +160,6 @@ public class Properties : MonoBehaviour
         GameManager.instance.backToMenu();
     }
 }
+
+
+

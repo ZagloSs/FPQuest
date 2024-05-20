@@ -302,9 +302,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 239244903}
-  - component: {fileID: 239244905}
-  - component: {fileID: 239244904}
+  - component: {fileID: 362041859}
+  - component: {fileID: 362041858}
+  - component: {fileID: 362041857}
+  - component: {fileID: 362041856}
+  - component: {fileID: 362041860}
+  - component: {fileID: 362041854}
+  - component: {fileID: 362041853}
+  - component: {fileID: 362041861}
+  - component: {fileID: 362041852}
   m_Layer: 0
   m_Name: PersonajePantallaCarga_0
   m_TagString: Untagged
@@ -400,6 +406,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &362041859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362041851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1786748236}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &362041860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362041851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f217ebb03a254b445947f3ffaf68d73e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraAnimationDuration: 0.2
+  cameraMovementSpeed: 2
+  playerMovementSpeed: 5
+--- !u!114 &362041861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362041851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a6cf9794bb3ba43a0b9641a1b8b05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomIndexX: 0
+  roomIndexY: 0
 --- !u!1 &398604916
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +463,7 @@ GameObject:
   - component: {fileID: 398604917}
   m_Layer: 0
   m_Name: RoomManager
-  m_TagString: Untagged
+  m_TagString: RoomManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -435,7 +486,7 @@ MonoBehaviour:
   - {fileID: 4387193763643438217, guid: ed66e1ebfda6e8848a8b39b130a35a39, type: 3}
   - {fileID: 4454803178079850173, guid: 6b9eec73ce1d68348aa341e35dbbe870, type: 3}
   - {fileID: 4454803178079850173, guid: c8989a93237e5dc4bbd8a07283f19249, type: 3}
-  - {fileID: 1190144646390510974, guid: bac196a1615b05a4ea5a6ffaea10cd1b, type: 3}
+  - {fileID: 4454803178079850173, guid: 8c2b6fbf6bf1f744da038fa2f4838a9a, type: 3}
   maxRooms: 10
   minRooms: 5
   gridSizeX: 20
@@ -445,6 +496,8 @@ MonoBehaviour:
   - {fileID: 4380225394526594851, guid: c6edf96c9c95fb04aa008e6e945ab199, type: 3}
   itemPedestal: {fileID: 7220347311511442308, guid: b2b9cdd20a1186e43a06ccec4ca2938c, type: 3}
   bossRoomPrefab: {fileID: 381536782758281193, guid: e75d54a5e9ab31e43a5653283a9fdbe1, type: 3}
+  enemyPrefab: {fileID: 6929958692872619665, guid: 30fb212fba7f1aa4d99f3921ba31f0f1, type: 3}
+  generationComplete: 0
 --- !u!4 &398604918
 Transform:
   m_ObjectHideFlags: 0

@@ -13,29 +13,23 @@ public class EnemyController : MonoBehaviour
     public float knockbackForce = 16f; //Retroceso
 
     [SerializeField] private ParticleSystem ps;
-
    
     private SpriteRenderer spriteRenderer; // Referencia al componente SpriteRenderer del enemigo
-
-   
-
-    private Rigidbody2D rb;
-
-
-
+  
+    
     private void Start()
     {
-        
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>(); // Obtener el componente SpriteRenderer del enemigo
-        rb = gameObject.GetComponent<Rigidbody2D>(); 
-
+        // Buscar el objeto del jugador por etiqueta
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Obtener el componente SpriteRenderer del enemigo
+       
     }
 
+    
     public void TomarDaño(float daño)
     {
         StartCoroutine(blinkEffect());
         vida -= daño;
-        if(vida<=0)
+        if (vida <= 0)
         {
             StartCoroutine(Death());
         }

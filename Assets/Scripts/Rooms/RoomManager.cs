@@ -15,6 +15,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject itemPedestal;
     [SerializeField] GameObject bossRoomPrefab;
 
+    [SerializeField] GameObject enemyPrefab;
+
     private bool hasGeneratedItemRoom = false;
     private bool hasGeneratedBossRoom = false;
 
@@ -30,7 +32,7 @@ public class RoomManager : MonoBehaviour
 
     private int roomCount;
 
-    private bool generationComplete = false;
+    public bool generationComplete = false;
 
     private void Start()
     {
@@ -88,7 +90,7 @@ public class RoomManager : MonoBehaviour
 
         GameObject fill = Instantiate(fillPrefab[0], roomFill.position, Quaternion.identity, roomFill);
 
-        initialRoom.name = $"Room-{roomCount}";
+        initialRoom.name = "StartRoom";
         initialRoom.GetComponent<Room>().RoomIndex = roomIndex;
         roomObjects.Add(initialRoom);
     }
@@ -131,7 +133,6 @@ public class RoomManager : MonoBehaviour
         roomObjects.Add(newRoom);
 
         OpenDoors(newRoom, x, y);
-
         return true;
     }
 
@@ -167,26 +168,26 @@ public class RoomManager : MonoBehaviour
         if (leftRoom != null)
         {
             //Neighbour left
-            newRoom.OpenDoor(Vector2Int.left);
-            leftRoom.OpenDoor(Vector2Int.right);
+            newRoom.SpawnDoor(Vector2Int.left);
+            leftRoom.SpawnDoor(Vector2Int.right);
         }
         if (rightRoom != null)
         {
             //Neighbour right
-            newRoom.OpenDoor(Vector2Int.right);
-            rightRoom.OpenDoor(Vector2Int.left);
+            newRoom.SpawnDoor(Vector2Int.right);
+            rightRoom.SpawnDoor(Vector2Int.left);
         }
         if (bottomRoom != null)
         {
             //Neighbour below
-            newRoom.OpenDoor(Vector2Int.down);
-            bottomRoom.OpenDoor(Vector2Int.up);
+            newRoom.SpawnDoor(Vector2Int.down);
+            bottomRoom.SpawnDoor(Vector2Int.up);
         }
         if (topRoom != null)
         {
             //Neighbour above
-            newRoom.OpenDoor(Vector2Int.up);
-            topRoom.OpenDoor(Vector2Int.down);
+            newRoom.SpawnDoor(Vector2Int.up);
+            topRoom.SpawnDoor(Vector2Int.down);
         }
     }
 
@@ -225,6 +226,7 @@ public class RoomManager : MonoBehaviour
         // Choose a random room from the existing rooms
         int randomRoomIndex = Random.Range(1, roomObjects.Count);
         GameObject itemRoom = roomObjects[randomRoomIndex];
+        roomObjects[randomRoomIndex].name = "ItemRoom";
 
         // Find the RoomFill object in the room
         Transform roomFill = itemRoom.transform.Find("RoomFill");
@@ -248,6 +250,7 @@ public class RoomManager : MonoBehaviour
 
         // Choose a random room from the existing rooms
         GameObject bossRoom = roomObjects[roomObjects.Count - 1];
+        roomObjects[roomObjects.Count - 1].name = "BossRoom";
 
         // Find the RoomFill object in the room
         Transform roomFill = bossRoom.transform.Find("RoomFill");
@@ -286,3 +289,4 @@ public class RoomManager : MonoBehaviour
         }
     }
 }
+
