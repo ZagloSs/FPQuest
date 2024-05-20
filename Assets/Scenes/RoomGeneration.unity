@@ -785,6 +785,7 @@ GameObject:
   - component: {fileID: 612475173}
   - component: {fileID: 612475172}
   - component: {fileID: 612475181}
+  - component: {fileID: 612475182}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1024,6 +1025,20 @@ MonoBehaviour:
   cameraAnimationDuration: 1
   cameraMovementSpeed: 5
   playerMovementSpeed: 5
+--- !u!114 &612475182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612475171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a6cf9794bb3ba43a0b9641a1b8b05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomIndexX: 0
+  roomIndexY: 0
 --- !u!1 &895647899
 GameObject:
   m_ObjectHideFlags: 0
