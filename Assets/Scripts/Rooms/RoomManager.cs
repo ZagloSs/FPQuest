@@ -90,7 +90,7 @@ public class RoomManager : MonoBehaviour
 
         GameObject fill = Instantiate(fillPrefab[0], roomFill.position, Quaternion.identity, roomFill);
 
-        initialRoom.name = $"Room-{roomCount}";
+        initialRoom.name = "StartRoom";
         initialRoom.GetComponent<Room>().RoomIndex = roomIndex;
         roomObjects.Add(initialRoom);
     }
@@ -133,10 +133,6 @@ public class RoomManager : MonoBehaviour
         roomObjects.Add(newRoom);
 
         OpenDoors(newRoom, x, y);
-        for (int i = 0; i < Random.Range(1,5); i++)
-        {
-            SpawnEnemy(newRoom);
-        }
         return true;
     }
 
@@ -291,24 +287,6 @@ public class RoomManager : MonoBehaviour
                 Gizmos.DrawWireCube(position, new Vector3(roomWidth, roomHeight, 1));
             }
         }
-    }
-    private void SpawnEnemy(GameObject room)
-    {
-        // Find the RoomFill object in the room
-        Transform roomFill = room.transform.Find("RoomFill");
-
-        // Generate a random position within the room
-        Vector3 spawnPosition = roomFill.position;
-        spawnPosition.x += Random.Range(-roomWidth / 2f + 2f, roomWidth / 2f - 2f);
-        spawnPosition.y += Random.Range(-roomHeight / 2f + 2f, roomHeight / 2f - 2f);
-
-        // Check the distance between the spawn position and the door positions
-        float minDistance = 3f;
-        bool validSpawnPosition = true;
-        Vector3 doorPosition;
-        Transform doorTransform;
-
-        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
     }
 }
 

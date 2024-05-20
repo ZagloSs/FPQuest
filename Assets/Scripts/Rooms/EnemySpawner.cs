@@ -8,6 +8,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] int maxEnemyCount;
     [SerializeField] int minEnemyCount;
 
+    private int roomWidth = 20;
+    private int roomHeight = 12;
+
     private Room room;
     RoomManager roomManager;
     private PlayerPosition player;
@@ -25,16 +28,13 @@ public class EnemySpawner : MonoBehaviour
     {
         if (roomManager.generationComplete)
         {
-            if (room.IsPlayerInRoom(player) && !room.completed && !enemiesSpawned && room.name != "BossRoom" && room.name != "ItemRoom")
+            if (room.IsPlayerInRoom(player) && !room.completed && !enemiesSpawned && room.name != "BossRoom" && room.name != "ItemRoom" && room.name != "StartRoom")
             {
                 SpawnEnemies();
                 enemiesSpawned = true;
                 room.CloseDoors();
             }
-            else if (room.name == "BossRoom" && room.name == "ItemRoom")
-            {
-                room.OpenDoors();
-            }
+
 
             if (enemiesSpawned && AllEnemiesDefeated())
             {
@@ -49,7 +49,14 @@ public class EnemySpawner : MonoBehaviour
         int enemyCount = Random.Range(minEnemyCount, maxEnemyCount + 1);
         for (int i = 0; i < enemyCount; i++)
         {
-            Vector2 spawnPosition = new Vector2(Random.Range(transform.position.x - 6.5f, transform.position.x + 6.5f), Random.Range(transform.position.y - 2.5f, transform.position.y + 2.5f));
+            // Find the RoomFill object in the room
+            Transform roomFill = room.transform.Find("RoomFill");
+
+            // Generate a random position within the room
+            Vector3 spawnPosition = roomFill.position;
+            spawnPosition.x += Random.Range(-roomWidth / 2f + 2f, roomWidth / 2f - 2f);
+            spawnPosition.y += Random.Range(-roomHeight / 2f + 2f, roomHeight / 2f - 2f);
+
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
             spawnedEnemies.Add(enemy);
         }
