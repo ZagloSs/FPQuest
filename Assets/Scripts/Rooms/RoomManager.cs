@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class RoomManager : MonoBehaviour
 {
@@ -23,7 +25,6 @@ public class RoomManager : MonoBehaviour
     private int roomWidth = 20;
     private int roomHeight = 12;
 
-
     private List<GameObject> roomObjects = new List<GameObject>();
 
     private Queue<Vector2Int> roomQueue = new Queue<Vector2Int>();
@@ -33,6 +34,12 @@ public class RoomManager : MonoBehaviour
     private int roomCount;
 
     public bool generationComplete = false;
+
+    // New field for the current level
+    public int CurrentLevel { get; set; } = 1;
+
+    private RoomData[,] roomDataGrid;
+
 
     private void Start()
     {
@@ -76,6 +83,7 @@ public class RoomManager : MonoBehaviour
             GenerateBossRoom();
         }
     }
+
     private void StartRoomGenerationFromRoom(Vector2Int roomIndex)
     {
         roomQueue.Enqueue(roomIndex);
@@ -154,6 +162,7 @@ public class RoomManager : MonoBehaviour
         Vector2Int initialRoomIndex = new Vector2Int(gridSizeX / 2, gridSizeY / 2);
         StartRoomGenerationFromRoom(initialRoomIndex);
     }
+
     void OpenDoors(GameObject room, int x, int y)
     {
         Room newRoom = room.GetComponent<Room>();
@@ -213,12 +222,14 @@ public class RoomManager : MonoBehaviour
 
         return count;
     }
+
     private Vector3 GetPositionFromGridIndex(Vector2Int gridIndex)
     {
         int gridX = gridIndex.x;
         int gridY = gridIndex.y;
-        return new Vector3(roomWidth *(gridX - gridSizeX / 2), roomHeight * (gridY - gridSizeY / 2));
+        return new Vector3(roomWidth * (gridX - gridSizeX / 2), roomHeight * (gridY - gridSizeY / 2));
     }
+
     private void GenerateItemRoom()
     {
         hasGeneratedItemRoom = true;
@@ -240,8 +251,6 @@ public class RoomManager : MonoBehaviour
         item.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         GameObject pedestal = Instantiate(itemPedestal, itemRoom.transform.position, Quaternion.identity, roomFill);
         GameObject fill = Instantiate(fillPrefab[0], roomFill.position, Quaternion.identity, roomFill);
-        
-
     }
 
     private void GenerateBossRoom()
@@ -249,44 +258,116 @@ public class RoomManager : MonoBehaviour
         hasGeneratedBossRoom = true;
 
         // Choose a random room from the existing rooms
-        GameObject bossRoom = roomObjects[roomObjects.Count - 1];
-        roomObjects[roomObjects.Count - 1].name = "BossRoom";
+        int randomRoomIndex = Random.Range(1, roomObjects.Count);
+        GameObject bossRoom = roomObjects[randomRoomIndex];
 
         // Find the RoomFill object in the room
         Transform roomFill = bossRoom.transform.Find("RoomFill");
 
-        // Clear the contents of the previous room
+        // Clear the room of any existing RoomFill objects
         ClearRoom(roomFill);
 
-        // Instantiate the boss room prefab as a child of the room
-        GameObject bossRoomInstance = Instantiate(bossRoomPrefab, roomFill.position, Quaternion.identity, roomFill);
+        // Instantiate the boss room prefab in the room
+        Instantiate(bossRoomPrefab, bossRoom.transform.position, Quaternion.identity, roomFill);
+
+        bossRoom.name = "BossRoom";
     }
 
-    private void ClearRoom(Transform room)
+    private void ClearRoom(Transform roomFill)
     {
-        // Remove all RoomFill objects from the room
-        foreach (Transform child in room.transform)
+        // Clear all existing RoomFill objects
+        foreach (Transform child in roomFill)
         {
-            if (child.gameObject.tag == "RoomFill")
+            Destroy(child.gameObject);
+        }
+    }
+
+    // Method to get completed rooms
+    public List<Vector2Int> GetCompletedRooms()
+    {
+        List<Vector2Int> completedRooms = new List<Vector2Int>();
+        foreach (var roomObject in roomObjects)
+        {
+            Room room = roomObject.GetComponent<Room>();
+            if (room.completed)
             {
-                Destroy(child.gameObject);
+                completedRooms.Add(room.RoomIndex);
+            }
+        }
+        return completedRooms;
+    }
+
+    // Method to set completed rooms
+    public void SetCompletedRooms(List<Vector2Int> completedRooms)
+    {
+        foreach (var roomIndex in completedRooms)
+        {
+            Room room = GetRoomScriptAt(roomIndex);
+            if (room != null)
+            {
+                room.completed = true;
+                room.OpenDoors();
             }
         }
     }
 
-    private void OnDrawGizmos()
+    // Method to increment the level (call this when killing the boss)
+    public void IncrementLevel()
     {
-        Color gizmoColor = Color.green;
-        Gizmos.color = gizmoColor;
+        CurrentLevel++;
+    }
+    public RoomData[,] GetMapData()
+    {
+        roomDataGrid = new RoomData[gridSizeX, gridSizeY];
+
+        foreach (var roomObject in roomObjects)
+        {
+            Room room = roomObject.GetComponent<Room>();
+            int x = room.RoomIndex.x;
+            int y = room.RoomIndex.y;
+
+            roomDataGrid[x, y] = new RoomData
+            {
+                roomIndex = room.RoomIndex,
+                isCompleted = room.completed,
+                roomType = roomObject.name
+                // Añade cualquier otra información relevante
+            };
+        }
+
+        return roomDataGrid;
+    }
+
+    public void LoadMapData(RoomData[,] loadedMapData)
+    {
+        roomDataGrid = loadedMapData;
 
         for (int x = 0; x < gridSizeX; x++)
         {
             for (int y = 0; y < gridSizeY; y++)
             {
-                Vector3 position = GetPositionFromGridIndex(new Vector2Int(x, y));
-                Gizmos.DrawWireCube(position, new Vector3(roomWidth, roomHeight, 1));
+                RoomData roomData = roomDataGrid[x, y];
+                if (roomData != null)
+                {
+                    var roomPosition = GetPositionFromGridIndex(roomData.roomIndex);
+                    var newRoom = Instantiate(roomPrefab, roomPosition, Quaternion.identity);
+                    newRoom.name = roomData.roomType;
+
+                    Room roomScript = newRoom.GetComponent<Room>();
+                    roomScript.RoomIndex = roomData.roomIndex;
+                    roomScript.completed = roomData.isCompleted;
+                    roomObjects.Add(newRoom);
+
+                    if (roomData.roomType == "ItemRoom")
+                    {
+                        GenerateItemRoom(); // O cualquier lógica específica para generar la habitación de ítems
+                    }
+                    else if (roomData.roomType == "BossRoom")
+                    {
+                        GenerateBossRoom(); // O cualquier lógica específica para generar la habitación del jefe
+                    }
+                }
             }
         }
     }
 }
-
