@@ -2887,6 +2887,7 @@ MonoBehaviour:
   LoadingScene: {fileID: 1424003905}
   healthBar: {fileID: 0}
   pickUpCanvas: {fileID: 0}
+  isLoaded: 0
 --- !u!1 &1771379596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,6 +2900,7 @@ GameObject:
   - component: {fileID: 1771379600}
   - component: {fileID: 1771379599}
   - component: {fileID: 1771379598}
+  - component: {fileID: 1771379601}
   m_Layer: 5
   m_Name: CargarBtn
   m_TagString: Untagged
@@ -3031,6 +3033,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771379596}
   m_CullTransparentMesh: 1
+--- !u!114 &1771379601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771379596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720c203ef523d1745b4e752a910d6881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1842694756
 GameObject:
   m_ObjectHideFlags: 0

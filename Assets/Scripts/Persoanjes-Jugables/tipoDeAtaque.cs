@@ -6,7 +6,7 @@ public class tipoDeAtaque : MonoBehaviour
 {
     private Magia magia;
     [SerializeField] private GameObject melee;
-    private float tipoAtaque;
+    public float tipoAtaque;
     // Start is called before the first frame update
     void Start()
     {

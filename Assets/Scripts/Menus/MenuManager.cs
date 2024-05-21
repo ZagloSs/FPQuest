@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.EditorTools;
@@ -15,6 +16,7 @@ public class MenuManager : MonoBehaviour
         if (!instance)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
     public void backToMenu()
@@ -36,7 +38,8 @@ public class MenuManager : MonoBehaviour
     {
         if (SaveLoadManager.Instance.SaveFileExists())
         {
-            SceneManager.LoadScene("RoomGeneration");
+            GameManager.instance.isLoaded = true;
+            
             // Usa una corutina para asegurar que la escena se cargue antes de llamar a LoadGame.
             StartCoroutine(LoadGameAfterSceneLoad());
         }
@@ -47,23 +50,22 @@ public class MenuManager : MonoBehaviour
     }
     private IEnumerator LoadGameAfterSceneLoad()
     {
+        SceneManager.LoadScene("RoomGeneration");
         // Espera un frame para asegurar que la escena se haya cargado.
-        yield return null;
-
-        // Encuentra los componentes necesarios.
-        RoomManager roomManager = FindObjectOfType<RoomManager>();
-        PlayerPosition player = FindObjectOfType<PlayerPosition>();
-        Properties playerProperties = player.GetComponent<Properties>();
-
-        // Carga el juego.
-        SaveLoadManager.Instance.LoadGame(roomManager, player, playerProperties);
+        yield return new WaitForSeconds(0.2f);
+        Debug.Log("Nigs");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Nigs2" + player.GetComponent<Properties>().Health);
+        Debug.Log("Nigs3");
+        SaveLoadManager.Instance.LoadGame(/*roomManager, playerPos,*/ player);
+        Debug.Log("Nigs4");
     }
     public void quitGame()
     {
         Application.Quit();
     }
 
-
+      
 
     public void LoadingScreen(string sceneName)
     {
@@ -86,4 +88,5 @@ public class MenuManager : MonoBehaviour
     {
         AudioManager.instance.PlayClick();
     }
+
 }

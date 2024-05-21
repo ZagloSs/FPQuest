@@ -18,16 +18,19 @@ public class anim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.GetComponent<SpriteRenderer>().enabled = false;
-        player.GetComponent<Movement>().enabled = false;
-        canvas.SetActive(false);
-        intro.SetActive(true);
+        if (!GameManager.instance.isLoaded)
+        {
+            player.GetComponent<SpriteRenderer>().enabled = false;
+            player.GetComponent<Movement>().enabled = false;
+            canvas.SetActive(false);
+            intro.SetActive(true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (intro)
+        if (intro && !GameManager.instance.isLoaded)
         {
             if (timer > 2f && intro.GetComponent<SpriteRenderer>().color.r > 0)
             {

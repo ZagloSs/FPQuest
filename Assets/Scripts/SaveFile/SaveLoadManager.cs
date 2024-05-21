@@ -25,6 +25,7 @@ public class SaveLoadManager : MonoBehaviour
     private void Start()
     {
         saveFilePath = Path.Combine(Application.persistentDataPath, "savegame.json");
+        
     }
 
     public bool SaveFileExists()
@@ -46,8 +47,10 @@ public class SaveLoadManager : MonoBehaviour
                 health = playerProperties.Health,
                 damage = playerProperties.Damage,
                 speed = playerProperties.Speed,
-                attackSpeed = playerProperties.AttSpeed
-            },
+                attackSpeed = playerProperties.AttSpeed,
+                atttype = GameObject.FindGameObjectWithTag("Player").GetComponent<tipoDeAtaque>().tipoAtaque
+
+    },
             mapData = mapData
         };
 
@@ -57,22 +60,22 @@ public class SaveLoadManager : MonoBehaviour
         Debug.Log("Game saved.");
     }
 
-    public void LoadGame(RoomManager roomManager, PlayerPosition player, Properties playerProperties)
+    public void LoadGame(/*RoomManager roomManager, PlayerPosition playerPos,*/ GameObject player)
     {
         if (SaveFileExists())
         {
             string json = File.ReadAllText(saveFilePath);
             GameState gameState = JsonUtility.FromJson<GameState>(json);
 
-            roomManager.CurrentLevel = gameState.level;
-            roomManager.SetCompletedRooms(gameState.completedRooms);
-            player.RoomIndex = gameState.playerRoom;
-            playerProperties.Health = gameState.playerStats.health;
-            playerProperties.Damage = gameState.playerStats.damage;
-            playerProperties.Speed = gameState.playerStats.speed;
-            playerProperties.AttSpeed = gameState.playerStats.attackSpeed;
+            //roomManager.CurrentLevel = gameState.level;
+            //roomManager.SetCompletedRooms(gameState.completedRooms);
+            // playerPos.RoomIndex = JsonUtility.FromJson<GameState>(json).playerRoom;
+            player.GetComponent<Properties>().Health = gameState.playerStats.health;
+            player.GetComponent<Properties>().Damage = gameState.playerStats.damage;
+            player.GetComponent<Properties>().Speed = gameState.playerStats.speed;
+            player.GetComponent<Properties>().AttSpeed = gameState.playerStats.attackSpeed;
 
-            roomManager.LoadMapData(gameState.mapData);
+            //roomManager.LoadMapData(gameState.mapData);
 
             Debug.Log("Game loaded.");
         }

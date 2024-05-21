@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<string, float> properties;
     private Sprite healtrait;
 
+    public bool isLoaded = false;
     private void Awake()
     {
         if (!instance)
@@ -86,4 +87,6 @@ public class GameManager : MonoBehaviour
         pickUpCanvas.GetComponentInChildren<TextMeshProUGUI>().text = str;
         pickUpCanvas.SetActive(true);
     }
+
+    
 }

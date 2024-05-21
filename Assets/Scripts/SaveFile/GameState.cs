@@ -20,6 +20,7 @@ public class PlayerStats
     public float damage;
     public float speed;
     public float attackSpeed;
+    public float atttype;
 }
 
 [System.Serializable]

@@ -47,40 +47,46 @@ public class RoomManager : MonoBehaviour
         roomQueue = new Queue<Vector2Int>();
 
         Vector2Int initialRoomIndex = new Vector2Int(gridSizeX / 2, gridSizeY / 2);
-        StartRoomGenerationFromRoom(initialRoomIndex);
+        if(!GameManager.instance.isLoaded)
+        {
+            StartRoomGenerationFromRoom(initialRoomIndex);
+        }
     }
 
     private void Update()
     {
-        if (roomQueue.Count > 0 && roomCount < maxRooms && !generationComplete)
+        if (!GameManager.instance.isLoaded)
         {
-            Vector2Int roomIndex = roomQueue.Dequeue();
-            int gridX = roomIndex.x;
-            int gridY = roomIndex.y;
+            if (roomQueue.Count > 0 && roomCount < maxRooms && !generationComplete)
+            {
+                Vector2Int roomIndex = roomQueue.Dequeue();
+                int gridX = roomIndex.x;
+                int gridY = roomIndex.y;
 
-            TryGenerateRoom(new Vector2Int(gridX - 1, gridY));
-            TryGenerateRoom(new Vector2Int(gridX + 1, gridY));
-            TryGenerateRoom(new Vector2Int(gridX, gridY - 1));
-            TryGenerateRoom(new Vector2Int(gridX, gridY + 1));
-        }
-        else if (roomCount < minRooms)
-        {
-            Debug.Log("Regenerating rooms");
-            RegenerateRooms();
-        }
-        else if (!generationComplete)
-        {
-            generationComplete = true;
-            Debug.Log($"Generation Complete, {roomCount} rooms created");
-        }
-        if (roomCount >= minRooms && !hasGeneratedItemRoom)
-        {
-            GenerateItemRoom();
-        }
+                TryGenerateRoom(new Vector2Int(gridX - 1, gridY));
+                TryGenerateRoom(new Vector2Int(gridX + 1, gridY));
+                TryGenerateRoom(new Vector2Int(gridX, gridY - 1));
+                TryGenerateRoom(new Vector2Int(gridX, gridY + 1));
+            }
+            else if (roomCount < minRooms)
+            {
+                Debug.Log("Regenerating rooms");
+                RegenerateRooms();
+            }
+            else if (!generationComplete)
+            {
+                generationComplete = true;
+                Debug.Log($"Generation Complete, {roomCount} rooms created");
+            }
+            if (roomCount >= minRooms && !hasGeneratedItemRoom)
+            {
+                GenerateItemRoom();
+            }
 
-        if (generationComplete && !hasGeneratedBossRoom)
-        {
-            GenerateBossRoom();
+            if (generationComplete && !hasGeneratedBossRoom)
+            {
+                GenerateBossRoom();
+            }
         }
     }
 
