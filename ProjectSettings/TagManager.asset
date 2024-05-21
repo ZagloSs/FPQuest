@@ -11,6 +11,8 @@ TagManager:
   - RoomFill
   - AudioManager
   - RoomManager
+  - BP
+  - Wall
   layers:
   - Default
   - TransparentFX

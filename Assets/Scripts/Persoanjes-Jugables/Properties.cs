@@ -96,8 +96,13 @@ public class Properties : MonoBehaviour
     // Velocidad de Ataque
     public void ModifyAttackSpeed(float modifier)
     {
-        AttSpeed += modifier;
-        Debug.Log("Velocidad de ataque del jugador modificada: " + AttSpeed);
+        if(modifier < 0 && AttSpeed > 0.75)
+        {
+            AttSpeed += modifier;
+            if (AttSpeed < 0.75f)
+                AttSpeed = 0.75f;
+            Debug.Log("Velocidad de ataque del jugador modificada: " + AttSpeed);
+        }
     }
 
     // Daño enemigo hacia jugador

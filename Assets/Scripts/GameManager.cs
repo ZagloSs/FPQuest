@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private Dictionary<string, float> properties;
     private Sprite healtrait;
 
+    public int spawnedEnemies = 0;
+
     private void Awake()
     {
         if (!instance)

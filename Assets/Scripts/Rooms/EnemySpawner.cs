@@ -5,21 +5,19 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] int maxEnemyCount;
-    [SerializeField] int minEnemyCount;
 
-    private int roomWidth = 20;
-    private int roomHeight = 12;
+
 
     private Room room;
     RoomManager roomManager;
     private PlayerPosition player;
     private bool enemiesSpawned = false;
-    private List<GameObject> spawnedEnemies = new List<GameObject>();
+    private bool soundOnce = false;
 
     private void Start()
     {
-        room = GetComponent<Room>();
+        
+        room = GetComponentInParent<Room>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPosition>();
         roomManager = GameObject.FindGameObjectWithTag("RoomManager").GetComponent<RoomManager>();
     }
@@ -28,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (roomManager.generationComplete)
         {
-            if (room.IsPlayerInRoom(player) && !room.completed && !enemiesSpawned && room.name != "BossRoom" && room.name != "ItemRoom" && room.name != "StartRoom")
+            if (room.IsPlayerInRoom(player) && !room.completed && !enemiesSpawned)
             {
                 SpawnEnemies();
                 enemiesSpawned = true;
@@ -46,25 +44,13 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        int enemyCount = Random.Range(minEnemyCount, maxEnemyCount + 1);
-        for (int i = 0; i < enemyCount; i++)
-        {
-            // Find the RoomFill object in the room
-            Transform roomFill = room.transform.Find("RoomFill");
+        GameManager.instance.spawnedEnemies++;
+        Instantiate(enemyPrefab, transform.position, transform.rotation);
 
-            // Generate a random position within the room
-            Vector3 spawnPosition = roomFill.position;
-            spawnPosition.x += Random.Range(-roomWidth / 2f + 2f, roomWidth / 2f - 2f);
-            spawnPosition.y += Random.Range(-roomHeight / 2f + 2f, roomHeight / 2f - 2f);
-
-            GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-            spawnedEnemies.Add(enemy);
-        }
     }
 
     private bool AllEnemiesDefeated()
     {
-        spawnedEnemies.RemoveAll(enemy => enemy == null);  // Remove null references (destroyed enemies)
-        return spawnedEnemies.Count == 0;
+        return GameManager.instance.spawnedEnemies == 0;
     }
 }

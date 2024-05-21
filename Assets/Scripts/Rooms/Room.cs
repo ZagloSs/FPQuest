@@ -50,6 +50,7 @@ public class Room : MonoBehaviour
     // Método para abrir las puertas
     public void OpenDoors()
     {
+
         foreach (GameObject door in doors)
         {
             door.GetComponent<SpriteRenderer>().sprite = openDoorSprite;

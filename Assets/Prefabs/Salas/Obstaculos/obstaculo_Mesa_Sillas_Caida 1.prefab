@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6263172788286256203}
   - component: {fileID: 4309127026299537558}
   - component: {fileID: 4027296858702930335}
+  - component: {fileID: 8541152190980959307}
   m_Layer: 0
   m_Name: obstaculo_silla_caida
   m_TagString: Untagged
@@ -130,6 +131,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24, y: 0.15}
   m_EdgeRadius: 0
+--- !u!50 &8541152190980959307
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505967862764577813}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4283596399701403929
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +169,7 @@ GameObject:
   - component: {fileID: 2251898566790787492}
   - component: {fileID: 4427780799593118398}
   - component: {fileID: 564549454394534541}
+  - component: {fileID: 5656356687467166253}
   m_Layer: 0
   m_Name: obstaculo_chair
   m_TagString: Untagged
@@ -260,6 +289,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23, y: 0.18}
   m_EdgeRadius: 0
+--- !u!50 &5656356687467166253
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4283596399701403929}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7273114877329794878
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3362653360976544307}
   m_Layer: 0
-  m_Name: obstaculo_Mesa_Sillas_Caida
+  m_Name: obstaculo_Mesa_Sillas_Caida 1
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,6 +361,7 @@ GameObject:
   - component: {fileID: 8984852439166277817}
   - component: {fileID: 2752677770757564518}
   - component: {fileID: 4376264592574321254}
+  - component: {fileID: 1502473410528850448}
   m_Layer: 0
   m_Name: obstaculo_DobleMesa
   m_TagString: Untagged
@@ -424,3 +481,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.24}
   m_EdgeRadius: 0
+--- !u!50 &1502473410528850448
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551954941350883436}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -31,6 +31,8 @@ public class EnemyController : MonoBehaviour
         vida -= daño;
         if (vida <= 0)
         {
+            if(GameManager.instance.spawnedEnemies>0)
+                GameManager.instance.spawnedEnemies--;
             StartCoroutine(Death());
         }
     }

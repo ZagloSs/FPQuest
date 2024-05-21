@@ -20,9 +20,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip magicSpelled;
     [SerializeField] private AudioClip meleeAttackSound;
     [SerializeField] private AudioClip monsterHitted;
-    [SerializeField] private AudioClip merodeadorDeath;
-    [SerializeField] private AudioClip flyDeath;
-    [SerializeField] private AudioClip eyeDeath;
+    [SerializeField] private AudioClip openDoor;
+
 
 
     private bool isJugar = true;
@@ -113,6 +112,11 @@ public class AudioManager : MonoBehaviour
     public void PlayMeleeAtt()
     {
         SFXSource.PlayOneShot(meleeAttackSound);
+    }
+
+    public void PlayOpenDoor()
+    {
+        SFXSource.PlayOneShot(openDoor);
     }
 
     public void PlayEnemyHitted()

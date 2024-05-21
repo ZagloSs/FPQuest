@@ -9,7 +9,6 @@ public class FlyMovement : MonoBehaviour
     public float speed = 1f; // Velocidad Enemigo
     private GameObject player; // Bucar al player
     private SpriteRenderer spriteRenderer; // Referencia al componente SpriteRenderer del enemigo
-    private bool isPlayerInRange = false;
 
     private void Start()
     {
@@ -18,7 +17,7 @@ public class FlyMovement : MonoBehaviour
     }
     private void Update()
     {
-        if (player && isPlayerInRange)
+        if (player)
         {
             // Movimiento del enemigo hacia el jugador
             Vector2 direction = (player.transform.position - transform.position).normalized;
@@ -30,22 +29,5 @@ public class FlyMovement : MonoBehaviour
                 spriteRenderer.flipX = true;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject == player)
-        {
-            isPlayerInRange = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.gameObject == player)
-        {
-            isPlayerInRange = false;
-        }
-    }
-
 
 }

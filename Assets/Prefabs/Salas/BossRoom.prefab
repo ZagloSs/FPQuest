@@ -109,6 +109,9 @@ PrefabInstance:
     - {fileID: 6301800852986771984, guid: ed66e1ebfda6e8848a8b39b130a35a39, type: 3}
     - {fileID: 1326966878544161552, guid: ed66e1ebfda6e8848a8b39b130a35a39, type: 3}
     - {fileID: 4326281662700524356, guid: ed66e1ebfda6e8848a8b39b130a35a39, type: 3}
+    - {fileID: 3608564890134904108, guid: ed66e1ebfda6e8848a8b39b130a35a39, type: 3}
+    - {fileID: 264150875610538203, guid: ed66e1ebfda6e8848a8b39b130a35a39, type: 3}
+    - {fileID: 439027384250808097, guid: ed66e1ebfda6e8848a8b39b130a35a39, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed66e1ebfda6e8848a8b39b130a35a39, type: 3}

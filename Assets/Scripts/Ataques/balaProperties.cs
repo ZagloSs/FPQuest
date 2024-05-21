@@ -28,11 +28,16 @@ public class balaProperties : MonoBehaviour
             enemy.TomarDaño(Properties.instance.Damage);
             gameObject.SetActive(false);
 
-            //Reiniciamos los valores a 0
-            transform.rotation = Quaternion.Euler(0,0,0);
-            transform.position = Vector3.zero;
-            rb.velocity = Vector2.zero;
+  
+            
+        }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            gameObject.SetActive(false);
         }
     }
+
+
 
 }

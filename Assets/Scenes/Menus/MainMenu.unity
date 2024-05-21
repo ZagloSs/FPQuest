@@ -1741,9 +1741,7 @@ MonoBehaviour:
   magicSpelled: {fileID: 8300000, guid: 59261c083b67bb44592d950939a09428, type: 3}
   meleeAttackSound: {fileID: 8300000, guid: ae362b88f7ded6b4b9763155253d4eee, type: 3}
   monsterHitted: {fileID: 8300000, guid: 9ebc95bb89afac240b5a481c57042978, type: 3}
-  merodeadorDeath: {fileID: 8300000, guid: 8535c34f11b7a984990f2a37d73c61a1, type: 3}
-  flyDeath: {fileID: 8300000, guid: efb3c09080ee4f34e955c351d6520d1a, type: 3}
-  eyeDeath: {fileID: 8300000, guid: 45b50defcfe13994db8cbbcf8d91961f, type: 3}
+  openDoor: {fileID: 8300000, guid: 39fbf81458fc60b42879be4c03534c72, type: 3}
 --- !u!1 &1198029801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2843,6 +2841,7 @@ MonoBehaviour:
   LoadingScene: {fileID: 1424003905}
   healthBar: {fileID: 0}
   pickUpCanvas: {fileID: 0}
+  spawnedEnemies: 0
 --- !u!1 &1842694756
 GameObject:
   m_ObjectHideFlags: 0

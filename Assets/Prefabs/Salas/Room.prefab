@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7627645267813852417}
   m_Layer: 0
   m_Name: BottomWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,7 +270,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3041457453640957980}
   - component: {fileID: 3751993882934555887}
-  - component: {fileID: 6396682614856086046}
   - component: {fileID: 2896359396055992408}
   m_Layer: 0
   m_Name: Room
@@ -322,21 +321,6 @@ MonoBehaviour:
   openDoorSprite: {fileID: 1889706236, guid: 523b27a7263b2504bb2f978608fde19d, type: 3}
   closedDoorSprite: {fileID: -378854317, guid: 523b27a7263b2504bb2f978608fde19d, type: 3}
   completed: 0
---- !u!114 &6396682614856086046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3898833184905089846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1090ab711e3bb640a716c753e67edb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6929958692872619665, guid: 30fb212fba7f1aa4d99f3921ba31f0f1, type: 3}
-  maxEnemyCount: 5
-  minEnemyCount: 1
 --- !u!61 &2896359396055992408
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -395,7 +379,7 @@ GameObject:
   - component: {fileID: 1362964470600772307}
   m_Layer: 0
   m_Name: RightWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,7 +835,7 @@ GameObject:
   - component: {fileID: 5256025861214781534}
   m_Layer: 0
   m_Name: LeftWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1111,7 +1095,7 @@ GameObject:
   - component: {fileID: 6959963794442194004}
   m_Layer: 0
   m_Name: TopWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

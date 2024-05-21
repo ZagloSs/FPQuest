@@ -101,7 +101,7 @@ MonoBehaviour:
   damageModifier: 4
   healthModifier: 4
   speedModifier: 4
-  attackSpeedModifier: 4
+  attackSpeedModifier: -0.4
 --- !u!61 &-8403474711246793985
 BoxCollider2D:
   m_ObjectHideFlags: 0

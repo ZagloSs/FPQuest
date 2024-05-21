@@ -6,13 +6,16 @@ using UnityEngine;
 public class Magia : MonoBehaviour
 {
 
-    [SerializeField] private GameObjectPool pool;
+    private GameObjectPool pool;
     private bool puedeDisparar = true;
     private float timer = 0f;
     private float bulletcooldown = 1f;
-    private float force = 2f;
+    private float force = 8f;
 
-
+    private void Start()
+    {
+        pool = GameObject.FindGameObjectWithTag("BP").GetComponent<GameObjectPool>();
+    }
 
     // Update is called once per frame
     void Update()

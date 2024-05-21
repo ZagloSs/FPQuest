@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17db858c01eff5645948e5af3790c844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 15
+  vida: 30
   deathSound: {fileID: 8300000, guid: 8535c34f11b7a984990f2a37d73c61a1, type: 3}
   damage: 10
   knockbackForce: 16
@@ -181,11 +181,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948946892794690098}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1042.32
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -199,7 +199,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4268887180590928230
 MonoBehaviour:
   m_ObjectHideFlags: 0

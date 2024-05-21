@@ -37,7 +37,7 @@ public class OjoBehaviour : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         animator.SetBool("Abrir", false);
         canTp = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         animator.SetBool("Abrir", true);
         GetComponent<BoxCollider2D>().enabled = true;
         StartCoroutine(canShoot());
