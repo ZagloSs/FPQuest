@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ececfbe69baf6479947f669e1f6441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageModifier: 10
-  healthModifier: 10
-  speedModifier: 0.5
-  attackSpeedModifier: 10
+  damageModifier: 0.2
+  healthModifier: 0.7
+  speedModifier: -0.4
+  attackSpeedModifier: -0.1
 --- !u!212 &5518162727185177116
 SpriteRenderer:
   m_ObjectHideFlags: 0

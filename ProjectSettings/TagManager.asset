@@ -13,6 +13,7 @@ TagManager:
   - RoomManager
   - BP
   - Wall
+  - BossDoor
   layers:
   - Default
   - TransparentFX

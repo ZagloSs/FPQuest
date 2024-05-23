@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7306069591949955580}
   m_Layer: 0
   m_Name: bocaton
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ececfbe69baf6479947f669e1f6441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageModifier: -5
-  healthModifier: 10
-  speedModifier: 3
-  attackSpeedModifier: 0.5
+  damageModifier: 0
+  healthModifier: 1.3
+  speedModifier: 0
+  attackSpeedModifier: 0.2
 --- !u!61 &7306069591949955580
 BoxCollider2D:
   m_ObjectHideFlags: 0

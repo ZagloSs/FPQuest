@@ -123,9 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17db858c01eff5645948e5af3790c844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 30
+  vida: 4
   deathSound: {fileID: 8300000, guid: 8535c34f11b7a984990f2a37d73c61a1, type: 3}
-  damage: 10
+  damage: 1.5
   knockbackForce: 16
   ps: {fileID: 8665457956922528012}
 --- !u!61 &1048922673496918919
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a3bbfa7355c6546b5e71283911d934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
 --- !u!1 &8683729613931684359
 GameObject:
   m_ObjectHideFlags: 0

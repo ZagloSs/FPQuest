@@ -23,11 +23,13 @@ public class DoorCollisionHandler : MonoBehaviour
 
     private Camera mainCamera;
     private Transform playerTransform;
+    private RoomManager roomManager;
 
     void Start()
     {
         mainCamera = Camera.main;
         playerTransform = transform;
+        roomManager = GameObject.FindGameObjectsWithTag("RoomManager")[0].GetComponent<RoomManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -44,6 +46,10 @@ public class DoorCollisionHandler : MonoBehaviour
                 // Move the player towards the door
                 StartCoroutine(MovePlayerTowardsDoor(doorType));
             }
+        }
+        if (collision.gameObject.CompareTag("BossDoor"))
+        {
+            roomManager.enteredBoosExit = true;
         }
     }
 

@@ -5,7 +5,9 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     [SerializeField] GameObject roomPrefab;
-    [SerializeField] GameObject[] fillPrefab;
+    [SerializeField] GameObject[] fillPrefabLevel1;
+    [SerializeField] GameObject[] fillPrefabLevel2;
+    //[SerializeField] GameObject[] fillPrefabLevel1;
     [SerializeField] private int maxRooms = 15;
     [SerializeField] private int minRooms = 10;
     [SerializeField] private int gridSizeX = 10;
@@ -13,7 +15,7 @@ public class RoomManager : MonoBehaviour
 
     [SerializeField] GameObject[] itemPrefabs;
     [SerializeField] GameObject itemPedestal;
-    [SerializeField] GameObject bossRoomPrefab;
+    [SerializeField] GameObject[] bossRoomPrefabs;
 
     [SerializeField] GameObject enemyPrefab;
 
@@ -23,6 +25,8 @@ public class RoomManager : MonoBehaviour
     private int roomWidth = 20;
     private int roomHeight = 12;
 
+    public int gameLevel = 1;
+    public bool enteredBoosExit = false;
 
     private List<GameObject> roomObjects = new List<GameObject>();
 
@@ -75,6 +79,12 @@ public class RoomManager : MonoBehaviour
         {
             GenerateBossRoom();
         }
+        if (enteredBoosExit)
+        {
+            enteredBoosExit = false;
+            gameLevel++;
+            RegenerateRooms();
+        }
     }
     private void StartRoomGenerationFromRoom(Vector2Int roomIndex)
     {
@@ -87,8 +97,15 @@ public class RoomManager : MonoBehaviour
         var initialRoom = Instantiate(roomPrefab, GetPositionFromGridIndex(roomIndex), Quaternion.identity);
 
         Transform roomFill = initialRoom.transform.Find("RoomFill");
-
-        GameObject fill = Instantiate(fillPrefab[0], roomFill.position, Quaternion.identity, roomFill);
+        switch(gameLevel)
+        {
+            case 1:
+                GameObject fill1 = Instantiate(fillPrefabLevel1[0], roomFill.position, Quaternion.identity, roomFill);
+                break;
+            case 2:
+                GameObject fill2 = Instantiate(fillPrefabLevel2[0], roomFill.position, Quaternion.identity, roomFill);
+                break;
+        }
 
         initialRoom.name = "StartRoom";
         initialRoom.GetComponent<Room>().RoomIndex = roomIndex;
@@ -126,7 +143,15 @@ public class RoomManager : MonoBehaviour
 
         Transform roomFill = newRoom.transform.Find("RoomFill");
 
-        GameObject fill = Instantiate(fillPrefab[Random.Range(1, fillPrefab.Length)], roomFill.position, Quaternion.identity, roomFill);
+        switch(gameLevel)
+        {
+            case 1:
+                GameObject fill1 = Instantiate(fillPrefabLevel1[Random.Range(1, fillPrefabLevel1.Length)], roomFill.position, Quaternion.identity, roomFill);
+                break;
+            case 2:
+                GameObject fill2 = Instantiate(fillPrefabLevel2[Random.Range(1, fillPrefabLevel2.Length)], roomFill.position, Quaternion.identity, roomFill);
+                break;
+        }
 
         newRoom.GetComponent<Room>().RoomIndex = roomIndex;
         newRoom.name = $"Room-{roomCount}";
@@ -153,6 +178,9 @@ public class RoomManager : MonoBehaviour
 
         Vector2Int initialRoomIndex = new Vector2Int(gridSizeX / 2, gridSizeY / 2);
         StartRoomGenerationFromRoom(initialRoomIndex);
+        GameObject player = GameObject.Find("Player");
+        player.transform.position = new Vector3(0, 0, 0);
+        Camera.main.transform.position = new Vector2(0, 0);
     }
     void OpenDoors(GameObject room, int x, int y)
     {
@@ -239,7 +267,16 @@ public class RoomManager : MonoBehaviour
         item.name = "Item";
         item.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         GameObject pedestal = Instantiate(itemPedestal, itemRoom.transform.position, Quaternion.identity, roomFill);
-        GameObject fill = Instantiate(fillPrefab[0], roomFill.position, Quaternion.identity, roomFill);
+
+        switch(gameLevel)
+        {
+            case 1:
+                GameObject fill1 = Instantiate(fillPrefabLevel1[0], roomFill.position, Quaternion.identity, roomFill);
+                break;
+            case 2:
+                GameObject fill2 = Instantiate(fillPrefabLevel2[0], roomFill.position, Quaternion.identity, roomFill);
+                break;
+        }
         
 
     }
@@ -258,8 +295,12 @@ public class RoomManager : MonoBehaviour
         // Clear the contents of the previous room
         ClearRoom(roomFill);
 
+        //Destroy the doors in the room
+        Transform doors = bossRoom.transform.Find("Doors");
+        Destroy(doors.gameObject);
+
         // Instantiate the boss room prefab as a child of the room
-        GameObject bossRoomInstance = Instantiate(bossRoomPrefab, roomFill.position, Quaternion.identity, roomFill);
+        GameObject bossRoomInstance = Instantiate(bossRoomPrefabs[gameLevel-1], roomFill.position, Quaternion.identity, roomFill);
     }
 
     private void ClearRoom(Transform room)

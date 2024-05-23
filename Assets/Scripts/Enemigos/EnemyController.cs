@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float vida;
     [SerializeField] private AudioClip deathSound;
 
-    public int damage = 10; // Daño a jugador
+    public float damage = 10; // Daño a jugador
     public float knockbackForce = 16f; //Retroceso
 
     [SerializeField] private ParticleSystem ps;

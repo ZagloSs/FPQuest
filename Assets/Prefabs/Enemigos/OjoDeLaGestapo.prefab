@@ -5011,9 +5011,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17db858c01eff5645948e5af3790c844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 20
+  vida: 1
   deathSound: {fileID: 8300000, guid: 45b50defcfe13994db8cbbcf8d91961f, type: 3}
-  damage: 2
+  damage: 0.5
   knockbackForce: 0
   ps: {fileID: 2508828567903601395}
 --- !u!114 &5434461239124004075
