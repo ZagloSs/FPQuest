@@ -6,8 +6,8 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     [Header("Modifiers")]
-    [SerializeField] private float damageModifier = 0;
     [SerializeField] private float healthModifier = 0;
+    [SerializeField] private float damageModifier = 0;
     [SerializeField] private float speedModifier = 0f;
     [SerializeField] private float attackSpeedModifier = 0f;
 
