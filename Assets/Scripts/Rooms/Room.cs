@@ -12,14 +12,14 @@ public class Room : MonoBehaviour
     [SerializeField] GameObject rightDoor;
 
     public GameObject[] doors;  // Array de puertas de la habitación
-    public Sprite openDoorSprite;  // Sprite de puerta abierta (Puertas_0)
-    public Sprite closedDoorSprite;  // Sprite de puerta cerrada (Puertas_1)
+
     public bool completed = false;  // Estado de la habitación
 
     public Vector2Int RoomIndex { get; set; }
 
     public void SpawnDoor(Vector2Int direction)
     {
+
         if (direction == Vector2Int.up)
         {
             topDoor.SetActive(true);
@@ -36,13 +36,14 @@ public class Room : MonoBehaviour
         {
             rightDoor.SetActive(true);
         }
+        OpenDoors();
     }
     // Método para cerrar las puertas
     public void CloseDoors()
     {
         foreach (GameObject door in doors)
         {
-            door.GetComponent<SpriteRenderer>().sprite = closedDoorSprite;
+            door.GetComponent<Animator>().SetBool("Abrir", false);
             door.GetComponent<BoxCollider2D>().enabled = false;  // Activa el collider para cerrar la puerta
         }
     }
@@ -53,7 +54,7 @@ public class Room : MonoBehaviour
 
         foreach (GameObject door in doors)
         {
-            door.GetComponent<SpriteRenderer>().sprite = openDoorSprite;
+            door.GetComponent<Animator>().SetBool("Abrir", true);
             door.GetComponent<BoxCollider2D>().enabled = true;  // Desactiva el collider para abrir la puerta
         }
     }
