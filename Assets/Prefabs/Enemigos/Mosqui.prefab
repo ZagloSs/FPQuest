@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8984497981007918240}
   - component: {fileID: 7003484636162294157}
   - component: {fileID: 3368500005714146411}
+  - component: {fileID: 7605064716976586471}
   m_Layer: 0
   m_Name: Mosqui
   m_TagString: Untagged
@@ -122,9 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17db858c01eff5645948e5af3790c844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 0
+  vida: 3
   deathSound: {fileID: 8300000, guid: efb3c09080ee4f34e955c351d6520d1a, type: 3}
-  damage: 10
+  damage: 1
   knockbackForce: 16
   ps: {fileID: 0}
 --- !u!61 &7003484636162294157
@@ -199,6 +200,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7605064716976586471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986068642901618078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4a87c0ec3f4cd4ea2e26455fc56190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.4
 --- !u!1 &1199139715739818183
 GameObject:
   m_ObjectHideFlags: 0

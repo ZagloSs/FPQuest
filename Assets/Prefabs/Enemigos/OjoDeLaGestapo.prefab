@@ -5013,7 +5013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 1
   deathSound: {fileID: 8300000, guid: 45b50defcfe13994db8cbbcf8d91961f, type: 3}
-  damage: 0.5
+  damage: 0.1
   knockbackForce: 0
   ps: {fileID: 2508828567903601395}
 --- !u!114 &5434461239124004075
