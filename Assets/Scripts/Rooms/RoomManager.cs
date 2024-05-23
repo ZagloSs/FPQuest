@@ -181,6 +181,7 @@ public class RoomManager : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         player.transform.position = new Vector3(0, 0, 0);
         Camera.main.transform.position = new Vector2(0, 0);
+        Camera.main.nearClipPlane = 0;
     }
     void OpenDoors(GameObject room, int x, int y)
     {
