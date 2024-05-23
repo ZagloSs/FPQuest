@@ -481,6 +481,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 347308214410476281}
     m_Modifications:
+    - target: {fileID: 2251898566790787492, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3362653360976544307, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.26
@@ -540,6 +544,14 @@ PrefabInstance:
     - target: {fileID: 7273114877329794878, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
       propertyPath: m_Name
       value: obstaculo_Mesa_Sillas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478166011097587463, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984852439166277817, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -621,6 +633,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 347308214410476281}
     m_Modifications:
+    - target: {fileID: 2251898566790787492, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3362653360976544307, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.26
@@ -680,6 +696,14 @@ PrefabInstance:
     - target: {fileID: 7273114877329794878, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
       propertyPath: m_Name
       value: obstaculo_Mesa_Sillas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478166011097587463, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984852439166277817, guid: 6c7a4be02704f674a95a669e50e3c2db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
