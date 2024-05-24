@@ -84,7 +84,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3, y: 0.41}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -122,8 +122,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0016014278, y: 0.012811571}
-  m_Size: {x: 0.32882625, y: 0.46124643}
+  m_Offset: {x: 0.00054468215, y: -0.017690033}
+  m_Size: {x: 0.27871647, y: 0.3632056}
   m_Direction: 0
 --- !u!50 &1823998593494795659
 Rigidbody2D:
@@ -187,7 +187,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2150835351238342592}
   moveDir: {x: 0, y: 0}
-  lastMovedVector: {x: 0, y: 0}
 --- !u!114 &7852586295335480142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,11 +199,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97946a9b04db0f04f88bcf44c12e9945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exp1: {fileID: 0}
+  DeathSound: {fileID: 0}
   Health: 0
   Damage: 0
   Speed: 0
   AttSpeed: 0
   healthBar: {fileID: 0}
+  noDeletingWhenDying: []
 --- !u!114 &-1100400021201999217
 MonoBehaviour:
   m_ObjectHideFlags: 0

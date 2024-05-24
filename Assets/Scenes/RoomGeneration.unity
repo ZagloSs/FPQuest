@@ -495,6 +495,7 @@ MonoBehaviour:
   - {fileID: 381536782758281193, guid: b89fb6321d260f54b9779e6cdd1606f9, type: 3}
   enemyPrefab: {fileID: 6929958692872619665, guid: 30fb212fba7f1aa4d99f3921ba31f0f1, type: 3}
   gameLevel: 1
+  enteredBoosExit: 0
   generationComplete: 0
 --- !u!4 &398604918
 Transform:
@@ -868,8 +869,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0016014278, y: 0.012811571}
-  m_Size: {x: 0.32882625, y: 0.46124643}
+  m_Offset: {x: 0.0028283068, y: -0.062028967}
+  m_Size: {x: 0.29201952, y: 0.2968431}
   m_Direction: 0
 --- !u!114 &612475175
 MonoBehaviour:
@@ -998,7 +999,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1145199061, guid: 4767eade5e7610b4692e9a294f05117a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
