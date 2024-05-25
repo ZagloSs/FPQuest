@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float vida;
     [SerializeField] private AudioClip deathSound;
 
+    private Color initialColor;
     public float damage = 10; // Daño a jugador
     public float knockbackForce = 16f; //Retroceso
 
@@ -19,8 +20,10 @@ public class EnemyController : MonoBehaviour
     
     private void Start()
     {
+
         // Buscar el objeto del jugador por etiqueta
         spriteRenderer = GetComponent<SpriteRenderer>(); // Obtener el componente SpriteRenderer del enemigo
+        initialColor = spriteRenderer.color;
        
     }
 
@@ -53,6 +56,6 @@ public class EnemyController : MonoBehaviour
     {
         spriteRenderer.color = new Color(1 , 0, 0);
         yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = initialColor;
     }
 }
