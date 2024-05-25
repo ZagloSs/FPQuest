@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MeordeadorBoss : MonoBehaviour
 {
     private GameObjectPool pool;
     private GameObject player;
+    [SerializeField] private Slider HealthBar;
 
     private float timer = 0;
 
@@ -25,6 +27,9 @@ public class MeordeadorBoss : MonoBehaviour
             StartCoroutine(attack());
         }
         timer += Time.deltaTime;
+
+        HealthBar.value = GetComponent<EnemyController>().vida;
+
     }
 
 

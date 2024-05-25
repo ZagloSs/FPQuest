@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float vida;
+    public float vida;
     [SerializeField] private AudioClip deathSound;
 
     private Color initialColor;

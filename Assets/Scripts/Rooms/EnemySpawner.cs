@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     RoomManager roomManager;
     private PlayerPosition player;
     private bool enemiesSpawned = false;
-    private bool soundOnce = false;
+
 
     private void Start()
     {
