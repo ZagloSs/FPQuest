@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject LoadingScene;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private GameObject pickUpCanvas;
-    private AnimatorController animator;
+    private RuntimeAnimatorController animator;
     private Dictionary<string, float> properties;
     private Sprite healtrait;
 
@@ -69,11 +68,11 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void setAnimator(AnimatorController animator)
+    public void setAnimator(RuntimeAnimatorController animator)
     {
         this.animator = animator;
     }
-    public AnimatorController GetAnimator()
+    public RuntimeAnimatorController GetAnimator()
     {
         return this.animator;
     }
