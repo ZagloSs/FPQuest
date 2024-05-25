@@ -6337,15 +6337,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331889899403589756, guid: a7e662a8aa4dc5149bb309548eb75574, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4331889899403589756, guid: a7e662a8aa4dc5149bb309548eb75574, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6866171809919518211, guid: a7e662a8aa4dc5149bb309548eb75574, type: 3}
       propertyPath: m_Name
       value: MerodeadorBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866171809919518211, guid: a7e662a8aa4dc5149bb309548eb75574, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6372,6 +6376,87 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1001 &2976393327222473213
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5722702323167586025, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722702323167586025, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507811913569045450, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7924528
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507811913569045450, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.15325737
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507811913569045450, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5318409
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031577551768937697, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6231959
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031577551768937697, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.49174777
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031577551768937697, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031577551768937697, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031577551768937697, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031577551768937697, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031577551768937697, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031577551768937697, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031577551768937697, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031577551768937697, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7534137234689076689, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_Name
+      value: MosquiBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7534137234689076689, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc6a804ddde541f4fa5d39dd6218d9fb, type: 3}
 --- !u!95 &5621871771036369457
 Animator:
   serializedVersion: 5
@@ -6484,3 +6569,4 @@ SceneRoots:
   - {fileID: 1943677662}
   - {fileID: 1915323304}
   - {fileID: 565923021017696392}
+  - {fileID: 2976393327222473213}
