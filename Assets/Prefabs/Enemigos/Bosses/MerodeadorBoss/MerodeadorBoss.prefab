@@ -5184,6 +5184,7 @@ GameObject:
   - component: {fileID: 6659104583120481066}
   - component: {fileID: 3247922214517883600}
   - component: {fileID: 3253932214925078440}
+  - component: {fileID: -3549069709007533676}
   m_Layer: 0
   m_Name: MerodeadorBoss
   m_TagString: Enemy
@@ -5411,6 +5412,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 4257249611042998631}
+--- !u!114 &-3549069709007533676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6866171809919518211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b308352c9a3e1741aaee293a29c4007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6925823116863854676
 GameObject:
   m_ObjectHideFlags: 0

@@ -296,7 +296,7 @@ public class RoomManager : MonoBehaviour
     {
         hasGeneratedBossRoom = true;
 
-        // Choose a random room from the existing rooms
+        // Choose the last room from the existing rooms
         GameObject bossRoom = roomObjects[roomObjects.Count - 1];
         roomObjects[roomObjects.Count - 1].name = "BossRoom";
 
@@ -312,6 +312,9 @@ public class RoomManager : MonoBehaviour
 
         // Instantiate the boss room prefab as a child of the room
         GameObject bossRoomInstance = Instantiate(bossRoomPrefabs[gameLevel-1], roomFill.position, Quaternion.identity, roomFill);
+        GameObject bossDoor = bossRoom.transform.Find("BossDoor").gameObject;
+        bossDoor.SetActive(true);
+        bossDoor.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     private void ClearRoom(Transform room)

@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public float vida;
     [SerializeField] private AudioClip deathSound;
 
+    private Room room;
+
     private Color initialColor;
     public float damage = 10; // Daño a jugador
     public float knockbackForce = 16f; //Retroceso
@@ -22,6 +24,8 @@ public class EnemyController : MonoBehaviour
     {
 
         // Buscar el objeto del jugador por etiqueta
+        room = GetComponentInParent<Room>();
+
         spriteRenderer = GetComponent<SpriteRenderer>(); // Obtener el componente SpriteRenderer del enemigo
         initialColor = spriteRenderer.color;
        

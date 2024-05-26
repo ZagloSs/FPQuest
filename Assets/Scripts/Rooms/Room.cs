@@ -10,12 +10,14 @@ public class Room : MonoBehaviour
     [SerializeField] GameObject bottomDoor;
     [SerializeField] GameObject leftDoor;
     [SerializeField] GameObject rightDoor;
+    [SerializeField] GameObject bossDoor;
 
     public GameObject[] doors;  // Array de puertas de la habitación
 
     public bool completed = false;  // Estado de la habitación
 
     public Vector2Int RoomIndex { get; set; }
+
 
     public void SpawnDoor(Vector2Int direction)
     {
@@ -64,5 +66,4 @@ public class Room : MonoBehaviour
     {
         return GetComponent<Collider2D>().bounds.Contains(player.transform.position);
     }
-
 }

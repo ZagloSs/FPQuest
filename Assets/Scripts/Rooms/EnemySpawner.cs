@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
             }
 
 
-            if (enemiesSpawned && AllEnemiesDefeated())
+            if (enemiesSpawned && AllEnemiesDefeated() && room.name != "BossRoom")
             {
                 room.OpenDoors();
                 room.completed = true;

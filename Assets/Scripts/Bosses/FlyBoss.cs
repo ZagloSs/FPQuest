@@ -8,11 +8,13 @@ public class FlyBoss : MonoBehaviour
 
     private float timer = 0;
     private GameObject player;
+    private Room room;
     [SerializeField] private Slider HealthBar;
     // Update is called once per frame
 
     private void Start()
     {
+        room = GetComponentInParent<Room>();
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -26,11 +28,6 @@ public class FlyBoss : MonoBehaviour
         timer += Time.deltaTime;
 
         HealthBar.value = GetComponent<EnemyController>().vida;
-
-        if (GetComponent<EnemyController>().vida <= 0)
-        {
-            GameObject.FindGameObjectWithTag("BossDoor").SetActive(true);
-        }
     }
 
 
