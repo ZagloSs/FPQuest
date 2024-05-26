@@ -6,6 +6,7 @@ public class balaProperties : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector3 mousePos;
+    [SerializeField] private ParticleSystem ps;
 
     private float timer = 0f;
 
@@ -26,7 +27,8 @@ public class balaProperties : MonoBehaviour
             AudioManager.instance.PlayEnemyHitted();
             EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
             enemy.TomarDaño(Properties.instance.Damage);
-            gameObject.SetActive(false);
+
+            StartCoroutine(disable());
 
   
             
@@ -34,10 +36,16 @@ public class balaProperties : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Wall"))
         {
-            gameObject.SetActive(false);
+            StartCoroutine(disable());
         }
     }
 
+    public IEnumerator disable()
+    {
+        ps.Play();
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
+    }
 
 
 }

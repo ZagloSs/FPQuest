@@ -7,6 +7,7 @@ public class OjoDisparo : MonoBehaviour
 
     [SerializeField] private float damage;
     private Rigidbody2D rb;
+    [SerializeField] private ParticleSystem ps;
 
     private float timer = 0f;
 
@@ -28,12 +29,15 @@ public class OjoDisparo : MonoBehaviour
             AudioManager.instance.PlayEnemyHitted();
             Properties.instance.gotHittedByBullet(damage);
 
-            gameObject.SetActive(false);
-
-            
-            
+            StartCoroutine(disable());
         }
     }
 
+    public IEnumerator disable()
+    {
+        ps.Play();
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
+    }
 
 }
