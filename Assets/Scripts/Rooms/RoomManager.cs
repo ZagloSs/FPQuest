@@ -16,6 +16,7 @@ public class RoomManager : MonoBehaviour
 
     [SerializeField] GameObject[] itemPrefabs;
     [SerializeField] GameObject itemPedestal;
+    [SerializeField] GameObject LvlChangeCanvas;
     [SerializeField] GameObject[] bossRoomPrefabs;
 
     [SerializeField] GameObject enemyPrefab;
@@ -84,6 +85,7 @@ public class RoomManager : MonoBehaviour
         {
             enteredBoosExit = false;
             gameLevel++;
+            StartCoroutine(cambioDeLvl());
             RegenerateRooms();
         }
     }
@@ -342,6 +344,20 @@ public class RoomManager : MonoBehaviour
                 Gizmos.DrawWireCube(position, new Vector3(roomWidth, roomHeight, 1));
             }
         }
+    }
+
+    public IEnumerator cambioDeLvl()
+    {
+        LvlChangeCanvas.SetActive(true);
+        if(roomCount == 2)
+        {
+            LvlChangeCanvas.GetComponentInChildren<ChangeScene>().changeLvl1();
+        }else if(gameLevel == 3)
+        {
+            LvlChangeCanvas.GetComponentInChildren<ChangeScene>().changeLvl2();
+        }
+        yield return new WaitForSeconds(2f);
+        LvlChangeCanvas.SetActive(false);
     }
 }
 
