@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -45,6 +46,12 @@ public class FBProperties : MonoBehaviour
             StartCoroutine(shooting());
         }
         timer += Time.deltaTime;
+
+        //Cuando le quites la mitad de la vida va a hacer una carita de dolor
+        if(health <= health * 0.5)
+        {
+            StartCoroutine(auch());
+        }
     }
 
     public IEnumerator shooting()
@@ -74,6 +81,14 @@ public class FBProperties : MonoBehaviour
             float rot = Mathf.Atan2(rotation.x, rotation.y) * Mathf.Rad2Deg;
             bullet.transform.rotation = Quaternion.Euler(0, 0, -rot);
         }
+    }
+
+    //Carita de dolor
+    public IEnumerator auch()
+    {
+        spriteCara.sprite = caraRecibirDaño;
+        yield return new WaitForSeconds(2f);
+        spriteCara.sprite = caraNormal;
     }
 
   
