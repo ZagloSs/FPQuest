@@ -29,15 +29,10 @@ public class OjoDisparo : MonoBehaviour
             AudioManager.instance.PlayEnemyHitted();
             Properties.instance.gotHittedByBullet(damage);
 
-            StartCoroutine(disable());
+            gameObject.SetActive(false);
         }
     }
 
-    public IEnumerator disable()
-    {
-        ps.Play();
-        yield return new WaitForSeconds(1f);
-        gameObject.SetActive(false);
-    }
+  
 
 }

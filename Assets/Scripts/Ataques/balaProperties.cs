@@ -28,7 +28,7 @@ public class balaProperties : MonoBehaviour
             EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
             enemy.TomarDaño(Properties.instance.Damage);
 
-            StartCoroutine(disable());
+            gameObject.SetActive(false );
 
   
             
@@ -36,15 +36,8 @@ public class balaProperties : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Wall"))
         {
-            StartCoroutine(disable());
+            gameObject.SetActive(false);
         }
-    }
-
-    public IEnumerator disable()
-    {
-        ps.Play();
-        yield return new WaitForSeconds(1f);
-        gameObject.SetActive(false);
     }
 
 
