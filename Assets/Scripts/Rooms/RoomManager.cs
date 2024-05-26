@@ -349,14 +349,15 @@ public class RoomManager : MonoBehaviour
     public IEnumerator cambioDeLvl()
     {
         LvlChangeCanvas.SetActive(true);
-        if(roomCount == 2)
+
+        if(gameLevel == 2)
         {
             LvlChangeCanvas.GetComponentInChildren<ChangeScene>().changeLvl1();
         }else if(gameLevel == 3)
         {
             LvlChangeCanvas.GetComponentInChildren<ChangeScene>().changeLvl2();
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         LvlChangeCanvas.SetActive(false);
     }
 }
