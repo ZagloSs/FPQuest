@@ -55,6 +55,17 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void bakcToMenuFromPause()
+    {
+        GameManager.instance.backToMenu();
+        Time.timeScale = 1.0f;
+    }
+
+    public void resumeGame()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     //Pequeño parche para arreglar un bug.
     public void AuidoManagerPlayClick()
     {
