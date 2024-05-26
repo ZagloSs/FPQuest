@@ -182,11 +182,13 @@ public class RoomManager : MonoBehaviour
         roomQueue.Clear();
         roomCount = 0;
         generationComplete = false;
+        hasGeneratedBossRoom = false;
+        hasGeneratedItemRoom = false;
 
         Vector2Int initialRoomIndex = new Vector2Int(gridSizeX / 2, gridSizeY / 2);
         StartRoomGenerationFromRoom(initialRoomIndex);
         GameObject player = GameObject.Find("Player");
-        player.transform.position = new Vector3(0, 0, 0);
+        player.transform.position = new Vector2(0, 0);
         Camera.main.transform.position = new Vector2(0, 0);
         Camera.main.nearClipPlane = 0;
     }
