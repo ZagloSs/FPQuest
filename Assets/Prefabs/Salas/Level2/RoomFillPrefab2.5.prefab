@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 347308214410476281}
   - component: {fileID: 2891480131507728961}
   m_Layer: 0
-  m_Name: RoomFillPrefab1 7
+  m_Name: RoomFillPrefab2.5
   m_TagString: RoomFill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

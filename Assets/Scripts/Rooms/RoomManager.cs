@@ -7,7 +7,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject roomPrefab;
     [SerializeField] GameObject[] fillPrefabLevel1;
     [SerializeField] GameObject[] fillPrefabLevel2;
-    //[SerializeField] GameObject[] fillPrefabLevel1;
+    [SerializeField] GameObject[] fillPrefabLevel3;
+
     [SerializeField] private int maxRooms = 15;
     [SerializeField] private int minRooms = 10;
     [SerializeField] private int gridSizeX = 10;
@@ -105,6 +106,9 @@ public class RoomManager : MonoBehaviour
             case 2:
                 GameObject fill2 = Instantiate(fillPrefabLevel2[0], roomFill.position, Quaternion.identity, roomFill);
                 break;
+            case 3:
+                GameObject fill3 = Instantiate(fillPrefabLevel3[0], roomFill.position, Quaternion.identity, roomFill);
+                break;
         }
 
         initialRoom.name = "StartRoom";
@@ -150,6 +154,9 @@ public class RoomManager : MonoBehaviour
                 break;
             case 2:
                 GameObject fill2 = Instantiate(fillPrefabLevel2[Random.Range(1, fillPrefabLevel2.Length)], roomFill.position, Quaternion.identity, roomFill);
+                break;
+            case 3:
+                GameObject fill3 = Instantiate(fillPrefabLevel3[Random.Range(1, fillPrefabLevel3.Length)], roomFill.position, Quaternion.identity, roomFill);
                 break;
         }
 
@@ -253,7 +260,7 @@ public class RoomManager : MonoBehaviour
         hasGeneratedItemRoom = true;
 
         // Choose a random room from the existing rooms
-        int randomRoomIndex = Random.Range(1, roomObjects.Count);
+        int randomRoomIndex = Random.Range(1, roomObjects.Count - 1);
         GameObject itemRoom = roomObjects[randomRoomIndex];
         roomObjects[randomRoomIndex].name = "ItemRoom";
 
@@ -276,6 +283,9 @@ public class RoomManager : MonoBehaviour
                 break;
             case 2:
                 GameObject fill2 = Instantiate(fillPrefabLevel2[0], roomFill.position, Quaternion.identity, roomFill);
+                break;
+            case 3:
+                GameObject fill3 = Instantiate(fillPrefabLevel3[0], roomFill.position, Quaternion.identity, roomFill);
                 break;
         }
         

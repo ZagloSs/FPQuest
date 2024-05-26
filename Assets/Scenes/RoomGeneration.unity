@@ -471,9 +471,22 @@ MonoBehaviour:
   - {fileID: 4387193763643438217, guid: f95e5b435f201374195061993683ccf4, type: 3}
   fillPrefabLevel2:
   - {fileID: 1190144646390510974, guid: c5c8ca92a2d5a474e83db5cce29575bf, type: 3}
-  - {fileID: 4387193763643438217, guid: a71ec0c4cd053db499d9bf53a6edb493, type: 3}
-  maxRooms: 10
-  minRooms: 5
+  - {fileID: 4387193763643438217, guid: 1c091980554baa74c983d1bda67b1b48, type: 3}
+  - {fileID: 4387193763643438217, guid: 93e87773ff40a4547b4610a9920aeb52, type: 3}
+  - {fileID: 4387193763643438217, guid: 623726492469ae04da9c8925535609ad, type: 3}
+  - {fileID: 4387193763643438217, guid: b0dcf531066f8ec4abfd9b4f2add2d85, type: 3}
+  - {fileID: 4387193763643438217, guid: a1e60e2d63da15f45884194734820409, type: 3}
+  - {fileID: 4387193763643438217, guid: 4b950e133f46dbe43a1efca6ecaee523, type: 3}
+  fillPrefabLevel3:
+  - {fileID: 1190144646390510974, guid: bdc6c866778a66b46ac2fb640c858ace, type: 3}
+  - {fileID: 4387193763643438217, guid: bf0fbcbf7e256c04b80b6cc2522b72d7, type: 3}
+  - {fileID: 4387193763643438217, guid: a8cc598f9021e094d850af726c1f7bae, type: 3}
+  - {fileID: 4387193763643438217, guid: 915c006143d00a8419510718e98c137a, type: 3}
+  - {fileID: 4387193763643438217, guid: 691bc5dfbef0a794da8a68846554faa5, type: 3}
+  - {fileID: 4387193763643438217, guid: b3e0b277509db874e9274e479148fa31, type: 3}
+  - {fileID: 4387193763643438217, guid: 89d4857d09d1572409fb7920b1072b54, type: 3}
+  maxRooms: 5
+  minRooms: 3
   gridSizeX: 20
   gridSizeY: 20
   itemPrefabs:
@@ -493,6 +506,7 @@ MonoBehaviour:
   bossRoomPrefabs:
   - {fileID: 381536782758281193, guid: e75d54a5e9ab31e43a5653283a9fdbe1, type: 3}
   - {fileID: 381536782758281193, guid: b89fb6321d260f54b9779e6cdd1606f9, type: 3}
+  - {fileID: 381536782758281193, guid: 26df79c135240ff44950c5a924c8b87e, type: 3}
   enemyPrefab: {fileID: 6929958692872619665, guid: 30fb212fba7f1aa4d99f3921ba31f0f1, type: 3}
   gameLevel: 1
   enteredBoosExit: 0

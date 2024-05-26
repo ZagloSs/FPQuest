@@ -26,6 +26,11 @@ public class FlyBoss : MonoBehaviour
         timer += Time.deltaTime;
 
         HealthBar.value = GetComponent<EnemyController>().vida;
+
+        if (GetComponent<EnemyController>().vida <= 0)
+        {
+            GameObject.FindGameObjectWithTag("BossDoor").SetActive(true);
+        }
     }
 
 
