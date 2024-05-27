@@ -44,6 +44,7 @@ public class FBProperties : MonoBehaviour
 
     [Header("Donde aparece el player")]
     [SerializeField] private GameObject spawnPointPlayer;
+    private Vector3 pos;
 
     Vector3 att1 = new Vector2(0, -5);
     Vector3 att2 = new Vector2(1, -1);
@@ -73,9 +74,10 @@ public class FBProperties : MonoBehaviour
         iPosMI = manoIzquierda.transform.position;
 
         AudioManager.instance.playBoss();
-
+        pos = spawnPointPlayer.transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = spawnPointPlayer.transform.position;
+        Debug.Log(pos);
+        player.transform.position = pos;
 
     }
 
