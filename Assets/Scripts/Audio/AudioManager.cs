@@ -67,6 +67,12 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void playBoss()
+    {
+        musicaSource.clip = bossBattle;
+        musicaSource.Play();
+    }
+
     public void stopmusic()
     {
         musicaSource.Stop();

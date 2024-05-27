@@ -14,6 +14,8 @@ TagManager:
   - BP
   - Wall
   - BossDoor
+  - mano
+  - Boss
   layers:
   - Default
   - TransparentFX
