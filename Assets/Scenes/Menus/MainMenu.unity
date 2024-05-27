@@ -1736,6 +1736,7 @@ MonoBehaviour:
   background: {fileID: 8300000, guid: 1037a2a3571fa9644ac7ceffa5b36c93, type: 3}
   menus: {fileID: 8300000, guid: 703de95abf3f0cc44930f48112b97da4, type: 3}
   bossBattle: {fileID: 8300000, guid: d2121b1d871d5724d8a8bdf42ec77bce, type: 3}
+  credits: {fileID: 8300000, guid: 6eaf284ef10e6a742b2a06d1fcde590a, type: 3}
   click: {fileID: 8300000, guid: 03d042b40a0705346b3ea9e5020decc6, type: 3}
   pickUpItem: {fileID: 8300000, guid: 3ca88c9efb97efe4e98377db2aa359c0, type: 3}
   magicSpelled: {fileID: 8300000, guid: 59261c083b67bb44592d950939a09428, type: 3}

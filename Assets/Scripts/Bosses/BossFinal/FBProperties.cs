@@ -58,27 +58,27 @@ public class FBProperties : MonoBehaviour
     private Vector3 iPosMD;
     private Vector3 iPosMI;
     private GameObject player;
-    private bool justEntered = true;
+
+    private bool isAlive = true;
 
     private void Start()
     {
         spriteCara = GetComponent<SpriteRenderer>(); 
         pool = GetComponent<GameObjectPool>();
+
         iPosMD = manoDerecha.transform.position;
         iPosMI = manoIzquierda.transform.position;
+
         AudioManager.instance.playBoss();
+
         player = GameObject.FindGameObjectWithTag("Player");
-        
+        player.transform.position = spawnPointPlayer.transform.position;
+
     }
 
     private void Update()
     {
-        if (justEntered)
-        {
-            player.transform.position = spawnPointPlayer.transform.position;
-            justEntered = false;
-        }
-        if(timer > 5f)
+        if(timer > 5f && isAlive)
         {
             Random rand = new Random();
             int r = rand.Next(0, 2);
@@ -132,8 +132,10 @@ public class FBProperties : MonoBehaviour
 
     public IEnumerator Death()
     {
-        timer = 20f;
-        StopAllCoroutines();
+        isAlive = false;
+        StopCoroutine(ataquesManos());
+        StopCoroutine(shooting());
+
         spriteCara.sprite = caraMuerte;
         yield return new WaitForSeconds(2f);
         ps.Play();
