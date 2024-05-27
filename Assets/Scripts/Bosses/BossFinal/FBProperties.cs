@@ -39,6 +39,9 @@ public class FBProperties : MonoBehaviour
     [Header("HealthBar")]
     [SerializeField] private Slider HealthBar;
 
+    [Header("CanvasPosMortem")]
+    [SerializeField] private Canvas canvasPosMortem;
+
     [Header("Donde aparece el player")]
     [SerializeField] private GameObject spawnPointPlayer;
 
@@ -186,9 +189,8 @@ public class FBProperties : MonoBehaviour
 
     public void endGame()
     {
+       Instantiate(canvasPosMortem);
        Destroy(gameObject);
-
-
 
     }
 
