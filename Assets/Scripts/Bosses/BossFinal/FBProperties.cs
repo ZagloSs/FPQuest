@@ -59,6 +59,7 @@ public class FBProperties : MonoBehaviour
         pool = GetComponent<GameObjectPool>();
         iPosMD = manoDerecha.transform.position;
         iPosMI = manoIzquierda.transform.position;
+        AudioManager.instance.playBoss();
     }
 
     private void Update()
@@ -148,7 +149,7 @@ public class FBProperties : MonoBehaviour
 
     public IEnumerator ataqueMano(GameObject mano, Vector3 moveBack)
     {
-        //target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        target = GameObject.FindGameObjectWithTag("Player").transform.position;
         mano.GetComponent<SpriteRenderer>().sprite = ManosAtacar;
         yield return new WaitForSeconds(0.5f);
         mano.transform.DOMove(target, 0.5f);
@@ -171,6 +172,13 @@ public class FBProperties : MonoBehaviour
        
 
 
+    }
+
+
+
+    public float getDamage()
+    {
+        return damage;
     }
 
   
