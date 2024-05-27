@@ -1,8 +1,13 @@
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
+using Random = System.Random;
 
 public class FBProperties : MonoBehaviour
 {
@@ -19,7 +24,21 @@ public class FBProperties : MonoBehaviour
     [Header("Desde donde dispara")]
     [SerializeField] private GameObject puntoDeDisparo;
 
-    private bool isShooting = false;
+    [Header("Manos")]
+    [SerializeField] private GameObject manoIzquierda;
+    [SerializeField] private GameObject manoDerecha;
+
+    [Header("Manos Sprites")]
+    [SerializeField] private Sprite ManosRecibirDaño;
+    [SerializeField] private Sprite ManosAtacar;
+    [SerializeField] private Sprite ManosNormal;
+
+    [Header("Explosion")]
+    [SerializeField] private ParticleSystem ps;
+
+    [Header("HealthBar")]
+    [SerializeField] private Slider HealthBar;
+
     Vector3 att1 = new Vector2(0, -5);
     Vector3 att2 = new Vector2(1, -1);
     Vector3 att3 = new Vector2(-1, -1);
@@ -29,29 +48,33 @@ public class FBProperties : MonoBehaviour
     private GameObjectPool pool;
     private float timer = 0;
     private SpriteRenderer spriteCara;
+    private Vector3 target = new Vector3(0, -5, 0);
+
+    private Vector3 iPosMD;
+    private Vector3 iPosMI;
 
     private void Start()
     {
         spriteCara = GetComponent<SpriteRenderer>(); 
         pool = GetComponent<GameObjectPool>();
-        StartCoroutine(shooting());
+        iPosMD = manoDerecha.transform.position;
+        iPosMI = manoIzquierda.transform.position;
     }
 
     private void Update()
     {
         
-        if(timer > 6f)
+        if(timer > 4f)
         {
+            Random rand = new Random();
+            int r = rand.Next(0, 2);
             timer = 0;
-            StartCoroutine(shooting());
+            StartCoroutine(r == 1 ? shooting() : ataquesManos()) ;
+
         }
         timer += Time.deltaTime;
 
-        //Cuando le quites la mitad de la vida va a hacer una carita de dolor
-        if(health <= health * 0.5)
-        {
-            StartCoroutine(auch());
-        }
+        HealthBar.value = health;
     }
 
     public IEnumerator shooting()
@@ -67,9 +90,7 @@ public class FBProperties : MonoBehaviour
 
     public void shoot(Vector3 att)
     {
-        isShooting = true;
 
-           
         GameObject bullet = pool.GetInactiveGameObject();
         if (bullet)
         {
@@ -87,8 +108,69 @@ public class FBProperties : MonoBehaviour
     public IEnumerator auch()
     {
         spriteCara.sprite = caraRecibirDaño;
+        manoDerecha.GetComponent<SpriteRenderer>().sprite = ManosRecibirDaño;
+        manoIzquierda.GetComponent<SpriteRenderer>().sprite = ManosRecibirDaño;
         yield return new WaitForSeconds(2f);
         spriteCara.sprite = caraNormal;
+        manoDerecha.GetComponent<SpriteRenderer>().sprite = ManosNormal;
+        manoIzquierda.GetComponent<SpriteRenderer>().sprite = ManosNormal;
+    }
+
+    public IEnumerator Death()
+    {
+        spriteCara.sprite = caraMuerte;
+        yield return new WaitForSeconds(2f);
+        ps.Play();
+        GetComponent<SpriteRenderer>().enabled = false;
+        manoIzquierda.GetComponent<SpriteRenderer>().enabled = false;
+        manoDerecha.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(2f);
+        endGame();
+
+    }
+
+    public void TomarDaño(float daño)
+    {
+        StartCoroutine(blinkEffect());
+        health -= daño;
+        if (health <= 0)
+        {
+            StartCoroutine(Death());
+        }
+    }
+
+    public IEnumerator blinkEffect()
+    {
+        spriteCara.color = new Color(1, 0, 0);
+        yield return new WaitForSeconds(0.1f);
+        spriteCara.color = Color.white;
+    }
+
+    public IEnumerator ataqueMano(GameObject mano, Vector3 moveBack)
+    {
+        //target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        mano.GetComponent<SpriteRenderer>().sprite = ManosAtacar;
+        yield return new WaitForSeconds(0.5f);
+        mano.transform.DOMove(target, 0.5f);
+        yield return new WaitForSeconds(1f);
+        mano.transform.DOMove(moveBack, 1f);
+        yield return new WaitForSeconds(1f);
+        mano.GetComponent<SpriteRenderer>().sprite = ManosNormal;
+    }
+
+    public IEnumerator ataquesManos()
+    {
+        StartCoroutine(ataqueMano(manoIzquierda, iPosMI));
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(ataqueMano(manoDerecha, iPosMD));
+    }
+
+
+    public void endGame()
+    {
+       
+
+
     }
 
   
