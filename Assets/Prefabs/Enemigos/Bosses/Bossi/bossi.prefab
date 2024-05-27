@@ -5652,6 +5652,7 @@ MonoBehaviour:
   ManosNormal: {fileID: -1855356986, guid: 80c76876d17869b498d4de93ca542873, type: 3}
   ps: {fileID: 7294673147003741743}
   HealthBar: {fileID: 4633789699350207860}
+  canvasPosMortem: {fileID: 6504666826546474759, guid: a0e7849776c5b2c468e0b9f638e9cf50, type: 3}
   spawnPointPlayer: {fileID: 6549662892046555333}
 --- !u!114 &3883933712977508571
 MonoBehaviour:

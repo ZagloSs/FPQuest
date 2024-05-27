@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 6163761}
   - component: {fileID: 6163760}
   m_Layer: 5
-  m_Name: aga (1)
-  m_TagString: Untagged
+  m_Name: TXTFade
+  m_TagString: creditFade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,7 +739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -457}
+  m_AnchoredPosition: {x: 0, y: -458}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &829113288
@@ -1224,8 +1224,8 @@ GameObject:
   - component: {fileID: 1659252536}
   - component: {fileID: 1659252535}
   m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
+  m_Name: IMGFade
+  m_TagString: creditFade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1299,6 +1299,7 @@ GameObject:
   - component: {fileID: 1727878043}
   - component: {fileID: 1727878042}
   - component: {fileID: 1727878041}
+  - component: {fileID: 1727878045}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1389,6 +1390,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1727878045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727878040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22f314ab416e7f409ad637b0faf3689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  credits: {fileID: 715681490}
 --- !u!1 &1783926450
 GameObject:
   m_ObjectHideFlags: 0
