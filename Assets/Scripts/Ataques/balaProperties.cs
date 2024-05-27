@@ -28,11 +28,24 @@ public class balaProperties : MonoBehaviour
             EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
             enemy.TomarDaño(Properties.instance.Damage);
 
-            gameObject.SetActive(false );
+            gameObject.SetActive(false);
 
   
             
         }
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            AudioManager.instance.PlayEnemyHitted();
+            FBProperties enemy = collision.gameObject.GetComponent<FBProperties>();
+            enemy.TomarDaño(Properties.instance.Damage);
+
+            gameObject.SetActive(false);
+
+
+
+        }
+
+
 
         if (collision.gameObject.CompareTag("Wall"))
         {

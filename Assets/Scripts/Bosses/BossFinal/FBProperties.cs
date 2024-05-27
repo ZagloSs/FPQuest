@@ -39,11 +39,16 @@ public class FBProperties : MonoBehaviour
     [Header("HealthBar")]
     [SerializeField] private Slider HealthBar;
 
+    [Header("Donde aparece el player")]
+    [SerializeField] private GameObject spawnPointPlayer;
+
     Vector3 att1 = new Vector2(0, -5);
     Vector3 att2 = new Vector2(1, -1);
     Vector3 att3 = new Vector2(-1, -1);
     Vector3 att4 = new Vector2(-3, -1);
     Vector3 att5 = new Vector2(3, -1);
+
+   
 
     private GameObjectPool pool;
     private float timer = 0;
@@ -52,6 +57,8 @@ public class FBProperties : MonoBehaviour
 
     private Vector3 iPosMD;
     private Vector3 iPosMI;
+    private GameObject player;
+    private bool justEntered = true;
 
     private void Start()
     {
@@ -60,12 +67,18 @@ public class FBProperties : MonoBehaviour
         iPosMD = manoDerecha.transform.position;
         iPosMI = manoIzquierda.transform.position;
         AudioManager.instance.playBoss();
+        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     private void Update()
     {
-        
-        if(timer > 4f)
+        if (justEntered)
+        {
+            player.transform.position = spawnPointPlayer.transform.position;
+            justEntered = false;
+        }
+        if(timer > 5f)
         {
             Random rand = new Random();
             int r = rand.Next(0, 2);
@@ -119,6 +132,8 @@ public class FBProperties : MonoBehaviour
 
     public IEnumerator Death()
     {
+        timer = 20f;
+        StopAllCoroutines();
         spriteCara.sprite = caraMuerte;
         yield return new WaitForSeconds(2f);
         ps.Play();
@@ -169,7 +184,8 @@ public class FBProperties : MonoBehaviour
 
     public void endGame()
     {
-       
+       Destroy(gameObject);
+
 
 
     }
