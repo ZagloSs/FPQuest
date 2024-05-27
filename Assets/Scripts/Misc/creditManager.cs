@@ -12,6 +12,7 @@ public class creditManager : MonoBehaviour
     private bool isFaded = false;
     void Start()
     {
+        
         StartCoroutine(Credits());
         
     }
@@ -31,7 +32,7 @@ public class creditManager : MonoBehaviour
         credits.transform.DOMoveY(21f, 15f).SetEase(Ease.OutSine);
         yield return new WaitForSeconds(18f);
         isFaded = true;
-        yield return new WaitForSeconds(22f);
+        yield return new WaitForSeconds(4f);
         GameManager.instance.backToMenu();
     }
      
