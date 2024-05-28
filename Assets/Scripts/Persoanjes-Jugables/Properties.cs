@@ -132,21 +132,7 @@ public class Properties : MonoBehaviour
             Invoke("ResetCooldown", 1f);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy") && canDamage)
-        {
-            EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
-            if (enemy != null)
-            {
-                Health -= enemy.damage; // Reducir la vida del jugador
-                healthBar.setHealth(Health);
-                Debug.Log("Player health: " + Health);
-                canDamage = false; // Activar cooldown
-                Invoke("ResetCooldown", 1f);
-            }
-        }
-    }
+    
 
 
 
