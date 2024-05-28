@@ -46,7 +46,10 @@ public class EnemySpawner : MonoBehaviour
     {
         GameManager.instance.spawnedEnemies++;
         Instantiate(enemyPrefab, transform.position, transform.rotation);
-
+        if (GetComponent<MovePlayer>())
+        {
+            GetComponent<MovePlayer>().ChangePlayerPos();
+        }
     }
 
     private bool AllEnemiesDefeated()

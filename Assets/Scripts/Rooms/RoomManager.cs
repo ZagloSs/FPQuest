@@ -27,7 +27,7 @@ public class RoomManager : MonoBehaviour
     private int roomWidth = 20;
     private int roomHeight = 12;
 
-    public int gameLevel = 1;
+    public int gameLevel = 3;
     public bool enteredBoosExit = false;
 
     private List<GameObject> roomObjects = new List<GameObject>();

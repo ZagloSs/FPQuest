@@ -60,37 +60,25 @@ public class FBProperties : MonoBehaviour
 
     private Vector3 iPosMD;
     private Vector3 iPosMI;
-    private GameObject player;
 
     private bool isAlive = true;
-    private Room room;
-    private PlayerPosition playerPosition;
-    private bool playerPositioned = false;
+
 
     private void Start()
     {
         spriteCara = GetComponent<SpriteRenderer>(); 
         pool = GetComponent<GameObjectPool>();
 
-        room = GetComponentInParent<Room>();
 
         iPosMD = manoDerecha.transform.position;
         iPosMI = manoIzquierda.transform.position;
 
         AudioManager.instance.playBoss();
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerPosition = player.GetComponent<PlayerPosition>();
 
     }
 
     private void Update()
     {
-        if(!playerPositioned)
-        {
-            Debug.Log("Player in room");
-            playerPositioned = true;
-            player.transform.position = new Vector2(room.transform.position.x, room.transform.position.y - 1.2f);
-        }
 
         if (timer > 5f && isAlive)
         {

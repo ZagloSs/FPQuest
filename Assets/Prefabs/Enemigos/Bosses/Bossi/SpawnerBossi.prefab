@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1741060641138694655}
   - component: {fileID: 241744268291731862}
+  - component: {fileID: 1518830824624794318}
   m_Layer: 0
   m_Name: SpawnerBossi
   m_TagString: Untagged
@@ -45,3 +46,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8191356165518056094, guid: 1ff4b44beaa8d5e4e931bc5db2f05ce3, type: 3}
+--- !u!114 &1518830824624794318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428158113629989759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5c31b5c6cc57c4ca5cd04853c503fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
