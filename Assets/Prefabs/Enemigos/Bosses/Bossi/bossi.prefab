@@ -5640,6 +5640,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   damage: 5
+  huh: {fileID: 8300000, guid: 6c2ce90606a53564db99c508f13da8e2, type: 3}
+  explosion: {fileID: 8300000, guid: 7622dbebcc0566a439799313c65f7a35, type: 3}
   caraNormal: {fileID: 1072115267, guid: 80c76876d17869b498d4de93ca542873, type: 3}
   "caraRecibirDa\xF1o": {fileID: -1390718960, guid: 80c76876d17869b498d4de93ca542873, type: 3}
   caraDisparando: {fileID: 1353370581, guid: 80c76876d17869b498d4de93ca542873, type: 3}
@@ -5666,7 +5668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b92e5bb703ea5f4aaf072d8915ce5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 7693303986904201931, guid: 5b09929a6b16dcb489d18d98d52c734d, type: 3}
+  objectToPool: {fileID: 7693303986904201931, guid: 393e8a9e6db2a6e47b835816f12ba6c7, type: 3}
   poolSize: 30
   shouldExpand: 1
 --- !u!1 &8347560834361200572

@@ -15,6 +15,10 @@ public class FBProperties : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private float damage;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip huh;
+    [SerializeField] private AudioClip explosion;
+
     [Header("Sprites de la Cara")]
     [SerializeField] private Sprite caraNormal;
     [SerializeField] private Sprite caraRecibirDaño;
@@ -139,7 +143,9 @@ public class FBProperties : MonoBehaviour
         StopCoroutine(shooting());
 
         spriteCara.sprite = caraMuerte;
+        AudioManager.instance.playMonsterDeathSound(huh);
         yield return new WaitForSeconds(2f);
+        AudioManager.instance.playMonsterDeathSound(explosion);
         ps.Play();
         GetComponent<SpriteRenderer>().enabled = false;
         manoIzquierda.GetComponent<SpriteRenderer>().enabled = false;
