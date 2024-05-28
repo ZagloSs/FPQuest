@@ -114,9 +114,9 @@ public class FBProperties : MonoBehaviour
             bullet.SetActive(true);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.velocity = att.normalized * 5f;
-            Vector3 rotation = bullet.transform.position - att;
+            Vector3 rotation = att - bullet.transform.position;
             float rot = Mathf.Atan2(rotation.x, rotation.y) * Mathf.Rad2Deg;
-            bullet.transform.rotation = Quaternion.Euler(0, 0, -rot);
+            bullet.transform.rotation = Quaternion.Euler(0, 0, rot);
         }
     }
 

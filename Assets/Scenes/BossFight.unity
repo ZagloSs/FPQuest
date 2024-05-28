@@ -295,6 +295,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 510428311}
+    - target: {fileID: 3883933712977508571, guid: 1ff4b44beaa8d5e4e931bc5db2f05ce3, type: 3}
+      propertyPath: objectToPool
+      value: 
+      objectReference: {fileID: 7693303986904201931, guid: 393e8a9e6db2a6e47b835816f12ba6c7, type: 3}
     - target: {fileID: 5494384237203944812, guid: 1ff4b44beaa8d5e4e931bc5db2f05ce3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
