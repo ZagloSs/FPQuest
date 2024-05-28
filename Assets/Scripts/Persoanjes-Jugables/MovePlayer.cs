@@ -18,12 +18,13 @@ public class MovePlayer : MonoBehaviour
         {
             Debug.Log("ChangePlayerPos called");
             player.transform.position = new Vector3(transform.position.x, transform.position.y - 2.2f, player.transform.position.z);
-            yield return null;
             Debug.Log("Player position changed to: " + player.transform.position);
+            yield return null;
         }
         else
         {
             Debug.LogError("Player object is not assigned.");
+            yield return null;
         }
     }
 }
