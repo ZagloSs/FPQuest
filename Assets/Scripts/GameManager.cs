@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<string, float> properties;
     private Sprite healtrait;
 
-    public int spawnedEnemies = 0;
+    public int spawnedEnemies;
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
             //Prueba para acceder al diccionario de properties
             properties = new Dictionary<string, float>();
-
+            spawnedEnemies = 0;
             InitializeProperties();
 
         }

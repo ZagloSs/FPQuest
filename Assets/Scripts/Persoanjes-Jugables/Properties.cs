@@ -139,6 +139,7 @@ public class Properties : MonoBehaviour
     public void Death()
     {
         StartCoroutine(DeadCorrutine());
+        GameManager.instance.spawnedEnemies = 0;
     }
 
     public IEnumerator DeadCorrutine()
