@@ -48,7 +48,7 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(enemyPrefab, transform.position, transform.rotation);
         if (GetComponent<MovePlayer>())
         {
-            GetComponent<MovePlayer>().ChangePlayerPos();
+            StartCoroutine(GetComponent<MovePlayer>().ChangePlayerPos());
         }
     }
 
