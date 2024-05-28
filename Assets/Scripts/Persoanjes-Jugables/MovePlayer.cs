@@ -12,12 +12,13 @@ public class MovePlayer : MonoBehaviour
     }
 
 
-    public void ChangePlayerPos()
+    public IEnumerator ChangePlayerPos()
     {
         if (player != null)
         {
             Debug.Log("ChangePlayerPos called");
             player.transform.position = new Vector3(transform.position.x, transform.position.y - 2.2f, player.transform.position.z);
+            yield return null;
             Debug.Log("Player position changed to: " + player.transform.position);
         }
         else
