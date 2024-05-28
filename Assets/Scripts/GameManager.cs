@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour
 
     public int spawnedEnemies;
 
+    public GameObject movementJoystickPrefab;  // Referencia al prefab del joystick de movimiento
+    private GameObject movementJoystickInstance;
+    
+    public GameObject attackJoystickPrefab;  // Referencia al prefab del joystick de disparo
+    private GameObject attackJoystickInstance;
+
     private void Awake()
     {
         if (!instance)
@@ -28,14 +34,40 @@ public class GameManager : MonoBehaviour
             properties = new Dictionary<string, float>();
             spawnedEnemies = 0;
             InitializeProperties();
-
         }
         else
         {
             Destroy(gameObject);
         }
     }
-   
+    void Update()
+    {
+        // Instanciar el joystick solo en plataformas móviles
+        if (!Application.isMobilePlatform)
+        {
+            movementJoystickInstance.SetActive(false);
+            attackJoystickInstance.SetActive(false);
+        }
+    }
+    // Método para obtener el joystick de movimiento
+    public Joystick GetMovementJoystick()
+    {
+        if (movementJoystickInstance != null)
+        {
+            return movementJoystickInstance.GetComponent<Joystick>();
+        }
+        return null;
+    }    
+    
+    // Método para obtener el joystick de disparo
+    public Joystick GetAttackJoystick()
+    {
+        if (attackJoystickInstance != null)
+        {
+            return attackJoystickInstance.GetComponent<Joystick>();
+        }
+        return null;
+    }
     private void InitializeProperties()
     {
         // Inicializamos el diccionario de propiedades con valores por defecto
