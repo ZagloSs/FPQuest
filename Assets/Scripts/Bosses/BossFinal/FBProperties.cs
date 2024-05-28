@@ -44,7 +44,6 @@ public class FBProperties : MonoBehaviour
 
     [Header("Donde aparece el player")]
     [SerializeField] private GameObject spawnPointPlayer;
-    private Vector3 pos;
 
     Vector3 att1 = new Vector2(0, -5);
     Vector3 att2 = new Vector2(1, -1);
@@ -64,26 +63,36 @@ public class FBProperties : MonoBehaviour
     private GameObject player;
 
     private bool isAlive = true;
+    private Room room;
+    private PlayerPosition playerPosition;
+    private bool playerPositioned = false;
 
     private void Start()
     {
         spriteCara = GetComponent<SpriteRenderer>(); 
         pool = GetComponent<GameObjectPool>();
 
+        room = GetComponentInParent<Room>();
+
         iPosMD = manoDerecha.transform.position;
         iPosMI = manoIzquierda.transform.position;
 
         AudioManager.instance.playBoss();
-        pos = spawnPointPlayer.transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log(pos);
-        player.transform.position = pos;
+        playerPosition = player.GetComponent<PlayerPosition>();
 
     }
 
     private void Update()
     {
-        if(timer > 5f && isAlive)
+        if(!playerPositioned)
+        {
+            Debug.Log("Player in room");
+            playerPositioned = true;
+            player.transform.position = new Vector2(room.transform.position.x, room.transform.position.y - 1.2f);
+        }
+
+        if (timer > 5f && isAlive)
         {
             Random rand = new Random();
             int r = rand.Next(0, 2);

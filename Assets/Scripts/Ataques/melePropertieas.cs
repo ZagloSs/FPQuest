@@ -25,6 +25,11 @@ public class melePropertieas : MonoBehaviour
             EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
             AudioManager.instance.PlayEnemyHitted();
             enemy.TomarDaño(Properties.instance.Damage);
+        }else if(collision.gameObject.CompareTag("Boss"))
+        {
+            FBProperties boss = collision.gameObject.GetComponent<FBProperties>();
+            AudioManager.instance.PlayEnemyHitted();
+            boss.TomarDaño(Properties.instance.Damage);
         }
     }
 
