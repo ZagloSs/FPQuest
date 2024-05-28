@@ -14,6 +14,15 @@ public class MovePlayer : MonoBehaviour
 
     public void ChangePlayerPos()
     {
-        player.transform.position = new Vector2(transform.position.x, transform.position.y - 2.2f);
+        if (player != null)
+        {
+            Debug.Log("ChangePlayerPos called");
+            player.transform.position = new Vector3(transform.position.x, transform.position.y - 2.2f, player.transform.position.z);
+            Debug.Log("Player position changed to: " + player.transform.position);
+        }
+        else
+        {
+            Debug.LogError("Player object is not assigned.");
+        }
     }
 }

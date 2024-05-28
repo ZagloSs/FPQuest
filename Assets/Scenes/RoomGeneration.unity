@@ -607,8 +607,8 @@ MonoBehaviour:
   - {fileID: 4387193763643438217, guid: 691bc5dfbef0a794da8a68846554faa5, type: 3}
   - {fileID: 4387193763643438217, guid: b3e0b277509db874e9274e479148fa31, type: 3}
   - {fileID: 4387193763643438217, guid: 89d4857d09d1572409fb7920b1072b54, type: 3}
-  maxRooms: 5
-  minRooms: 5
+  maxRooms: 12
+  minRooms: 7
   gridSizeX: 20
   gridSizeY: 20
   itemPrefabs:
