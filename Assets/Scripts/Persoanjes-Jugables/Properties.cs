@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Properties : MonoBehaviour
 {
@@ -120,7 +121,19 @@ public class Properties : MonoBehaviour
                 Invoke("ResetCooldown", 1f);
             }
         }
+
+        if(collision.gameObject.CompareTag("mano") && canDamage)
+        {
+            ManosProperties manoHitted = collision.gameObject.GetComponent<ManosProperties>();
+            Health -= manoHitted.getDamage(); // Reducir la vida del jugador
+            healthBar.setHealth(Health);
+            Debug.Log("Player health: " + Health);
+            canDamage = false; // Activar cooldown
+            Invoke("ResetCooldown", 1f);
+        }
     }
+
+    
 
     public void gotHittedByBullet(float damage)
     {

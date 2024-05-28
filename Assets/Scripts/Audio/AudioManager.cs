@@ -11,10 +11,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource SFXSource;
 
 
-    [Header("Audio Clips")]
+    [Header("Audio Music")]
     [SerializeField] private AudioClip background;
     [SerializeField] private AudioClip menus;
     [SerializeField] private AudioClip bossBattle;
+    [SerializeField] private AudioClip credits;
+
+    [Header("Audio SFX")]
     [SerializeField] private AudioClip click;
     [SerializeField] private AudioClip pickUpItem;
     [SerializeField] private AudioClip magicSpelled;
@@ -67,6 +70,12 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void playBoss()
+    {
+        musicaSource.clip = bossBattle;
+        musicaSource.Play();
+    }
+
     public void stopmusic()
     {
         musicaSource.Stop();
@@ -93,7 +102,13 @@ public class AudioManager : MonoBehaviour
         return SFXSource.volume;
     }
 
+   
+    public void playCredits()
+    {
+        musicaSource.clip = credits;
+        musicaSource.Play();
 
+    }
 
     //Llamar a efectos de sonido
     public void PlayClick()
